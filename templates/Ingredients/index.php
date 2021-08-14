@@ -1,50 +1,54 @@
+
 <?php
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Ingredient[]|\Cake\Collection\CollectionInterface $ingredients
  */
+
+echo $this -> Html->css("/vendor/datatables/dataTables.bootstrap4.min.css",['block'=>true]);
+echo $this -> Html->script("/vendor/datatables/jquery.dataTables.min.js",['block'=>true]);
+echo $this -> Html->script("/vendor/datatables/dataTables.bootstrap4.min.js",['block'=>true]);
+echo $this -> Html->script("/js/demo/datatables-demo.js",['block'=>true]);
 ?>
-<div class="ingredients index content">
-    <?= $this->Html->link(__('New Ingredient'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Ingredients') ?></h3>
+<!-- Tabs -->
+<?php $page_name = $this->request->getparam("controller") ?>
+<p></p>
+<!-- End of Tabs -->
+
+<div>
+    <div class="mb-3 d-sm-flex align-items-center justify-content-between mb-4">
+        <h3 class="text-grey"><?= __('Ingredients') ?></h3>
+        <a href="<?= $this->Url->build('/ingredients/add')?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-plus fa-sm text-white-50"></i> New Ingredient</a>
+    </div>
     <div class="table-responsive">
-        <table>
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
-                <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('name') ?></th>
-                    <th><?= $this->Paginator->sort('stock') ?></th>
-                    <th><?= $this->Paginator->sort('price') ?></th>
-                    <th><?= $this->Paginator->sort('supplier_id') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
-                </tr>
+            <tr>
+                <th><?= h('Id') ?></th>
+                <th><?= h('Name') ?></th>
+                <th><?= h('Stock') ?></th>
+                <th><?= h('Price') ?></th>
+                <th><?= h('Supplier_id') ?></th>
+                <th class="actions"><?= __('Actions') ?></th>
+            </tr>
             </thead>
             <tbody>
-                <?php foreach ($ingredients as $ingredient): ?>
+            <?php foreach ($ingredients as $ingredient): ?>
                 <tr>
                     <td><?= $this->Number->format($ingredient->id) ?></td>
                     <td><?= h($ingredient->name) ?></td>
-                    <td><?= $this->Number->format($ingredient->stock) ?></td>
-                    <td><?= $this->Number->format($ingredient->price) ?></td>
-                    <td><?= $ingredient->has('supplier') ? $this->Html->link($ingredient->supplier->name, ['controller' => 'Suppliers', 'action' => 'view', $ingredient->supplier->id]) : '' ?></td>
+                    <td><?= h($ingredient->stock) ?></td>
+                    <td><?= $this->Number->currency($ingredient->price) ?></td>
+                    <td><?= $ingredient->has('supplier') ? $ingredient->supplier->id : '' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $ingredient->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $ingredient->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $ingredient->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ingredient->id)]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $ingredient->id], ['confirm' => __('Are you sure you want to delete ingredient {0}?', $ingredient->name)]) ?>
                     </td>
                 </tr>
-                <?php endforeach; ?>
+            <?php endforeach; ?>
             </tbody>
         </table>
-    </div>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
     </div>
 </div>

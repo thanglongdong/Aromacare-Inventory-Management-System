@@ -1,33 +1,54 @@
+
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Ingredient $ingredient
- * @var \Cake\Collection\CollectionInterface|string[] $suppliers
- * @var \Cake\Collection\CollectionInterface|string[] $products
+ * @var \App\Model\Entity\Ingredient $ingredients
  */
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Ingredients'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="ingredients form content">
-            <?= $this->Form->create($ingredient) ?>
-            <fieldset>
-                <legend><?= __('Add Ingredient') ?></legend>
-                <?php
-                    echo $this->Form->control('name');
-                    echo $this->Form->control('stock');
-                    echo $this->Form->control('price');
-                    echo $this->Form->control('supplier_id', ['options' => $suppliers]);
-                    echo $this->Form->control('products._ids', ['options' => $products]);
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
+<!-- Tabs -->
+<?php $page_name = $this->request->getparam("controller") ?>
+<p></p>
+<!-- End of Tabs -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <h1 class="h3 mb-2 text-gray-800"><?= __('New Ingredient') ?></h1>
+            </div>
+
+            <div>
+                <?= $this->Form->create($ingredient,['novalidate' => true, 'type'=>'file']) ?>
+                <?= $this->Form->control('name')?>
+                <!-- Row 1 -->
+                <div class="row">
+                    <div class="col">
+                        <?= $this->Form->control('stock')?>
+                    </div>
+                    <div class="col">
+                        <?= $this->Form->control('price',['label'=>'Price'])?>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="row">
+    
+                    <div class="col">
+                        <?= $this->Form->control('supplier_id', ['options' => $suppliers, 'empty' => true])?>
+                    </div>
+                </div>
+
+        
+
+                <div>
+                    <?= $this->Form->button(__('Add Ingredient'), ['class' => 'btn btn-primary']) ?>
+                    <?= $this->Html->link(__('List Ingredients'), ['action' => 'index'], ['class' => 'btn btn-outline-primary me-2 float-right mr-2']) ?>
+                </div>
+            </div>
+
         </div>
     </div>
+
 </div>
+<?= $this->Form->end() ?>
+<br </br>
