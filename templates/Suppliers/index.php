@@ -20,7 +20,7 @@ echo $this -> Html->script("/js/demo/datatables-demo.js",['block'=>true]);
     <div class="mb-3 d-sm-flex align-items-center justify-content-between mb-4">
         <h3 class="text-grey"><?= __('Suppliers') ?></h3>
         <a href="<?= $this->Url->build('/suppliers/add')?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-plus fa-sm text-white-50"></i> Add Supplier</a>
+                class="fas fa-plus fa-sm text-white-50"></i> New Supplier</a>
     </div>
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
