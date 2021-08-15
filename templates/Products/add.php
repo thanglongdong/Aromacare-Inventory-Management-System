@@ -16,7 +16,7 @@
             <div>
                 <h1 class="h3 mb-2 text-gray-800"><?= __('New Product') ?></h1>
             </div>
-
+            <br </br>
 
             <div>
                 <?= $this->Form->create($product,['novalidate' => true, 'type'=>'file']) ?>
@@ -43,13 +43,12 @@
                     </div>
                 </div>
                 <?= $this->Form->control('description') ?>
-                <br </br>
                 <?= $this->Form->control('ingredients._ids', ['options' => $ingredients]) ?>
                 <br </br>
 
                 <div>
                     <?= $this->Form->button(__('Add Product'), ['class' => 'btn btn-primary']) ?>
-                    <?= $this->Html->link(__('List Product'), ['action' => 'index'], ['class' => 'btn btn-outline-primary me-2 float-right mr-2']) ?>
+                    <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'btn btn-outline-primary me-2 float-right mr-2']) ?>
                 </div>
             </div>
 
