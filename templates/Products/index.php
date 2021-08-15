@@ -3,21 +3,36 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Product[]|\Cake\Collection\CollectionInterface $products
  */
+
+echo $this -> Html->css("/vendor/datatables/dataTables.bootstrap4.min.css",['block'=>true]);
+echo $this -> Html->script("/vendor/datatables/jquery.dataTables.min.js",['block'=>true]);
+echo $this -> Html->script("/vendor/datatables/dataTables.bootstrap4.min.js",['block'=>true]);
+echo $this -> Html->script("/js/demo/datatables-demo.js",['block'=>true]);
 ?>
+<!-- Tabs -->
+<?php $page_name = $this->request->getparam("controller") ?>
+<p></p>
+<!-- End of Tabs -->
+
 <div class="products index content">
-    <?= $this->Html->link(__('New Product'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Products') ?></h3>
+
+    <div class="mb-3 d-sm-flex align-items-center justify-content-between mb-4">
+        <h3 class="text-grey"><?= __('Products') ?></h3>
+        <a href="<?= $this->Url->build('/Products/add')?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-plus fa-sm text-white-50"></i> New Product</a>
+    </div>
+
     <div class="table-responsive">
-        <table>
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('name') ?></th>
-                    <th><?= $this->Paginator->sort('type') ?></th>
-                    <th><?= $this->Paginator->sort('price') ?></th>
-                    <th><?= $this->Paginator->sort('size') ?></th>
-                    <th><?= $this->Paginator->sort('stock') ?></th>
-                    <th><?= $this->Paginator->sort('sku') ?></th>
+                    <th><?= h('Id') ?></th>
+                    <th><?= h('Name') ?></th>
+                    <th><?= h('Type') ?></th>
+                    <th><?= h('Price') ?></th>
+                    <th><?= h('Size') ?></th>
+                    <th><?= h('Stock') ?></th>
+                    <th><?= h('SKU') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -40,15 +55,5 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
-    </div>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
     </div>
 </div>
