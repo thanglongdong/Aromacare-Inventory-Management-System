@@ -47,8 +47,8 @@
                 <br </br>
 
                 <div>
-                    <?= $this->Form->button(__('Add Product'), ['class' => 'btn btn-primary']) ?>
-                    <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'btn btn-outline-primary me-2 float-right mr-2']) ?>
+                    <?= $this->Form->button(__('Add Product'), ['class' => 'btn btn-dark']) ?>
+                    <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'btn btn-outline-dark flex-shrink-0']) ?>
                 </div>
             </div>
 
