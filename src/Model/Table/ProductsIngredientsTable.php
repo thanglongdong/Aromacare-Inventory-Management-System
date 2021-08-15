@@ -69,8 +69,7 @@ class ProductsIngredientsTable extends Table
         $validator
             ->scalar('amount')
             ->maxLength('amount', 64)
-            ->requirePresence('amount', 'create')
-            ->notEmptyString('amount');
+            ->allowEmpty('amount','create');
 
         return $validator;
     }

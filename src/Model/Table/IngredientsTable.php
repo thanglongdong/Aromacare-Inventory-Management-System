@@ -71,17 +71,17 @@ class IngredientsTable extends Table
             ->scalar('name')
             ->maxLength('name', 64)
             ->requirePresence('name', 'create')
-            ->notEmptyString('name');
+            ->notEmptyString('name','Please provide a name.');
 
         $validator
             ->integer('stock')
             ->requirePresence('stock', 'create')
-            ->notEmptyString('stock');
+            ->notEmptyString('stock','Please enter a number.');
 
         $validator
             ->numeric('price')
             ->requirePresence('price', 'create')
-            ->notEmptyString('price');
+            ->notEmptyString('price','Please provide the price.');
 
         return $validator;
     }
