@@ -79,7 +79,7 @@ class ProductsTable extends Table
             ->requirePresence('price', 'create')
             ->notEmptyString('price')
             ->add('price', 'range', [
-                'rule' => ['range',1,8000],
+                'rule' => ['range',0,8000],
                 'message' => 'Please enter a valid number.'
             ]);
 
@@ -94,7 +94,7 @@ class ProductsTable extends Table
             ->requirePresence('stock', 'create')
             ->notEmptyString('stock')
             ->add('stock', 'range', [
-                'rule' => ['range',1,8000],
+                'rule' => ['range',0,8000],
                 'message' => 'Please enter a valid number.'
             ]);
 

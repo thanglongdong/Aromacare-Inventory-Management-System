@@ -7,8 +7,9 @@
 ?>
 <!-- Tabs -->
 <?php $page_name = $this->request->getparam("controller") ?>
-<p></p>
+<?= $this->element('tabs/tab', ['page' => $page_name]) ?>
 <!-- End of Tabs -->
+<br>
 
 <div class="container">
     <div class="row">

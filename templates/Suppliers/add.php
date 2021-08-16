@@ -4,19 +4,21 @@
  * @var \App\Model\Entity\Supplier $supplier
  */
 ?>
-
+<!-- Tabs -->
+<?php $page_name = $this->request->getparam("controller") ?>
+<?= $this->element('tabs/tab', ['page' => $page_name]) ?>
+<!-- End of Tabs -->
 <br>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div>
                 <h1 class="h3 mb-2 text-success"><?= __('New Supplier') ?></h1>
             </div>
-
             <div>
                 <?= $this->Form->create($supplier,['novalidate' => true]) ?>
                 <?= $this->Form->control('name') ?>
-                <br>
                 <!-- Row 1 -->
                 <div class="row">
                     <div class="col">

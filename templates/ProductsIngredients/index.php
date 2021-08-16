@@ -4,6 +4,12 @@
  * @var \App\Model\Entity\ProductsIngredient[]|\Cake\Collection\CollectionInterface $productsIngredients
  */
 ?>
+<!-- Tabs -->
+<?php $page_name = $this->request->getparam("controller") ?>
+<?= $this->element('tabs/tab', ['page' => $page_name]) ?>
+<!-- End of Tabs -->
+<br>
+
 <div class="productsIngredients index content">
     <?= $this->Html->link(__('New Products Ingredient'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Products Ingredients') ?></h3>

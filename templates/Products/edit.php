@@ -7,15 +7,16 @@
 ?>
 <!-- Tabs -->
 <?php $page_name = $this->request->getparam("controller") ?>
-<p></p>
+<?= $this->element('tabs/tab', ['page' => $page_name]) ?>
 <!-- End of Tabs -->
+<br>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div>
                 <h1 class="h3 mb-2 text-success"><?= __('Edit Product') ?></h1>
             </div>
-            <br </br>
 
             <div>
                 <?= $this->Form->create($product,['novalidate' => true, 'type'=>'file']) ?>
