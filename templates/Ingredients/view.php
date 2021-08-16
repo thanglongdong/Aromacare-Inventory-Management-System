@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-md-12">
             <div>
-                <h1 class="h3 mb-2 text-gray-800"><?= h($ingredient->name) ?></h1>
+                <h1 class="h3 mb-2 text-success"><?= h($ingredient->name) ?></h1>
                 <?= $this->Form->create($ingredient) ?>
             </div>
 
@@ -37,11 +37,12 @@
                     </div>
                 </div>
                 <?= $this->Form->end() ?>
+                <br>
                 <div>
-                    <?= $this->Html->link(__('Edit Ingredient'), ['action' => 'edit', $ingredient->id], ['class' => 'btn btn-primary']) ?>
-                    <?= $this->Form->postLink(__('Delete Ingredient'), ['action' => 'delete', $ingredient->id], ['confirm' => __('Are you sure you want to delete ingredient {0}?', $ingredient->name), 'class' => 'btn btn-outline-primary me-2 float-right mr-2']) ?>
-                    <?= $this->Html->link(__('List Ingredient'), ['action' => 'index'], ['class' => 'btn btn-outline-primary me-2 float-right mr-2']) ?>
-                    <?= $this->Html->link(__('New Ingredient'), ['action' => 'add'], ['class' => 'btn btn-outline-primary me-2 float-right mr-2']) ?>
+                    <?= $this->Html->link(__('Edit Ingredient'), ['action' => 'edit', $ingredient->id], ['class' => 'btn btn-success']) ?>
+                    <?= $this->Form->postLink(__('Delete Ingredient'), ['action' => 'delete', $ingredient->id], ['confirm' => __('Are you sure you want to delete ingredient {0}?', $ingredient->name), 'class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
+                    <?= $this->Html->link(__('List Ingredient'), ['action' => 'index'], ['class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
+                    <?= $this->Html->link(__('New Ingredient'), ['action' => 'add'], ['class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
                 </div>
             </div>
 

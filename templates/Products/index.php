@@ -9,16 +9,12 @@ echo $this -> Html->script("/vendor/datatables/jquery.dataTables.min.js",['block
 echo $this -> Html->script("/vendor/datatables/dataTables.bootstrap4.min.js",['block'=>true]);
 echo $this -> Html->script("/js/demo/datatables-demo.js",['block'=>true]);
 ?>
-<!-- Tabs -->
-<?php $page_name = $this->request->getparam("controller") ?>
-<p></p>
-<!-- End of Tabs -->
-
-<div class="products index content">
+<br>
+<div class="container">
 
     <div class="mb-3 d-sm-flex align-items-center justify-content-between mb-4">
         <h3 class="text-grey"><?= __('Products') ?></h3>
-        <a href="<?= $this->Url->build('/Products/add')?>" class="d-none d-sm-inline-block btn btn-dark"><i
+        <a href="<?= $this->Url->build('/Products/add')?>" class="d-none d-sm-inline-block btn btn-success"><i
                 class="fas fa-plus fa-sm text-white-50"></i> New Product</a>
     </div>
 

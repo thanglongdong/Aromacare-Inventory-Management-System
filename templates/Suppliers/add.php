@@ -5,39 +5,34 @@
  */
 ?>
 
-<!-- Tabs -->
-<?php $page_name = $this->request->getparam("controller") ?>
-<p></p>
-<!-- End of Tabs -->
-
+<br>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div>
-                <h1 class="h3 mb-2 text-gray-800"><?= __('New Supplier') ?></h1>
+                <h1 class="h3 mb-2 text-success"><?= __('New Supplier') ?></h1>
             </div>
-            <br </br>
 
             <div>
-                <?= $this->Form->create($supplier,['novalidate' => true, 'type'=>'file']) ?>
+                <?= $this->Form->create($supplier,['novalidate' => true]) ?>
                 <?= $this->Form->control('name') ?>
-                <br </br>
+                <br>
                 <!-- Row 1 -->
                 <div class="row">
                     <div class="col">
-                        <?= $this->Form->control('Phone Number') ?>
+                        <?= $this->Form->control('phone',['label'=>'Phone Number']) ?>
                     </div>
                     <div class="col">
-                        <?= $this->Form->control('Email') ?>
-                    </div>
-                    <div class="col">
-                        <?= $this->Form->control('Address'); ?>
+                        <?= $this->Form->control('email') ?>
                     </div>
                 </div>
-                <br </br>
+                <div class="col">
+                    <?= $this->Form->control('address'); ?>
+                </div>
+                <br>
                 <div>
-                    <?= $this->Form->button(__('Add Supplier'), ['class' => 'btn btn-primary']) ?>
-                    <?= $this->Html->link(__('List Suppliers'), ['action' => 'index'], ['class' => 'btn btn-outline-primary me-2 float-right mr-2']) ?>
+                    <?= $this->Form->button(__('Add Supplier'), ['class' => 'btn btn-success']) ?>
+                    <?= $this->Html->link(__('List Suppliers'), ['action' => 'index'], ['class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
                 </div>
             </div>
 
@@ -46,30 +41,4 @@
 
 </div>
 <?= $this->Form->end() ?>
-<br </br>
-
-<!-- this is all the old stuff that was there before
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Suppliers'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="suppliers form content">
-            <?= $this->Form->create($supplier) ?>
-            <fieldset>
-                <legend><?= __('Add Supplier') ?></legend>
-                <?php
-                    echo $this->Form->control('name');
-                    echo $this->Form->control('phone');
-                    echo $this->Form->control('email');
-                    echo $this->Form->control('address');
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
-        </div>
-    </div>
-</div> -->
+<br>

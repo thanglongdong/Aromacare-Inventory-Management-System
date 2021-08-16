@@ -5,21 +5,17 @@
  * @var \Cake\Collection\CollectionInterface|string[] $ingredients
  */
 ?>
-<!-- Tabs -->
-<?php $page_name = $this->request->getparam("controller") ?>
-<p></p>
-<!-- End of Tabs -->
-
+<br>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div>
-                <h1 class="h3 mb-2 text-gray-800"><?= __('New Product') ?></h1>
+                <h1 class="h3 mb-2 text-success"><?= __('New Product') ?></h1>
             </div>
             <br </br>
 
             <div>
-                <?= $this->Form->create($product,['novalidate' => true, 'type'=>'file']) ?>
+                <?= $this->Form->create($product,['novalidate' => true]) ?>
                 <?= $this->Form->control('name') ?>
                 <!-- Row 1 -->
                 <div class="row">
@@ -47,8 +43,8 @@
                 <br </br>
 
                 <div>
-                    <?= $this->Form->button(__('Add Product'), ['class' => 'btn btn-dark']) ?>
-                    <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'btn btn-outline-dark flex-shrink-0']) ?>
+                    <?= $this->Form->button(__('Add Product'), ['class' => 'btn btn-success']) ?>
+                    <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'btn btn-outline-success flex-shrink-0']) ?>
                 </div>
             </div>
 

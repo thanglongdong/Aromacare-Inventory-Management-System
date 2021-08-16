@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-md-12">
             <div>
-                <h1 class="h3 mb-2 text-gray-800"><?= __('Edit Product') ?></h1>
+                <h1 class="h3 mb-2 text-success"><?= __('Edit Product') ?></h1>
             </div>
             <br </br>
 
@@ -46,12 +46,12 @@
                 <br </br>
 
                 <div>
-                    <?= $this->Form->button(__('Save Changes'), ['class' => 'btn btn-dark']) ?>
-                    <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'btn btn-outline-dark flex-shrink-0']) ?>
+                    <?= $this->Form->button(__('Save Changes'), ['class' => 'btn btn-success']) ?>
+                    <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'btn btn-outline-success flex-shrink-0']) ?>
                     <?= $this->Form->postLink(
                         __('Delete Product'),
                         ['action' => 'delete', $product->id],
-                        ['confirm' => __('Are you sure you want to delete # {0}?', $product->id), 'class' => 'btn btn-outline-dark flex-shrink-0']
+                        ['confirm' => __('Are you sure you want to delete # {0}?', $product->id), 'class' => 'btn btn-outline-success flex-shrink-0']
                     ) ?>
                 </div>
             </div>
