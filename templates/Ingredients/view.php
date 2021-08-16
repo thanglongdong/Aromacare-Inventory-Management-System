@@ -23,9 +23,6 @@
                 <!-- Row 1 -->
                 <div class="row">
                     <div class="col">
-                        <?= $this->Form->control('id',['disabled'])?>
-                    </div>
-                    <div class="col">
                         <?= $this->Form->control('stock',['disabled'])?>
                     </div>
                 </div>
