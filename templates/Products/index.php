@@ -13,7 +13,7 @@ echo $this -> Html->script("/js/demo/datatables-demo.js",['block'=>true]);
 <div class="container">
 
     <div class="mb-3 d-sm-flex align-items-center justify-content-between mb-4">
-        <h3 class="text-grey"><?= __('Products') ?></h3>
+        <h3 class="text-success"><?= __('Products') ?></h3>
         <a href="<?= $this->Url->build('/Products/add')?>" class="d-none d-sm-inline-block btn btn-success"><i
                 class="fas fa-plus fa-sm text-white-50"></i> New Product</a>
     </div>
