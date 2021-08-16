@@ -76,12 +76,23 @@ class IngredientsTable extends Table
         $validator
             ->integer('stock')
             ->requirePresence('stock', 'create')
-            ->notEmptyString('stock','Please enter a number.');
+            ->notEmptyString('stock','Please enter a number.')
+            ->add('stock', 'range', [
+                'rule' => ['range',1,8000],
+                'message' => 'Please enter a valid number.'
+            ]);
 
         $validator
             ->numeric('price')
             ->requirePresence('price', 'create')
-            ->notEmptyString('price','Please provide the price.');
+            ->notEmptyString('price','Please provide the price.')
+            ->add('price', 'range', [
+                'rule' => ['range',1,8000],
+                'message' => 'Please enter a valid number.'
+            ]);
+
+        $validator
+           ->notEmpty('supplier_id', 'Please select this options');
 
         return $validator;
     }

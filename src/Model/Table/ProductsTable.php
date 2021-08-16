@@ -77,7 +77,11 @@ class ProductsTable extends Table
         $validator
             ->numeric('price')
             ->requirePresence('price', 'create')
-            ->notEmptyString('price');
+            ->notEmptyString('price')
+            ->add('price', 'range', [
+                'rule' => ['range',1,8000],
+                'message' => 'Please enter a valid number.'
+            ]);
 
         $validator
             ->scalar('size')
@@ -88,7 +92,11 @@ class ProductsTable extends Table
         $validator
             ->integer('stock')
             ->requirePresence('stock', 'create')
-            ->notEmptyString('stock');
+            ->notEmptyString('stock')
+            ->add('stock', 'range', [
+                'rule' => ['range',1,8000],
+                'message' => 'Please enter a valid number.'
+            ]);
 
         $validator
             ->scalar('sku')
