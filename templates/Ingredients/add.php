@@ -17,7 +17,7 @@
             <div>
                 <h1 class="h3 mb-2 text-success"><?= __('New Ingredient') ?></h1>
             </div>
-
+            <br>
             <div>
                 <?= $this->Form->create($ingredient,['novalidate' => true, 'type'=>'file']) ?>
                 <?= $this->Form->control('name')?>

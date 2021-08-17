@@ -27,11 +27,11 @@ echo $this -> Html->script("/js/demo/datatables-demo.js",['block'=>true]);
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
             <tr>
-                <th><?= h('Id') ?></th>
+                <th><?= h('ID') ?></th>
                 <th><?= h('Name') ?></th>
                 <th><?= h('Stock') ?></th>
                 <th><?= h('Price') ?></th>
-                <th><?= h('Supplier_id') ?></th>
+                <th><?= h('Supplier_ID') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
             </thead>

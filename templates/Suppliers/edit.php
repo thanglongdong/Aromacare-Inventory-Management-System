@@ -16,6 +16,7 @@
             <div>
                 <h1 class="h3 mb-2 text-success"><?= __('Edit Suppliers') ?></h1>
             </div>
+            <br>
 
             <div>
                 <?= $this->Form->create($supplier,['novalidate' => true, 'type'=>'file']) ?>
@@ -37,12 +38,12 @@
                 </div>
                 <br>
                 <div>
-                    <?= $this->Form->button(__('Edit Supplier'), ['class' => 'btn btn-success']) ?>
+                    <?= $this->Form->button(__('Save Changes'), ['class' => 'btn btn-success']) ?>
                     <?= $this->Form->end() ?>
                     <?= $this->Form->postLink(
                         __('Delete Supplier'),
                         ['action' => 'delete', $supplier->id],
-                        ['confirm' => __('Are you sure you want to delete supplier {0}?', $supplier->name), 'class' => 'btn btn-outline-success me-2 float-right mr-2']
+                        ['confirm' => __('Are you sure you want to delete supplier {0}?', $supplier->name), 'class' => 'btn btn-outline-success float-right mr-2']
                     ) ?>
                     <?= $this->Html->link(__('List Suppliers'), ['action' => 'index'], ['class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
                 </div>

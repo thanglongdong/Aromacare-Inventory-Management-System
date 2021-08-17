@@ -47,8 +47,8 @@
                 <?= $this->Form->end() ?>
                 <div>
                     <?= $this->Html->link(__('Edit Supplier'), ['action' => 'edit', $supplier->id], ['class' => 'btn btn-success']) ?>
-                    <?= $this->Form->postLink(__('Delete Booking'), ['action' => 'delete', $supplier->id], ['confirm' => __('Are you sure you want to delete # {0}?', $supplier->id), 'class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
-                    <?= $this->Html->link(__('List Supplier'), ['action' => 'index'], ['class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
+                    <?= $this->Form->postLink(__('Delete Supplier'), ['action' => 'delete', $supplier->id], ['confirm' => __('Are you sure you want to delete # {0}?', $supplier->id), 'class' => 'btn btn-outline-success float-right mr-2']) ?>
+                    <?= $this->Html->link(__('List Supplier'), ['action' => 'index'], ['class' => 'btn btn-outline-success float-right mr-2']) ?>
                     <?= $this->Html->link(__('New Supplier'), ['action' => 'add'], ['class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
                 </div>
             </div>
@@ -63,7 +63,7 @@
 
 <?php if (!empty($supplier->ingredients)) : ?>
 <div class="container">
-    <h4><?= __('Related Ingredients') ?></h4>
+    <h1 class="h3 mb-2 text-success"><?= __('Related Ingredients') ?></h1>
     <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <tr>
@@ -91,7 +91,7 @@
             <?php endforeach; ?>
         </table>
     </div>
-</div>
+</div><br </br>
 <?php endif; ?>
 
 

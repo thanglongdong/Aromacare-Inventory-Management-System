@@ -20,7 +20,7 @@
             <div>
                 <h1 class="h3 mb-2 text-success"><?= __('Edit Ingredients') ?></h1>
             </div>
-
+            <br </br>
             <div>
                 <?= $this->Form->create($ingredient,['novalidate' => true, 'type'=>'file']) ?>
                 <?= $this->Form->control('name')?>
@@ -44,12 +44,12 @@
                 </div>
                 <br>
                 <div>
-                    <?= $this->Form->button(__('Edit Ingredient'), ['class' => 'btn btn-success']) ?>
+                    <?= $this->Form->button(__('Save Changes'), ['class' => 'btn btn-success']) ?>
                     <?= $this->Form->end() ?>
                     <?= $this->Form->postLink(
                         __('Delete Ingredient'),
                         ['action' => 'delete', $ingredient->id],
-                        ['confirm' => __('Are you sure you want to delete ingredient {0}?', $ingredient->name), 'class' => 'btn btn-outline-success me-2 float-right mr-2']
+                        ['confirm' => __('Are you sure you want to delete ingredient {0}?', $ingredient->name), 'class' => 'btn btn-outline-success float-right mr-2']
                     ) ?>
                     <?= $this->Html->link(__('List Ingredient'), ['action' => 'index'], ['class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
                 </div>

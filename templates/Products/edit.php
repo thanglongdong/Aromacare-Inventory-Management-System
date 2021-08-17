@@ -17,11 +17,23 @@
             <div>
                 <h1 class="h3 mb-2 text-success"><?= __('Edit Product') ?></h1>
             </div>
+            <br </br>
 
             <div>
                 <?= $this->Form->create($product,['novalidate' => true, 'type'=>'file']) ?>
-                <?= $this->Form->control('name') ?>
                 <!-- Row 1 -->
+                <div class="row">
+                    <div class="col">
+                        <?= $this->Form->control('name') ?>
+                    </div>
+                    <div class="col">
+                        <?= $this->Form->control('stock') ?>
+                    </div>
+                    <div class="col">
+                        <?= $this->Form->control('sku',['label'=>'SKU']) ?>
+                    </div>
+                </div>
+                <!-- Row 2 -->
                 <div class="row">
                     <div class="col">
                         <?= $this->Form->control('type') ?>
@@ -36,14 +48,12 @@
                 <!-- Row 2 -->
                 <div class="row">
                     <div class="col">
-                        <?= $this->Form->control('stock') ?>
+                        <?= $this->Form->control('description') ?>
                     </div>
                     <div class="col">
-                        <?= $this->Form->control('sku',['label'=>'SKU']) ?>
+                        <?= $this->Form->control('ingredients._ids', ['options' => $ingredients]) ?>
                     </div>
                 </div>
-                <?= $this->Form->control('description') ?>
-                <?= $this->Form->control('ingredients._ids', ['options' => $ingredients]) ?>
                 <br </br>
 
                 <div>
