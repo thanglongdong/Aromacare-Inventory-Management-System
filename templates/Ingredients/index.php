@@ -30,7 +30,7 @@ echo $this -> Html->script("/js/demo/datatables-demo.js",['block'=>true]);
                 <th><?= h('ID') ?></th>
                 <th><?= h('Name') ?></th>
                 <th><?= h('Stock') ?></th>
-                <th><?= h('Price') ?></th>
+                <th><?= h('Price (AUD)') ?></th>
                 <th><?= h('Supplier_ID') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>

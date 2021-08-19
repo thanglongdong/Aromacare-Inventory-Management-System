@@ -50,10 +50,10 @@
                             ]) ?>
                     </div>
                     <div class="col">
-                        <?= $this->Form->control('price') ?>
+                        <?= $this->Form->control('price',['label'=>'Price (AUD)']) ?>
                     </div>
                     <div class="col">
-                        <?= $this->Form->control('size'); ?>
+                        <?= $this->Form->control('size',['label'=>'Size (ml)']); ?>
                     </div>
                 </div>
                 <!-- Row 3 -->
