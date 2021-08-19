@@ -22,6 +22,8 @@ use Cake\Http\Exception\NotFoundException;
 
 $this->disableAutoLayout();
 
+
+
 $checkConnection = function (string $name) {
     $error = null;
     $connected = false;
@@ -57,7 +59,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <meta name="author" content="" />
     <?= $this->Html->meta('icon') ?>
 
-    <title><?= $this->fetch('title') ?></title>
+    <title>
+        Aromacare
+    </title>
+
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->

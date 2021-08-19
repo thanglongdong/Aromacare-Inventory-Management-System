@@ -6,7 +6,10 @@
     <meta name="author" content="" />
     <?= $this->Html->meta('icon') ?>
 
-    <title><?= $this->fetch('title') ?></title>
+    <title>
+        Aromacare
+    </title>
+
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->

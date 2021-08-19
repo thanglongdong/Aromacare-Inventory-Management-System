@@ -3,13 +3,6 @@
 
 <ul class="nav nav-tabs nav-fill">
     <li class="nav-item">
-        <?php if($page == 'Dashboard') : ?>
-            <a class="nav-link active font-weight-bold link-success" href="<?= $this->Url->build('/dashboard')?>"><strong class="text-success">Dashboard</strong></a>
-        <?php else : ?>
-            <a class="nav-link link-success" href="<?= $this->Url->build('/dashboard')?>">Dashboard</a>
-        <?php endif; ?>
-    </li>
-    <li class="nav-item">
         <?php if($page == 'Products') : ?>
             <a class="nav-link active font-weight-bold link-success" href="<?= $this->Url->build('/products')?>"><strong class="text-success">Products</strong></a>
         <?php else : ?>
