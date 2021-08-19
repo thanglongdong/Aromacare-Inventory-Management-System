@@ -19,6 +19,10 @@
                 <p class="lead text-success"><?= h($product->description) ?></p>
 
                 <br>
+
+                <div class="d-flex">
+                        <?= $this->Html->link('Purchase', '/', ['class' => 'btn btn-outline-success flex-shrink-0']);?>
+                </div>
             </div>
         </div>
     </div>
