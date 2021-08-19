@@ -30,8 +30,8 @@ echo $this -> Html->script("/js/demo/datatables-demo.js",['block'=>true]);
                 <th><?= h('ID') ?></th>
                 <th><?= h('Name') ?></th>
                 <th><?= h('Stock') ?></th>
-                <th><?= h('Price') ?></th>
-                <th><?= h('Supplier_ID') ?></th>
+                <th><?= h('Price (AUD)') ?></th>
+                <th><?= h('Supplier') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
             </thead>
@@ -42,7 +42,7 @@ echo $this -> Html->script("/js/demo/datatables-demo.js",['block'=>true]);
                     <td><?= h($ingredient->name) ?></td>
                     <td><?= h($ingredient->stock) ?></td>
                     <td><?= $this->Number->currency($ingredient->price) ?></td>
-                    <td><?= $ingredient->has('supplier') ? $ingredient->supplier->id : '' ?></td>
+                    <td><?= $ingredient->has('supplier') ? $ingredient->supplier->name : '' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $ingredient->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $ingredient->id]) ?>

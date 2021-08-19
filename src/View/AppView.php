@@ -46,7 +46,8 @@ class AppView extends View
                 'select' => '<select name="{{name}}" class="form-control"{{attrs}}>{{content}}</select>',
                 'selectMultiple' => '<select name="{{name}}[]" class="form-control" multiple="multiple"{{attrs}}>{{content}}</select>',
                 'radioContainer' => '<div class="form-radio">{{content}}</div>',
-                'checkbox' => '<input type="checkbox" name="{{name}}" value="{{value}}"{{attrs}}>'
+                'checkbox' => '<input type="checkbox" name="{{name}}" value="{{value}}"{{attrs}}>',
+                'error' => '<div class="error-message" style="color:#AA2A0E;font-size:14px;font-weight:bold">{{content}}</div>'
             ];
         $this->Form->setTemplates($formTemplate);
     }

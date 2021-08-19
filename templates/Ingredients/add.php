@@ -27,7 +27,7 @@
                         <?= $this->Form->control('stock')?>
                     </div>
                     <div class="col">
-                        <?= $this->Form->control('price',['label'=>'Price'])?>
+                        <?= $this->Form->control('price',['label'=>'Price (AUD)'])?>
                     </div>
                 </div>
 

@@ -70,7 +70,7 @@
             <th><?= __('Id') ?></th>
             <th><?= __('Name') ?></th>
             <th><?= __('Stock') ?></th>
-            <th><?= __('Price') ?></th>
+            <th><?= __('Price (AUD)') ?></th>
             <th><?= __('Supplier Id') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -79,7 +79,7 @@
                 <td><?= h($ingredients->id) ?></td>
                 <td><?= h($ingredients->name) ?></td>
                 <td><?= h($ingredients->stock) ?></td>
-                <td><?= h($ingredients->price) ?></td>
+                <td><?= h($this->Number->currency($ingredients->price)) ?></td>
                 <td><?= h($ingredients->supplier_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Ingredients', 'action' => 'view', $ingredients->id]) ?>
