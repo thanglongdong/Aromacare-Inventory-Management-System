@@ -36,7 +36,18 @@
                 <!-- Row 2 -->
                 <div class="row">
                     <div class="col">
-                        <?= $this->Form->control('type') ?>
+                        <?= $this->Form->control('type',
+                            ['options' =>
+                                ['Aromatherapy Accessories and Diffusers'=>'Aromatherapy Accessories and Diffusers',
+                                'Essential Oil Blends'=>'Essential Oil Blends',
+                                'Essential Oils'=>'Essential Oils',
+                                'Skin Care'=>'Skin Care',
+                                'Personal and Home'=>'Personal and Home',
+                                'Lifestyle'=>'Lifestyle',
+                                'Dementia Care'=>'Dementia Care',
+                                'Palliative Care'=>'Palliative Care',
+                                'Aged Care'=>'Aged Care']
+                        ]) ?>
                     </div>
                     <div class="col">
                         <?= $this->Form->control('price') ?>

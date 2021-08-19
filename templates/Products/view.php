@@ -2,99 +2,140 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Product $product
- * @var string[]|\Cake\Collection\CollectionInterface $ingredients
  */
 
 ?>
-<!-- Tabs -->
-<?php $page_name = $this->request->getparam("controller") ?>
-<?= $this->element('tabs/tab', ['page' => $page_name]) ?>
-<!-- End of Tabs -->
-<br>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div>
-                <h1 class="h3 mb-2 text-success"><?= h($product->name) ?></h1>
-                <?= $this->Form->create($product) ?>
-            </div>
-            <div>
-                <!-- Row 1 -->
-                <div class="row">
-                    <div class="col">
-                        <?= $this->Form->control('name',['disabled']) ?>
-                    </div>
-                    <div class="col">
-                        <?= $this->Form->control('stock',['disabled']) ?>
-                    </div>
-                    <div class="col">
-                        <?= $this->Form->control('sku',['label'=>'SKU',['disabled']]) ?>
-                    </div>
-                </div>
-                <!-- Row 2 -->
-                <div class="row">
-                    <div class="col">
-                        <?= $this->Form->control('type',['disabled']) ?>
-                    </div>
-                    <div class="col">
-                        <?= $this->Form->control('price',['disabled']) ?>
-                    </div>
-                    <div class="col">
-                        <?= $this->Form->control('size',['disabled']); ?>
-                    </div>
-                </div>
 
-                <?= $this->Form->control('description',['disabled']) ?>
-                <br </br>
+<!-- Product section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
+            <div class="col-md-6">
+                <div class="small mb-1 text-success">SKU:<?= h($product->sku) ?></div>
+                <h1 class="display-5 fw-bolder text-success"><?= h($product->name) ?></h1>
+                <div class="fs-5 mb-5 text-success">
+                    <span><?= $this->Number->currency($product->price) ?></span>
+                </div>
+                <p class="lead text-success"><?= h($product->description) ?></p>
 
-                <div>
-                    <?= $this->Html->link(__('Edit Product'), ['action' => 'edit', $product->id], ['class' => 'btn btn-success']) ?>
-                    <?= $this->Form->postLink(
-                        __('Delete Product'),
-                        ['action' => 'delete', $product->id],
-                        ['confirm' => __('Are you sure you want to delete # {0}?', $product->id), 'class' => 'btn btn-outline-success flex-shrink-0']
-                    ) ?>
-                    <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'btn btn-outline-success flex-shrink-0']) ?>
-                    <?= $this->Html->link(__('New Product'), ['action' => 'add'], ['class' => 'btn btn-outline-success flex-shrink-0']) ?>
+                <br>
+
+                <div class="d-flex">
+                        <?= $this->Html->link('Purchase', '/', ['class' => 'btn btn-outline-success flex-shrink-0']);?>
                 </div>
             </div>
-
         </div>
     </div>
+</section>
 
-</div>
-<br </br>
-<br </br>
-
-
-<?php if (!empty($product->ingredients)) : ?>
-    <div class="container">
-        <h1 class="h3 mb-2 text-success"><?= __('Ingredients') ?></h1>
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <tr>
-                    <th><?= __('Id') ?></th>
-                    <th><?= __('Name') ?></th>
-                    <th><?= __('Stock') ?></th>
-                    <th><?= __('Price') ?></th>
-                    <th><?= __('Supplier Id') ?></th>
-                </tr>
-                <?php foreach ($product->ingredients as $ingredients) : ?>
-                    <tr>
-                        <td><?= h($ingredients->id) ?></td>
-                        <td><?= h($ingredients->name) ?></td>
-                        <td><?= h($ingredients->stock) ?></td>
-                        <td><?= h($ingredients->price) ?></td>
-                        <td><?= h($ingredients->supplier_id) ?></td>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </table>
+<!-- Related items section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2 class="fw-bolder mb-4">Related products</h2>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Fancy Product</h5>
+                            <!-- Product price-->
+                            $40.00 - $80.00
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Sale badge-->
+                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                    <!-- Product image-->
+                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Special Item</h5>
+                            <!-- Product reviews-->
+                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                            </div>
+                            <!-- Product price-->
+                            <span class="text-muted text-decoration-line-through">$20.00</span>
+                            $18.00
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Sale badge-->
+                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                    <!-- Product image-->
+                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Sale Item</h5>
+                            <!-- Product price-->
+                            <span class="text-muted text-decoration-line-through">$50.00</span>
+                            $25.00
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Popular Item</h5>
+                            <!-- Product reviews-->
+                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                            </div>
+                            <!-- Product price-->
+                            $40.00
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <br </br>
-<?php endif; ?>
-
-
-
-
+</section>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>

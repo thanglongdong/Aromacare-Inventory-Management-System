@@ -44,7 +44,9 @@ class AppView extends View
                 'label' => '<label{{attrs}} class="form-label"> {{text}}</label>',
                 'textarea' => '<textarea name="{{name}}" class="form-control"{{attrs}}>{{value}}</textarea>',
                 'select' => '<select name="{{name}}" class="form-control"{{attrs}}>{{content}}</select>',
-                'selectMultiple' => '<select name="{{name}}[]" class="form-control" multiple="multiple"{{attrs}}>{{content}}</select>'
+                'selectMultiple' => '<select name="{{name}}[]" class="form-control" multiple="multiple"{{attrs}}>{{content}}</select>',
+                'radioContainer' => '<div class="form-radio">{{content}}</div>',
+                'checkbox' => '<input type="checkbox" name="{{name}}" value="{{value}}"{{attrs}}>'
             ];
         $this->Form->setTemplates($formTemplate);
     }
