@@ -71,7 +71,8 @@ class IngredientsTable extends Table
             ->scalar('name')
             ->maxLength('name', 64)
             ->requirePresence('name', 'create')
-            ->notEmptyString('name','Please provide a name.');
+            ->notEmptyString('name','Please provide a name.')
+            ->alphaNumeric('name', 'Please enter a valid name without special characters');
 
         $validator
             ->integer('stock')
@@ -79,7 +80,7 @@ class IngredientsTable extends Table
             ->notEmptyString('stock','Please enter a number.')
             ->add('stock', 'range', [
                 'rule' => ['range',0,8000],
-                'message' => 'Please enter a valid number.'
+                'message' => 'Please enter a valid number from 0 - 8000.'
             ]);
 
         $validator
@@ -88,11 +89,11 @@ class IngredientsTable extends Table
             ->notEmptyString('price','Please provide the price.')
             ->add('price', 'range', [
                 'rule' => ['range',0,8000],
-                'message' => 'Please enter a valid number.'
+                'message' => 'Please enter a valid price from $0 - $8000.'
             ]);
 
         $validator
-           ->notEmptyString('supplier_id', 'Please select this options');
+           ->notEmptyString('supplier_id', 'Please select an option');
 
         return $validator;
     }

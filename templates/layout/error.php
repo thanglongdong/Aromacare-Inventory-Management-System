@@ -35,6 +35,7 @@
     <div class="error-container">
         <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
+        An error has occurred.
         <?= $this->Html->link(__('Back'), 'javascript:history.back()') ?>
     </div>
 </body>
