@@ -35,7 +35,25 @@ class ProductsController extends AppController
         $product = $this->Products->get($id, [
             'contain' => ['Ingredients'],
         ]);
+        $key= $this->request->getQuery();
 
+        if (!empty($key['inputQuantity'])) {  //if not empty (user inputted) - do this
+            if (is_numeric($key['inputQuantity'])&&$key['inputQuantity']>0) { //if entered stuff is int do this
+                $inputQuantity = $key['inputQuantity'];
+                $stock = $product->stock;
+                $result =  $stock - $inputQuantity;
+                $product->stock= $result;
+                $this->Products->save($product);
+            }
+            else {  //if not int, return message error
+                $result = 'unsuccess'; //handled in view
+            }
+
+        } //else, no user input - do this
+        else{
+            $result = null;
+        }
+        $this->set('result', $result);
         $this->set(compact('product'));
     }
 

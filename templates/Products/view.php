@@ -3,6 +3,14 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Product $product
  */
+$inputQuantity = [
+    'data' => [
+        'result' => $this->request->getQuery('result'),
+    ],
+    'schema' => [
+        'result'
+    ]
+];
 ?>
 
 <!-- Product section-->
@@ -19,14 +27,39 @@
                 <p class="lead text-success"><?= h($product->description) ?></p>
 
                 <br>
+                <div class="row">
+                    <?= $this->Form->create($inputQuantity, ['type' => 'get']) ?>
+                    <div class="col"> 
+                        <?= $this->Form->control('inputQuantity', ['label' => false,
+                            'class' => 'form-control search-slt me-3','style'=>"width: 96px",
+                            'placeholder' => '#']); ?>
+                        
+                    </div>
+                    <br>
+                    <div class='col'>
+                        <?= $this->Form->button(__('Purchase'), ['class'=>'btn btn-outline-success flex-shrink-0 me-1']) ?>
+                    </div>
 
-                <div class="d-flex">
-                        <?= $this->Html->link('Purchase', '/', ['class' => 'btn btn-outline-success flex-shrink-0']);?>
+                    <?= $this->Form->end() ?>
+
+                    <?php if($result != null): ?>
+                        <?php if($result == 'unsuccess'): ?>
+                            <h6 style="color:#AA2A0E;font-size:16px;text-align:center;font-weight:bold" >Please input a valid number</h6>
+                        <?php else: ?>
+                            <?php if($product->stock>0): ?>
+                                <h5  style="color:#198754;font-size:16px;text-align:center;font-weight:bold" >Stock updated successfully. The remaining stock is: <?=$result?></h5>
+                            <?php else: ?>
+                                <h5  style="color:#AA2A0E;font-size:16px;text-align:center;font-weight:bold" >Stock updated successfully. The remaining stock is: <?=$result?></h5>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
 
 <!-- Related items section-->
 <section class="py-5">
