@@ -66,7 +66,8 @@ class ProductsTable extends Table
             ->scalar('name')
             ->maxLength('name', 64)
             ->requirePresence('name', 'create')
-            ->notEmptyString('name');
+            ->notEmptyString('name')
+            ->alphaNumeric('name', 'Please enter a valid name without special characters');
 
         $validator
             ->scalar('type')
@@ -80,14 +81,18 @@ class ProductsTable extends Table
             ->notEmptyString('price')
             ->add('price', 'range', [
                 'rule' => ['range',0,8000],
-                'message' => 'Please enter a valid number.'
+                'message' => 'Please enter a valid price from $0 - $8000.'
             ]);
 
         $validator
             ->scalar('size')
             ->maxLength('size', 64)
             ->requirePresence('size', 'create')
-            ->notEmptyString('size');
+            ->notEmptyString('size')
+            ->add('size', 'range', [
+                'rule' => ['range',0,10000],
+                'message' => 'Please enter a valid size.'
+            ]);
 
         $validator
             ->integer('stock')
@@ -95,7 +100,7 @@ class ProductsTable extends Table
             ->notEmptyString('stock')
             ->add('stock', 'range', [
                 'rule' => ['range',0,8000],
-                'message' => 'Please enter a valid number.'
+                'message' => 'Please enter a valid number from 0 - 8000.'
             ]);
 
         $validator

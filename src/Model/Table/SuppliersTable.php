@@ -64,13 +64,15 @@ class SuppliersTable extends Table
             ->scalar('name')
             ->maxLength('name', 64)
             ->requirePresence('name', 'create')
-            ->notEmptyString('name','Please enter supplier name.');
+            ->notEmptyString('name','Please enter supplier name.')
+            ->alphaNumeric('name', 'Please enter a valid name without special characters');
 
         $validator
             ->scalar('phone')
             ->maxLength('phone', 10)
             ->requirePresence('phone', 'create')
-            ->notEmptyString('phone','Please enter a contact number.');
+            ->notEmptyString('phone','Please enter a contact number.')
+            ->integer('phone', 'Please enter a valid phone number');
 
         $validator
             ->email('email')
@@ -80,7 +82,7 @@ class SuppliersTable extends Table
         $validator
             ->scalar('address')
             ->requirePresence('address', 'create')
-            ->notEmptyString('address','Please enter a location.');
+            ->notEmptyString('address','Please enter a valid address.');
 
         return $validator;
     }
