@@ -68,6 +68,22 @@
                         <?= $this->Form->multiCheckbox('ingredients', $ingredients, ['multiple' => 'checkbox']) ?>
                     </div>
                 </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Grass</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Tea</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox1">Myrrh Oil</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox2">Marjoram</label>
+                </div>
                 <br>
 
                 <div>
