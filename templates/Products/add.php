@@ -62,12 +62,15 @@
                         <?= $this->Form->control('description') ?>
                     </div>
                 </div>
-                <!-- Row 4 -->
-                <div class="row">
-                    <div class="col">
-                        <?= $this->Form->multiCheckbox('ingredients', $ingredients, ['multiple' => 'checkbox']) ?>
-                    </div>
+                <div>
+                Select Ingredients
                 </div>
+
+                <div class="row">
+                    <div class="col ">
+                        <?= $this->Form->multiCheckbox('ingredients', $ingredients, ['multiple' => 'checkbox',['style'=>'display:inline']]) ?>
+                    </div>
+                <!-- </div>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                     <label class="form-check-label" for="inlineCheckbox1">Grass</label>
@@ -84,8 +87,9 @@
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option4">
                     <label class="form-check-label" for="inlineCheckbox2">Marjoram</label>
                 </div>
+                <br> -->
+                
                 <br>
-
                 <div>
                     <?= $this->Form->button(__('Add Product'), ['class' => 'btn btn-success']) ?>
                     <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'btn btn-outline-success flex-shrink-0']) ?>

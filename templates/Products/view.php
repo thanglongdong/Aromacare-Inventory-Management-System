@@ -11,6 +11,15 @@ $inputQuantity = [
         'result'
     ]
 ];
+
+$produceQuantity = [
+    'data' => [
+        'result' => $this->request->getQuery('ingredientResult'),
+    ],
+    'schema' => [
+        'ingredientResult'
+    ]
+];
 ?>
 
 <!-- Product section-->
@@ -32,7 +41,7 @@ $inputQuantity = [
                     <div class="col"> 
                         <?= $this->Form->control('inputQuantity', ['label' => false,
                             'class' => 'form-control search-slt me-3','style'=>"width: 96px",
-                            'placeholder' => '#']); ?>
+                            'placeholder' => '1','default'=>'1']); ?>
                         
                     </div>
                     <br>
@@ -41,6 +50,22 @@ $inputQuantity = [
                     </div>
 
                     <?= $this->Form->end() ?>
+
+                    <?= $this->Form->create($produceQuantity, ['type' => 'get']) ?>
+                    <div class="col"> 
+                        <?= $this->Form->control('produceQuantity', ['label' => false,
+                            'class' => 'form-control search-slt me-3','style'=>"width: 96px",
+                            'placeholder' => '1','default'=>'1']); ?>
+                        
+                    </div>
+                    <br>
+                    <div class='col'>
+                        <?= $this->Form->button(__('Produce'), ['class'=>'btn btn-outline-success flex-shrink-0 me-1','style'=>"width: 96px"]) ?>
+                    </div>
+
+                    <?= $this->Form->end() ?>
+
+                    
 
                     <?php if($result != null): ?>
                         <?php if($result == 'unsuccess'): ?>

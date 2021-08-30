@@ -23,4 +23,11 @@
             <a class="nav-link link-success" href="<?= $this->Url->build('/suppliers')?>">Suppliers</a>
         <?php endif; ?>
     </li>
+    <li class="nav-item">
+        <?php if($page == 'products-ingredients') : ?>
+            <a class="nav-link active font-weight-bold link-success" href="<?= $this->Url->build('/products-ingredients')?>"><strong class="text-success">Products Ingredients</strong></a>
+        <?php else : ?>
+            <a class="nav-link link-success" href="<?= $this->Url->build('/products-ingredients')?>">Products Ingredients</a>
+        <?php endif; ?>
+    </li>
 </ul>
