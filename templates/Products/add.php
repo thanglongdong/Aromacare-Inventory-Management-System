@@ -62,10 +62,8 @@
                         <?= $this->Form->control('description') ?>
                     </div>
                 </div>
-                <div>
-                Select Ingredients
-                </div>
-
+                <!-- Row 4 -->
+                <div>Select Ingredients In This Product</div> <!-- this should just go above whatever the final ingredients section is so that the process makes sense-->
                 <div class="row">
                     <div class="col ">
                         <?= $this->Form->multiCheckbox('ingredients', $ingredients, ['multiple' => 'checkbox',['style'=>'display:inline']]) ?>
