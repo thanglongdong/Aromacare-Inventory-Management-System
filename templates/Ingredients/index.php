@@ -4,7 +4,8 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Ingredient[]|\Cake\Collection\CollectionInterface $ingredients
  */
-
+echo $this -> Html->css("//cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css",['block'=>true]);
+echo $this -> Html->script("//cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js",['block'=>true]);
 echo $this -> Html->css("/vendor/datatables/dataTables.bootstrap4.min.css",['block'=>true]);
 echo $this -> Html->script("/vendor/datatables/jquery.dataTables.min.js",['block'=>true]);
 echo $this -> Html->script("/vendor/datatables/dataTables.bootstrap4.min.js",['block'=>true]);
@@ -24,7 +25,7 @@ echo $this -> Html->script("/js/demo/datatables-demo.js",['block'=>true]);
                 class="fas fa-plus fa-sm text-white-50"></i> New Ingredient</a>
     </div>
     <div class="table-responsive">
-        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <table class="table table-bordered" id="ingredientsTable" width="100%" cellspacing="0">
             <thead>
             <tr>
                 <th><?= h('ID') ?></th>
@@ -54,3 +55,8 @@ echo $this -> Html->script("/js/demo/datatables-demo.js",['block'=>true]);
         </table>
     </div>
 </div>
+<script>
+    $(document).ready( function () {
+        $("#ingredientsTable").DataTable();
+    } );
+</script>
