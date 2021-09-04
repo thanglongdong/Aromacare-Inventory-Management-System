@@ -14,10 +14,10 @@ $inputQuantity = [
 
 $produceQuantity = [
     'data' => [
-        'result' => $this->request->getQuery('ingredientResult'),
+        'result' => $this->request->getQuery('produceResult'),
     ],
     'schema' => [
-        'ingredientResult'
+        'produceResult'
     ]
 ];
 ?>
@@ -41,7 +41,7 @@ $produceQuantity = [
                     <div class="col"> 
                         <?= $this->Form->control('inputQuantity', ['label' => false,
                             'class' => 'form-control search-slt me-3','style'=>"width: 96px",
-                            'placeholder' => '1','default'=>'1']); ?>
+                            'placeholder' => '1','default'=>'0']); ?>
                         
                     </div>
                     <br>
@@ -55,7 +55,7 @@ $produceQuantity = [
                     <div class="col"> 
                         <?= $this->Form->control('produceQuantity', ['label' => false,
                             'class' => 'form-control search-slt me-3','style'=>"width: 96px",
-                            'placeholder' => '1','default'=>'1']); ?>
+                            'placeholder' => '1','default'=>'0']); ?>
                         
                     </div>
                     <br>
@@ -65,7 +65,16 @@ $produceQuantity = [
 
                     <?= $this->Form->end() ?>
 
-                    
+                    <?php if($produceResult != null): ?>
+                        <?php if($produceResult == 'invalid'): ?>
+                            <h6 style="color:#AA2A0E;font-size:16px;text-align:center;font-weight:bold" >Please input a valid number</h6>
+                        <?php elseif ($produceResult =='unsuccess'): ?>
+                            <h5  style="color:#AA2A0E;font-size:16px;text-align:center;font-weight:bold" >Updated unsuccessfully. Please check the stock of ingredients. </h5>
+                        <?php else : ?>
+                            <h5  style="color:#198754;font-size:16px;text-align:center;font-weight:bold" >Stock updated successfully. The remaining stock is: <?=$produceResult?></h5>
+                        <?php endif; ?>
+                    <?php endif; ?>
+
 
                     <?php if($result != null): ?>
                         <?php if($result == 'unsuccess'): ?>

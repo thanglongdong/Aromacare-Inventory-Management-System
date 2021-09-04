@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 namespace App\Controller;
+use Cake\ORM\TableRegistry;
 
 /**
  * Products Controller
@@ -32,10 +33,66 @@ class ProductsController extends AppController
      */
     public function view($id = null)
     {
+
+        $ProductsIngredients = TableRegistry::getTableLocator()->get('ProductsIngredients');
+        $Ingredients = TableRegistry::getTableLocator()->get('Ingredients');
+
         $product = $this->Products->get($id, [
             'contain' => ['Ingredients'],
         ]);
         $key= $this->request->getQuery();
+
+
+        if (!empty($key['produceQuantity'])) {  //if not empty (user inputted) - do this
+            if (is_numeric($key['produceQuantity'])&&$key['produceQuantity']>0) { //if entered stuff is int do this
+
+                $produceQuantity = $key['produceQuantity'];
+                $product_ingredient=$ProductsIngredients
+                ->find()
+                ->where(['product_id' => $product->id])
+                ->all();
+                $ingredientResult=true;
+
+                foreach ($product_ingredient as $eachproduct_ingredient){ // use foreach loop to check whether each ingredients required is enough or not, if all of them are enough, variable ingredientResult = true
+                    $eachingredient = $Ingredients
+                    ->find()
+                    ->where(['id' => $eachproduct_ingredient->ingredient_id])
+                    ->first();
+                    $amount=$eachproduct_ingredient->amount;
+                    $updatedStock=$eachingredient->stock-$produceQuantity*$amount;
+                    $eachingredient->stock= $updatedStock;
+                    if($updatedStock<0){
+                        $ingredientResult=false;
+                        $produceResult = 'unsuccess'; 
+                        break;
+                    }
+                }
+                if($ingredientResult==true){ //we have checked all the related ingredients stock are enough to make that amount of products, we update the stock of ingredients and product
+                    foreach ($product_ingredient as $eachproduct_ingredient){
+                        $eachingredient = $Ingredients
+                        ->find()
+                        ->where(['id' => $eachproduct_ingredient->ingredient_id])
+                        ->first();
+                        $amount=$eachproduct_ingredient->amount;
+                        $updatedStock=$eachingredient->stock-$produceQuantity*$amount;
+                        $eachingredient->stock= $updatedStock;
+                        $Ingredients->save($eachingredient);
+                    }
+                    $stock = $product->stock;
+                    $produceResult =  $stock + $produceQuantity;
+                    $product->stock= $produceResult;
+                    $this->Products->save($product);
+
+                }
+            }
+            else {  //if not int, return message error
+                $produceResult = 'invalid'; //handled in view
+            }
+
+        } //else, no user input - do this
+        else{
+            $produceResult = null;
+        }
 
         if (!empty($key['inputQuantity'])) {  //if not empty (user inputted) - do this
             if (is_numeric($key['inputQuantity'])&&$key['inputQuantity']>0) { //if entered stuff is int do this
@@ -53,6 +110,7 @@ class ProductsController extends AppController
         else{
             $result = null;
         }
+        $this->set('produceResult', $produceResult);
         $this->set('result', $result);
         $this->set(compact('product'));
     }
