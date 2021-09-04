@@ -16,10 +16,10 @@ class SuppliersController extends AppController
      *
      * @return \Cake\Http\Response|null|void Renders view
      */
+
     public function index()
     {
-        $suppliers = $this->paginate($this->Suppliers);
-
+        $suppliers = $this->Suppliers->find();
         $this->set(compact('suppliers'));
     }
 

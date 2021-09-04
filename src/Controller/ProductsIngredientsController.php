@@ -16,15 +16,13 @@ class ProductsIngredientsController extends AppController
      *
      * @return \Cake\Http\Response|null|void Renders view
      */
+
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Products', 'Ingredients'],
-        ];
-        $productsIngredients = $this->paginate($this->ProductsIngredients);
-
+        $productsIngredients = $this->ProductsIngredients->find()->contain(['Products', 'Ingredients']);
         $this->set(compact('productsIngredients'));
     }
+
 
     /**
      * View method

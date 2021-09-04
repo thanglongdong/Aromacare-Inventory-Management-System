@@ -18,11 +18,7 @@ class IngredientsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Suppliers'],
-        ];
-        $ingredients = $this->paginate($this->Ingredients);
-
+        $ingredients = $this->Ingredients->find()->contain(['Suppliers']);
         $this->set(compact('ingredients'));
     }
 
