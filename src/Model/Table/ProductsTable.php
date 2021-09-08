@@ -67,7 +67,12 @@ class ProductsTable extends Table
             ->maxLength('name', 64)
             ->requirePresence('name', 'create')
             ->notEmptyString('name')
-            ->alphaNumeric('name', 'Please enter a valid name without special characters');
+            ->add('name','validName',[
+                'rule'=>'isName',
+                'message'=> 'Please enter a valid name without special characters',
+                'provider'=>'table'
+            ]);
+//            ->alphaNumeric('name', 'Please enter a valid name without special characters');
 
         $validator
             ->scalar('type')
@@ -115,5 +120,12 @@ class ProductsTable extends Table
             ->notEmptyString('description');
 
         return $validator;
+    }
+
+    public function isName($value){
+        if (!preg_match('/[^a-z ]/i',$value)){
+            return true;
+        }
+        return false;
     }
 }

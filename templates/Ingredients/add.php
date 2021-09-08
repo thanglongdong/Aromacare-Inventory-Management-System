@@ -20,8 +20,19 @@
             <br>
             <div>
                 <?= $this->Form->create($ingredient,['novalidate' => true, 'type'=>'file']) ?>
-                <?= $this->Form->control('name')?>
+
                 <!-- Row 1 -->
+                <div class="row">
+                    <div class="col">
+                        <?= $this->Form->control('name')?>
+                    </div>
+                    <div class="col">
+                        <?= $this->Form->control('supplier_id', ['options' => $suppliers, 'empty' => true])?>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+
                 <div class="row">
                     <div class="col">
                         <?= $this->Form->control('stock')?>
@@ -31,13 +42,6 @@
                     </div>
                 </div>
 
-                <!-- Row 2 -->
-                <div class="row">
-
-                    <div class="col">
-                        <?= $this->Form->control('supplier_id', ['options' => $suppliers, 'empty' => true])?>
-                    </div>
-                </div>
 
                 <br>
 

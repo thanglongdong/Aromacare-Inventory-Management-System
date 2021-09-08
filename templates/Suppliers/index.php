@@ -23,7 +23,7 @@ echo $this -> Html->script("/js/demo/datatables-demo.js",['block'=>true]);
         <a href="<?= $this->Url->build('/suppliers/add')?>" class="d-none d-sm-inline-block btn btn-success"><i
                 class="fas fa-plus fa-sm text-white-50"></i> New Supplier</a>
     </div>
-    <div class="table-responsive">
+    <div class="table-responsive-lg">
         <table class="table table-bordered" id="suppliersTable" width="100%" cellspacing="0">
             <thead>
             <tr>

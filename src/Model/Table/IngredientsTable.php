@@ -72,7 +72,12 @@ class IngredientsTable extends Table
             ->maxLength('name', 64)
             ->requirePresence('name', 'create')
             ->notEmptyString('name','Please provide a name.')
-            ->alphaNumeric('name', 'Please enter a valid name without special characters');
+            ->add('name','validName',[
+                'rule'=>'isName',
+                'message'=> 'Please enter a valid name without special characters',
+                'provider'=>'table'
+            ]);
+//            ->alphaNumeric('name', 'Please enter a valid name without special characters');
 
         $validator
             ->integer('stock')
@@ -110,5 +115,12 @@ class IngredientsTable extends Table
         $rules->add($rules->existsIn(['supplier_id'], 'Suppliers'), ['errorField' => 'supplier_id']);
 
         return $rules;
+    }
+
+    public function isName($value){
+        if (!preg_match('/[^a-z ]/i',$value)){
+            return true;
+        }
+        return false;
     }
 }

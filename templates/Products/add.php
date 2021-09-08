@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <!-- Row 4 -->
-                <div>Select Ingredients In This Product</div> <!-- this should just go above whatever the final ingredients section is so that the process makes sense-->
+                <div>Select Ingredients in This Product</div> <!-- this should just go above whatever the final ingredients section is so that the process makes sense-->
                 <div class="row">
                     <div class="col ">
                         <?= $this->Form->multiCheckbox('ingredients', $ingredients, ['multiple' => 'checkbox',['style'=>'display:inline']]) ?>
@@ -86,7 +86,9 @@
                     <label class="form-check-label" for="inlineCheckbox2">Marjoram</label>
                 </div>
                 <br> -->
-                
+
+                <br></br>
+
                 <br>
                 <div>
                     <?= $this->Form->button(__('Add Product'), ['class' => 'btn btn-success']) ?>
