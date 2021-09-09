@@ -65,7 +65,12 @@ class SuppliersTable extends Table
             ->maxLength('name', 64)
             ->requirePresence('name', 'create')
             ->notEmptyString('name','Please enter supplier name.')
-            ->alphaNumeric('name', 'Please enter a valid name without special characters');
+            ->add('name','validName',[
+                'rule'=>'isName',
+                'message'=> 'Please enter a valid name without special characters',
+                'provider'=>'table'
+            ]);
+//            ->alphaNumeric('name', 'Please enter a valid name without special characters');
 
         $validator
             ->scalar('phone')
@@ -85,5 +90,12 @@ class SuppliersTable extends Table
             ->notEmptyString('address','Please enter a valid address.');
 
         return $validator;
+    }
+
+    public function isName($value){
+        if (!preg_match('/[^a-z ]/i',$value)){
+            return true;
+        }
+        return false;
     }
 }

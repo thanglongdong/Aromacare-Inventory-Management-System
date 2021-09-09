@@ -12,26 +12,40 @@
 <!-- End of Tabs -->
 <br>
 
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Products Ingredients'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="productsIngredients form content">
-            <?= $this->Form->create($productsIngredient) ?>
-            <fieldset>
-                <legend><?= __('Add Products Ingredient') ?></legend>
-                <?php
-                    echo $this->Form->control('product_id', ['options' => $products]);
-                    echo $this->Form->control('ingredient_id', ['options' => $ingredients]);
-                    echo $this->Form->control('amount');
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <h1 class="h3 mb-2 text-success"><?= __('Add Products Ingredient') ?></h1>
+            </div>
+            <br </br>
+
+            <div>
+                <?= $this->Form->create($productsIngredient) ?>
+                <!-- Row 1 -->
+                <div class="row">
+                    <div class="col">
+                        <?= $this->Form->control('product_id', ['options' => $products]) ?>
+                    </div>
+                    <div class="col">
+                        <?= $this->Form->control('ingredient_id', ['options' => $ingredients]) ?>
+                    </div>
+                    <div class="col">
+                        <?= $this->Form->control('amount') ?>
+                    </div>
+                </div>
+
+
+                <br>
+                <div>
+                    <?= $this->Form->button(__('Add Ingredients'), ['class' => 'btn btn-success']) ?>
+                    <?= $this->Html->link(__('List Products Ingredients'), ['action' => 'index'], ['class' => 'btn btn-outline-success flex-shrink-0']) ?>
+                </div>
+            </div>
+
         </div>
     </div>
+
 </div>
+<?= $this->Form->end() ?>
+<br>

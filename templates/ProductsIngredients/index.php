@@ -24,7 +24,7 @@ echo $this -> Html->script("/js/demo/datatables-demo.js",['block'=>true]);
                 class="fas fa-plus fa-sm text-white-50"></i>New Products Ingredient</a>
     </div>
 
-    <div class="table-responsive">
+    <div class="table-responsive-lg">
         <table class="table table-bordered" id="productsIngredientsTable" width="100%" cellspacing="0">
             <thead>
                 <tr>
