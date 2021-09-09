@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Core\Configure;
+use Cake\Mailer\Mailer;
 /**
  * Ingredients Controller
  *
@@ -75,6 +77,25 @@ class IngredientsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $ingredient = $this->Ingredients->patchEntity($ingredient, $this->request->getData());
             if ($this->Ingredients->save($ingredient)) {
+                //send email
+                if ($ingredient->stock < 4) {
+                    $mailer = new Mailer('default');
+                    $mailer
+                        ->setEmailFormat('html')
+                        ->setTo(Configure::read('InventoryEmail.to'))
+                        ->setFrom(Configure::read('InventoryEmail.from'))
+                        ->viewBuilder()
+                        ->setTemplate('inventory');
+
+                    $mailer->setViewVars([
+                        'name'=> $ingredient->name,
+                        'stock'=> $ingredient->stock,
+                        'supplier'=> $ingredient->supplier,
+                        'id'=> $ingredient->id
+                    ]);
+                    $email_result = $mailer->deliver();
+                }
+
                 $this->Flash->success(__('The ingredient has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
