@@ -207,4 +207,39 @@ class ProductsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+
+    public function login()
+    {
+        // $this->request->allowMethod(['get', 'post']);
+        // $result = $this->Authentication->getResult();
+
+        // if ($result->isValid()) {
+
+        //     $user=$this->Authentication->getIdentity();
+        //     $role=$user->get('role');
+
+        //     if($role==='admin'){
+        //         $redirect = $this->request->getQuery('redirect', [
+        //             'controller' => 'dashboard',
+        //             'action' => 'index',
+        //         ]);
+        //     }
+
+        //     elseif($role==='customer'){
+        //         $redirect ='/';
+        //     }
+        //     //more elseif condition for talents/suppliers should be added below
+        //     else{
+        //         $redirect ='/';
+        //     }
+        //     return $this->redirect($redirect);
+        //     //return $this->redirect('/');
+        //     //return $this->redirect($this->referer()); //want to redirect to page before we clicked log in
+        // }
+        // // display error if user submitted and authentication failed
+        // if ($this->request->is('post') && !$result->isValid()) {
+        //     $this->Flash->error(__('Invalid email or password'));
+        // }
+    }
 }
