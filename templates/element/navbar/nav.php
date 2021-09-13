@@ -10,17 +10,11 @@
         </a>
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="<?= $this->Url->build('/') ?>" class="nav-link px-2 link-success">Home</a></li>
-            <li><a href="<?= $this->Url->build('/about') ?>" class="nav-link px-2 link-success">About</a></li>
-            <li><a href="<?= $this->Url->build('/products') ?>" class="nav-link px-2 link-success">Dashboard</a></li>
+            <li><a href="<?= $this->Url->build('/') ?>" class="nav-link px-2 link-success">Dashboard</a></li>
+            <li><a href="<?= $this->Url->build('/') ?>" class="nav-link px-2 link-success">Documentation</a></li>
         </ul>
 
         <div class="col-md-3 text-end">
-            <button class="btn btn-outline-success" type="submit">
-                <i class="bi-cart-fill me-1"></i>
-                Cart
-                <span class="badge bg-success text-white ms-1 rounded-pill">0</span>
-            </button>
         </div>
     </header>
 </div>

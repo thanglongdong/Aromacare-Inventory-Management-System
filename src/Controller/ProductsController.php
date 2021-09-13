@@ -76,12 +76,13 @@ class ProductsController extends AppController
                         ->find()
                         ->where(['id' => $eachproduct_ingredient->ingredient_id])
                         ->first();
+
                         $amount=$eachproduct_ingredient->amount;
                         $updatedStock=$eachingredient->stock-$produceQuantity*$amount;
                         $eachingredient->stock= $updatedStock;
                         $Ingredients->save($eachingredient);
 
-                        
+
                         if ($eachingredient->stock < 4) {
                             $mailer = new Mailer('default');
                             $mailer
@@ -99,6 +100,8 @@ class ProductsController extends AppController
                             ]);
                             $email_result = $mailer->deliver();
                         }
+
+
 
 
                     }
