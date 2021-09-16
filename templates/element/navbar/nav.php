@@ -15,6 +15,7 @@
         </ul>
 
         <div class="col-md-3 text-end">
+        <a href="<?= $this->Url->build(['controller'=>'products','action'=>'login'])?>" style="margin-right:10px" class="btn btn-outline-success me-2">Login</a>
         </div>
     </header>
 </div>
