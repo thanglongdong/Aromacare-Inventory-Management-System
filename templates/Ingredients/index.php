@@ -5,9 +5,6 @@
  * @var \App\Model\Entity\Ingredient[]|\Cake\Collection\CollectionInterface $ingredients
  */
 
-echo $this -> Html->script("/vendor/datatables/jquery.dataTables.min.js",['block'=>true]);
-echo $this -> Html->script("/vendor/datatables/dataTables.bootstrap4.min.js",['block'=>true]);
-echo $this -> Html->script("/js/demo/datatables-demo.js",['block'=>true]);
 ?>
 <!-- Tabs -->
 <?php $page_name = $this->request->getparam("controller") ?>
