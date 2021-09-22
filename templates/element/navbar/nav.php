@@ -1,5 +1,12 @@
 <?php
+$this->loadHelper('Authentication.Identity');
 
+$loggedin = $this->Identity->isLoggedIn();
+
+if ($loggedin){
+$role = $this->Identity->get('role');
+$user_id=$this->Identity->get('id');
+}
 ?>
 
 <!-- Navigation-->
@@ -13,9 +20,31 @@
             <li><a href="<?= $this->Url->build('/') ?>" class="nav-link px-2 link-success">Dashboard</a></li>
             <li><a href="<?= $this->Url->build('/') ?>" class="nav-link px-2 link-success">Documentation</a></li>
         </ul>
+        <?php if($loggedin): ?>
+            <?php if($role=='admin'): ?>
+                <div class="col-md-3 text-end">
+                <a href="<?= $this->Url->build(['controller'=>'users','action'=>'logout'])?>" style="margin-right:10px" class="btn btn-outline-success me-2">Logout</a>
+                </div>
 
-        <div class="col-md-3 text-end">
-        <a href="<?= $this->Url->build(['controller'=>'products','action'=>'login'])?>" style="margin-right:10px" class="btn btn-outline-success me-2">Login</a>
-        </div>
+            <?php elseif($role=='owner'): ?>
+                
+                <div class="col-md-3 text-end">
+                <a href="<?= $this->Url->build(['controller'=>'users','action'=>'logout'])?>" style="margin-right:10px" class="btn btn-outline-success me-2">Logout</a>
+                <a href="<?= $this->Url->build(['controller'=>'users','action'=>'add'])?>" style="margin-right:10px" class="btn btn-success me-2">Add Account</a>
+                </div>
+                 
+                
+            <?php endif; ?>
+
+           
+            
+        <?php else : ?> 
+            <div class="col-md-3 text-end">
+            <a href="<?= $this->Url->build(['controller'=>'users','action'=>'login'])?>" style="margin-right:10px" class="btn btn-outline-success me-2">Login</a>
+            </div>
+
+        <?php endif; ?>
+
+        
     </header>
 </div>
