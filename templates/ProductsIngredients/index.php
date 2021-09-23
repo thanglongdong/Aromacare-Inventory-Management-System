@@ -4,11 +4,6 @@
  * @var \App\Model\Entity\Supplier[]|\Cake\Collection\CollectionInterface $suppliers
  */
 
-echo $this -> Html->css("//cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css",['block'=>true]);
-echo $this -> Html->script("//cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js",['block'=>true]);
-echo $this -> Html->script("/vendor/datatables/jquery.dataTables.min.js",['block'=>true]);
-echo $this -> Html->script("/vendor/datatables/dataTables.bootstrap4.min.js",['block'=>true]);
-echo $this -> Html->script("/js/demo/datatables-demo.js",['block'=>true]);
 ?>
 <!-- Tabs -->
 <?php $page_name = $this->request->getparam("controller") ?>

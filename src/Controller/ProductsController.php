@@ -2,7 +2,10 @@
 declare(strict_types=1);
 
 namespace App\Controller;
+
 use Cake\ORM\TableRegistry;
+use Cake\Core\Configure;
+use Cake\Mailer\Mailer;
 
 /**
  * Products Controller
@@ -63,7 +66,7 @@ class ProductsController extends AppController
                     $eachingredient->stock= $updatedStock;
                     if($updatedStock<0){
                         $ingredientResult=false;
-                        $produceResult = 'unsuccess'; 
+                        $produceResult = 'unsuccess';
                         break;
                     }
                 }
@@ -73,10 +76,34 @@ class ProductsController extends AppController
                         ->find()
                         ->where(['id' => $eachproduct_ingredient->ingredient_id])
                         ->first();
+
                         $amount=$eachproduct_ingredient->amount;
                         $updatedStock=$eachingredient->stock-$produceQuantity*$amount;
                         $eachingredient->stock= $updatedStock;
                         $Ingredients->save($eachingredient);
+
+
+                        if ($eachingredient->stock < 4) {
+                            $mailer = new Mailer('default');
+                            $mailer
+                                ->setEmailFormat('html')
+                                ->setTo(Configure::read('InventoryEmail.to'))
+                                ->setFrom(Configure::read('InventoryEmail.from'))
+                                ->viewBuilder()
+                                ->setTemplate('inventory');
+
+                            $mailer->setViewVars([
+                                'name'=> $eachingredient->name,
+                                'stock'=> $eachingredient->stock,
+                                'supplier'=> $eachingredient->supplier_id,
+                                'id'=> $eachingredient->id
+                            ]);
+                            $email_result = $mailer->deliver();
+                        }
+
+
+
+
                     }
                     $stock = $product->stock;
                     $produceResult =  $stock + $produceQuantity;
@@ -180,4 +207,5 @@ class ProductsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+    
 }
