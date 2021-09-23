@@ -12,7 +12,7 @@
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="<?= $this->Url->build('/') ?>" class="nav-link px-2 link-success">Home</a></li>
             <li><a href="<?= $this->Url->build('/about') ?>" class="nav-link px-2 link-success">About</a></li>
-            <li><a href="<?= $this->Url->build('/products') ?>" class="nav-link px-2 link-success">Dashboard</a></li>
+            <li><a href="<?= $this->Url->build('/dashboard') ?>" class="nav-link px-2 link-success">Dashboard</a></li>
         </ul>
 
         <div class="col-md-3 text-end">
