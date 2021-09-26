@@ -35,6 +35,7 @@ echo $this -> Html->css("login.css",['block'=>true]);
 
                                  
                                     <?= $this->Form->submit(__('Login'), ['class'=>'btn btn-success text-uppercase ','formnovalidate' => true]); ?>
+                                    <!-- <?= $this->Html->link("Forget password?", ['action' => 'forget_password']) ?> -->
                                 <?= $this->Form->end() ?>
                             </div>
                         </div>

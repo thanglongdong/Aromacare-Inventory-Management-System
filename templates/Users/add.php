@@ -34,7 +34,7 @@ echo $this -> Html->css("login.css",['block'=>true]);
                                     </div>
                                    
                                     <?= $this->Form->submit(__('Add Account'), [
-                                        'class'=>'btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2'
+                                        'class'=>'btn btn-success  text-uppercase font-weight-bold mb-2'
                                     ]); ?>
                                     <?= $this->Html->link("Already have an account?", ['action' => 'login']) ?>
                                 <?= $this->Form->end() ?>
