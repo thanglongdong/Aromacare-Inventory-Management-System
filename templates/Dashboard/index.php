@@ -1,13 +1,6 @@
 <?php
 
 use Cake\ORM\TableRegistry;
-use Cake\I18n\FrozenTime;
-
-echo $this -> Html->css("//cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css",['block'=>true]);
-echo $this -> Html->script("//cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js",['block'=>true]);
-echo $this -> Html->script("/vendor/datatables/jquery.dataTables.min.js",['block'=>true]);
-echo $this -> Html->script("/vendor/datatables/dataTables.bootstrap4.min.js",['block'=>true]);
-echo $this -> Html->script("/js/demo/datatables-demo.js",['block'=>true]);
 
 echo $this->Html->script("https://canvasjs.com/assets/script/canvasjs.min.js");
 
@@ -28,58 +21,6 @@ $supplier = $suppliers
     ->all()
     ->count();
 
-$now = FrozenTime::now();
-
-$beforeNow = 0;
-$afterNow = 0;
-$today = 0;
-$lastWeek = 0;
-$thisWeek = 0;
-$nextWeek = 0;
-$future = 0;
-
-foreach ($ingredient as $eachingredient) {
-    $time = $eachingredient->order_date;
-
-    if($time->isToday()){
-        $today++;
-    }
-    if($time < $now){
-        //everything before this second
-        $beforeNow++;
-    }
-    if($time > $now){
-        //everything after this second
-        $afterNow++;
-    }
-    if($time->wasWithinLast('1 week')){
-        //everything in last week
-        $lastWeek++;
-    }
-    if($time->isWithinNext('1 week')){
-        $thisWeek++;
-    }
-    if($time->isWithinNext('2 weeks')){
-        $nextWeek++;
-    }
-    if($time->isWithinNext('2 weeks')){
-        $future++;
-    }
-}
-
-$lastWeek = $lastWeek - $today;
-$before = $beforeNow - $today - $lastWeek; //cant include today or last week
-$nextWeek = $nextWeek - $thisWeek;
-$thisWeek = $thisWeek + $today;
-$after = $afterNow - $future; //cant include today
-
-$dataPoints = array( //data points for bar chart
-    array("y" => $before, "label" => "Previous" ),
-    array("y" => $lastWeek, "label" => "Last Week" ),
-    array("y" => $thisWeek, "label" => "This Week" ),
-    array("y" => $nextWeek, "label" => "Next Week" ),
-    array("y" => $after, "label" => "After" )
-);
 ?>
 
 <!-- Tabs -->
@@ -87,25 +28,6 @@ $dataPoints = array( //data points for bar chart
 <?= $this->element('tabs/tab', ['page' => $page_name]) ?>
 <!-- End of Tabs -->
 
-<script>
-    window.onload = function() {
-
-        var chart1 = new CanvasJS.Chart("columnChart", {
-            animationEnabled: true,
-            theme: "light2",
-            axisY: {
-                title: "Number of Ingredients Ordered"
-            },
-            data: [{
-                type: "column",
-                yValueFormatString: "Number of Orders",
-                dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-            }]
-        });
-
-        chart1.render();
-    }
-</script>
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -200,7 +122,7 @@ $dataPoints = array( //data points for bar chart
                             <h7 class="m-0 font-weight-bold">Select Ingredient</h7>
                         </div>
                         <div>
-                            <?= $this->Form->control('ingredients._ids', ['options' => $ingredients]) ?>
+<!--                            --><?//= $this->Form->control('ingredients._ids', ['options' => $ingredients]) ?>
                         </div>
                         <br>
                         <div>
