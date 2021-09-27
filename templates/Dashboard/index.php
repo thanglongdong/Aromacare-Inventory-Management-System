@@ -44,7 +44,7 @@ $supplier = $suppliers
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Total Number of Products</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= h($product) ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800 counter" data-target="<?= $product ?>">0</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-home fa-2x text-gray-300"></i>
@@ -62,7 +62,7 @@ $supplier = $suppliers
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Total Number of Ingredients</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= h($ingredient) ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800 counter" data-target="<?= $ingredient ?>">0</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-microphone-alt fa-2x text-gray-300"></i>
@@ -80,7 +80,7 @@ $supplier = $suppliers
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                 Total Number of Suppliers</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= h($supplier) ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800 counter" data-target="<?= $supplier ?>">0</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-utensils fa-2x text-gray-300"></i>
