@@ -22,6 +22,7 @@
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
 
+    <?= $this->Html->css(['/vendor/fontawesome-free-5.15.4-web/css/all.min.css']) ?>
 
 
     <?= $this -> Html->script("/vendor/datatables/dataTables.min.js",['block'=>true]); ?>
