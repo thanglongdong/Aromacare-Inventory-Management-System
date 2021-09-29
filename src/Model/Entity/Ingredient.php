@@ -12,7 +12,8 @@ use Cake\ORM\Entity;
  * @property string $name
  * @property int $stock
  * @property float $price
- * @property int $supplier_id
+ * @property int|null $supplier_id
+ * @property int|null $threshold
  *
  * @property \App\Model\Entity\Supplier $supplier
  * @property \App\Model\Entity\Product[] $products
@@ -33,6 +34,7 @@ class Ingredient extends Entity
         'stock' => true,
         'price' => true,
         'supplier_id' => true,
+        'threshold' => true,
         'supplier' => true,
         'products' => true,
     ];

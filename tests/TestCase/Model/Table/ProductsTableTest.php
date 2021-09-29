@@ -62,4 +62,15 @@ class ProductsTableTest extends TestCase
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
+
+    /**
+     * Test isName method
+     *
+     * @return void
+     * @uses \App\Model\Table\ProductsTable::isName()
+     */
+    public function testIsName(): void
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
 }

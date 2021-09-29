@@ -13,7 +13,7 @@
 <br>
 
 
-<div class="container">
+<div class="container-fluid">
     <div class="mb-3 d-sm-flex align-items-center justify-content-between mb-4">
         <h3 class="text-success"><?= __('Ingredients') ?></h3>
         <a href="<?= $this->Url->build('/ingredients/add')?>" class="d-none d-sm-inline-block btn btn-success"><i
@@ -27,6 +27,7 @@
                 <th><?= h('Name') ?></th>
                 <th><?= h('Stock') ?></th>
                 <th><?= h('Price (AUD)') ?></th>
+                <th><?= h('Threshold') ?></th>
                 <th><?= h('Supplier') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -38,6 +39,7 @@
                     <td><?= h($ingredient->name) ?></td>
                     <td><?= h($ingredient->stock) ?></td>
                     <td><?= $this->Number->currency($ingredient->price) ?></td>
+                    <td><?= h($ingredient->threshold) ?></td>
                     <td><?= $ingredient->has('supplier') ? $ingredient->supplier->name : '' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $ingredient->id]) ?>

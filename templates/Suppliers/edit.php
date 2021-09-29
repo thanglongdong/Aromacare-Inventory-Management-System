@@ -1,3 +1,4 @@
+
 <?php
 /**
  * @var \App\View\AppView $this
@@ -19,32 +20,36 @@
             <br>
 
             <div>
-                <?= $this->Form->create($supplier,['novalidate' => true, 'type'=>'file']) ?>
-                <?= $this->Form->control('name')?>
+                <?= $this->Form->create($supplier,['novalidate' => true]) ?>
+
                 <!-- Row 1 -->
                 <div class="row">
                     <div class="col">
-                        <?= $this->Form->control('phone')?>
+                        <?= $this->Form->control('name') ?>
                     </div>
                     <div class="col">
-                        <?= $this->Form->control('email') ?>
+                        <?= $this->Form->control('phone',['label'=>'Phone Number']) ?>
                     </div>
                 </div>
                 <!-- Row 2 -->
                 <div class="row">
-                    <div class="col">
-                    <?= $this->Form->control('address') ?>
+                    <div class="col-9">
+                        <?= $this->Form->control('email') ?>
+                    </div>
+                    <div class="col-3">
+                        <?= $this->Form->control('wait'); ?>
                     </div>
                 </div>
+                <!-- Row 3 -->
+                <div class="row">
+                    <div class="col">
+                        <?= $this->Form->control('address'); ?>
+                    </div>
+                </div>
+
                 <br>
                 <div>
-                    <?= $this->Form->button(__('Save Changes'), ['class' => 'btn btn-success']) ?>
-                    <?= $this->Form->end() ?>
-                    <?= $this->Form->postLink(
-                        __('Delete Supplier'),
-                        ['action' => 'delete', $supplier->id],
-                        ['confirm' => __('Are you sure you want to delete supplier {0}?', $supplier->name), 'class' => 'btn btn-outline-success float-right mr-2']
-                    ) ?>
+                    <?= $this->Form->button(__('Add Supplier'), ['class' => 'btn btn-success']) ?>
                     <?= $this->Html->link(__('List Suppliers'), ['action' => 'index'], ['class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
                 </div>
             </div>

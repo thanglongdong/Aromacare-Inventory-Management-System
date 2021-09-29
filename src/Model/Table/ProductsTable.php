@@ -119,6 +119,11 @@ class ProductsTable extends Table
             ->requirePresence('description', 'create')
             ->notEmptyString('description');
 
+        $validator
+            ->scalar('image')
+            ->maxLength('image', 256)
+            ->allowEmptyFile('image');
+
         return $validator;
     }
 

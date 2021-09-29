@@ -39,15 +39,15 @@
                         <?= $this->Form->control('type',
                             ['options' =>
                                 ['Aromatherapy Accessories and Diffusers'=>'Aromatherapy Accessories and Diffusers',
-                                'Essential Oil Blends'=>'Essential Oil Blends',
-                                'Essential Oils'=>'Essential Oils',
-                                'Skin Care'=>'Skin Care',
-                                'Personal and Home'=>'Personal and Home',
-                                'Lifestyle'=>'Lifestyle',
-                                'Dementia Care'=>'Dementia Care',
-                                'Palliative Care'=>'Palliative Care',
-                                'Aged Care'=>'Aged Care']
-                        ]) ?>
+                                    'Essential Oil Blends'=>'Essential Oil Blends',
+                                    'Essential Oils'=>'Essential Oils',
+                                    'Skin Care'=>'Skin Care',
+                                    'Personal and Home'=>'Personal and Home',
+                                    'Lifestyle'=>'Lifestyle',
+                                    'Dementia Care'=>'Dementia Care',
+                                    'Palliative Care'=>'Palliative Care',
+                                    'Aged Care'=>'Aged Care']
+                            ]) ?>
                     </div>
                     <div class="col">
                         <?= $this->Form->control('price',['label'=>'Price (AUD)']) ?>
@@ -59,12 +59,22 @@
                 <!-- Row 2 -->
                 <div class="row">
                     <div class="col">
+                        <?= $this->Form->control('image') ?>
+                    </div>
+                    <div class="col">
+                        <?= $this->Form->control('recipe_id') ?>
+                    </div>
+                </div>
+                <!-- Row 3 -->
+                <div class="row">
+                    <div class="col">
                         <?= $this->Form->control('description') ?>
                     </div>
                     <div class="col">
                         <?= $this->Form->control('ingredients._ids', ['options' => $ingredients]) ?>
                     </div>
                 </div>
+
                 <br </br>
 
                 <div>
@@ -84,4 +94,3 @@
 </div>
 <?= $this->Form->end() ?>
 <br </br>
-

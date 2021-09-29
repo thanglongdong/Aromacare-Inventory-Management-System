@@ -26,6 +26,9 @@
                     <div class="col">
                         <?= $this->Form->control('stock',['disabled'])?>
                     </div>
+                    <div class="col">
+                        <?= $this->Form->control('threshold',['disabled'])?>
+                    </div>
                 </div>
 
                 <!-- Row 2 -->
@@ -53,4 +56,3 @@
 </div>
 
 <br></br>
-

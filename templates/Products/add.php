@@ -63,42 +63,51 @@
                     </div>
                 </div>
                 <!-- Row 4 -->
+                <div class="row">
+                    <div class="col">
+                        <?= $this->Form->control('image') ?>
+                    </div>
+                    <div class="col">
+                        <?= $this->Form->control('recipe_id') ?>
+                    </div>
+                </div>
+                <!-- Row 5 -->
                 <div>Select Ingredients in This Product</div> <!-- this should just go above whatever the final ingredients section is so that the process makes sense-->
                 <div class="row">
                     <div class="col ">
                         <?= $this->Form->multiCheckbox('ingredients', $ingredients, ['multiple' => 'checkbox',['style'=>'display:inline']]) ?>
                     </div>
-                <!-- </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1">Grass</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2">Tea</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option3">
-                    <label class="form-check-label" for="inlineCheckbox1">Myrrh Oil</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option4">
-                    <label class="form-check-label" for="inlineCheckbox2">Marjoram</label>
-                </div>
-                <br> -->
+                    <!-- </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Grass</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">Tea</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox1">Myrrh Oil</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option4">
+                        <label class="form-check-label" for="inlineCheckbox2">Marjoram</label>
+                    </div>
+                    <br> -->
 
-                <br></br>
+                    <br></br>
 
-                <br>
-                <div>
-                    <?= $this->Form->button(__('Add Product'), ['class' => 'btn btn-success']) ?>
-                    <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'btn btn-outline-success flex-shrink-0']) ?>
+                    <br>
+                    <div>
+                        <?= $this->Form->button(__('Add Product'), ['class' => 'btn btn-success']) ?>
+                        <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'btn btn-outline-success flex-shrink-0']) ?>
+                    </div>
                 </div>
+
             </div>
-
         </div>
-    </div>
 
-</div>
-<?= $this->Form->end() ?>
-<br>
+    </div>
+    <?= $this->Form->end() ?>
+    <br>

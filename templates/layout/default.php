@@ -36,22 +36,14 @@
     <?= $this -> Html->script("scripts.js",['defer'=>true]); ?>
 </head>
 
-
 <!-- Navigation -->
 <?= $this->element('navbar/nav') ?>
-
 <!-- Main Content -->
-<main class="main">
+<main class="main" >
     <div class="container-fluid">
         <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
     </div>
 </main>
-
-
 <!-- Footer -->
 <?= $this->element('footer/foot') ?>
-
-
-</body>
-</html>

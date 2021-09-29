@@ -10,9 +10,10 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
- * @property string $phone
+ * @property int $phone
  * @property string $email
- * @property string $address
+ * @property string|null $address
+ * @property string|null $wait
  *
  * @property \App\Model\Entity\Ingredient[] $ingredients
  */
@@ -32,6 +33,7 @@ class Supplier extends Entity
         'phone' => true,
         'email' => true,
         'address' => true,
+        'wait' => true,
         'ingredients' => true,
     ];
 }

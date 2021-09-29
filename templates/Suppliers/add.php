@@ -1,3 +1,4 @@
+
 <?php
 /**
  * @var \App\View\AppView $this
@@ -18,19 +19,32 @@
             </div>
             <div>
                 <?= $this->Form->create($supplier,['novalidate' => true]) ?>
-                <?= $this->Form->control('name') ?>
+
                 <!-- Row 1 -->
                 <div class="row">
                     <div class="col">
-                        <?= $this->Form->control('phone',['label'=>'Phone Number']) ?>
+                    <?= $this->Form->control('name') ?>
                     </div>
                     <div class="col">
-                        <?= $this->Form->control('email') ?>
+                        <?= $this->Form->control('phone',['label'=>'Phone Number']) ?>
                     </div>
                 </div>
-                <div class="col">
-                    <?= $this->Form->control('address'); ?>
+                <!-- Row 2 -->
+                <div class="row">
+                    <div class="col-9">
+                        <?= $this->Form->control('email') ?>
+                    </div>
+                    <div class="col-3">
+                        <?= $this->Form->control('wait'); ?>
+                    </div>
                 </div>
+                <!-- Row 3 -->
+                <div class="row">
+                    <div class="col">
+                        <?= $this->Form->control('address'); ?>
+                    </div>
+                </div>
+
                 <br>
                 <div>
                     <?= $this->Form->button(__('Add Supplier'), ['class' => 'btn btn-success']) ?>
