@@ -47,7 +47,6 @@ $supplier = $suppliers
                             <div style="color: black" class="h5 mb-0 font-weight-bold text-gray-800 counter" data-target="<?= $product ?>">0</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-home fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -65,7 +64,6 @@ $supplier = $suppliers
                             <div style="color: black" class="h5 mb-0 font-weight-bold text-gray-800 counter" data-target="<?= $ingredient ?>">0</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-microphone-alt fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -74,7 +72,7 @@ $supplier = $suppliers
 
         <!-- Supplier count -->
         <div class="col-xl">
-            <a href="<?= $this->Url->build('/ingredients')?>" style="text-decoration: none" class="card border-left-primary shadow h-100 py-2">
+            <a href="<?= $this->Url->build('/suppliers')?>" style="text-decoration: none" class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -83,7 +81,6 @@ $supplier = $suppliers
                             <div style="color: black" class="h5 mb-0 font-weight-bold text-gray-800 counter" data-target="<?= $supplier ?>">0</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-utensils fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -151,12 +148,12 @@ $supplier = $suppliers
         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
                 <i class="fas fa-globe"></i>
-                <strong class="me-auto">  Bootstrap</strong>
+                <strong class="me-auto"> &emsp; System Notification</strong>
                 <small>Now</small>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="toast-body">
-                Hello, world! This is a toast message.
+                Ingredient threshold met! An email has been sent.
             </div>
         </div>
     </div>

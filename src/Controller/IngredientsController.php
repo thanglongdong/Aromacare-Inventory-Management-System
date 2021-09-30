@@ -76,9 +76,10 @@ class IngredientsController extends AppController
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $ingredient = $this->Ingredients->patchEntity($ingredient, $this->request->getData());
+            $threshold = $ingredient->threshold;
             if ($this->Ingredients->save($ingredient)) {
                 //send email
-                if ($ingredient->stock < 4) {
+                if ($ingredient->stock < $threshold) {
                     $mailer = new Mailer('default');
                     $mailer
                         ->setEmailFormat('html')

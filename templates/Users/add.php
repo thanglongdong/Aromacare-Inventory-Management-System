@@ -32,7 +32,7 @@ echo $this -> Html->css("login.css",['block'=>true]);
                                             'required' => true
                                         ]) ?>
                                     </div>
-                                   
+
                                     <?= $this->Form->submit(__('Add Account'), [
                                         'class'=>'btn btn-success  text-uppercase font-weight-bold mb-2'
                                     ]); ?>
