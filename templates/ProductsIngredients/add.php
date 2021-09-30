@@ -31,7 +31,7 @@
                         <?= $this->Form->control('ingredient_id', ['options' => $ingredients]) ?>
                     </div>
                     <div class="col">
-                        <?= $this->Form->control('amount') ?>
+                        <?= $this->Form->control('amount', ['label'=>'Amount (ml)']) ?>
                     </div>
                 </div>
 

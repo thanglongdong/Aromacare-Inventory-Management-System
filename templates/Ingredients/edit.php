@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-md-12">
             <div>
-                <h1 class="h3 mb-2 text-success"><?= __('Edit Ingredients') ?></h1>
+                <h1 class="h3 mb-2 text-success"><?= __('Edit Ingredient') ?></h1>
             </div>
             <br </br>
             <div>

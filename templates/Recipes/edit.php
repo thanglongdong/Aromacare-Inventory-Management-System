@@ -10,29 +10,38 @@
 <!-- End of Tabs -->
 <br>
 
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $recipe->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id), 'class' => 'side-nav-item']
-            ) ?>
-            <?= $this->Html->link(__('List Recipes'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="recipes form content">
-            <?= $this->Form->create($recipe) ?>
-            <fieldset>
-                <legend><?= __('Edit Recipe') ?></legend>
-                <?php
-                    echo $this->Form->control('method');
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <h1 class="h3 mb-2 text-success"><?= __('Edit Recipe') ?></h1>
+            </div>
+            <br </br>
+            <div>
+                <?= $this->Form->create($recipe,['novalidate' => true, 'type'=>'file']) ?>
+                <!-- Row 1 -->
+                <div class="row">
+                    <div class="col">
+                        <?= $this->Form->control('method')?>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <?= $this->Form->button(__('Save Changes'), ['class' => 'btn btn-success']) ?>
+                    <?= $this->Form->end() ?>
+                    <?= $this->Form->postLink(
+                        __('Delete Recipe'),
+                        ['action' => 'delete', $recipe->id],
+                        ['confirm' => __('Are you sure you want to delete ingredient {0}?', $recipe->name), 'class' => 'btn btn-outline-success float-right mr-2']
+                    ) ?>
+                    <?= $this->Html->link(__('List Recipes'), ['action' => 'index'], ['class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
+                </div>
+            </div>
+
         </div>
     </div>
+
 </div>
+
+<br </br>

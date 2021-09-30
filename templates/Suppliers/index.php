@@ -26,7 +26,7 @@
                 <th><?= h('Name') ?></th>
                 <th><?= h('Phone') ?></th>
                 <th><?= h('Email') ?></th>
-                <th><?= h('Avg Wait Time (Days)') ?></th>
+                <th><?= h('Average Wait Time (Days)') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
             </thead>

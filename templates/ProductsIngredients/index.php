@@ -26,7 +26,7 @@
                     <th><?= h('ID') ?></th>
                     <th><?= h('Product_ID') ?></th>
                     <th><?= h('Ingredient_ID') ?></th>
-                    <th><?= h('Amount') ?></th>
+                    <th><?= h('Amount (ml)') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>

@@ -96,7 +96,7 @@ class ProductsTable extends Table
             ->notEmptyString('size')
             ->add('size', 'range', [
                 'rule' => ['range',0,10000],
-                'message' => 'Please enter a valid size.'
+                'message' => 'Please enter a valid size from 0 - 100000ml.'
             ]);
 
         $validator

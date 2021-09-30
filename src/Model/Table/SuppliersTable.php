@@ -77,7 +77,7 @@ class SuppliersTable extends Table
             ->maxLength('phone', 10)
             ->requirePresence('phone', 'create')
             ->notEmptyString('phone','Please enter a contact number.')
-            ->integer('phone', 'Please enter a valid phone number');
+            ->integer('phone', 'Please enter a valid phone number.');
 
         $validator
             ->email('email')
@@ -92,7 +92,11 @@ class SuppliersTable extends Table
         $validator
             ->scalar('wait')
             ->maxLength('wait', 30)
-            ->allowEmptyString('wait');
+            ->allowEmptyString('wait')
+            ->add('wait', 'range', [
+                'rule' => ['range',0,365],
+                'message' => 'Please enter valid wait time from 0 - 365 days.'
+            ]);
 
         return $validator;
     }

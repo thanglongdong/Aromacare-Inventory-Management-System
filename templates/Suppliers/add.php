@@ -35,7 +35,7 @@
                         <?= $this->Form->control('email') ?>
                     </div>
                     <div class="col-3">
-                        <?= $this->Form->control('wait'); ?>
+                        <?= $this->Form->control('wait', ['label'=>'Wait Time (Days)']); ?>
                     </div>
                 </div>
                 <!-- Row 3 -->
