@@ -74,4 +74,15 @@ class IngredientsTableTest extends TestCase
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
+
+    /**
+     * Test isName method
+     *
+     * @return void
+     * @uses \App\Model\Table\IngredientsTable::isName()
+     */
+    public function testIsName(): void
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
 }

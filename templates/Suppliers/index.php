@@ -12,7 +12,7 @@
 <!-- End of Tabs -->
 <br>
 
-<div class="container">
+<div class="container-fluid">
     <div class="mb-3 d-sm-flex align-items-center justify-content-between mb-4">
         <h3 class="text-success"><?= __('Suppliers') ?></h3>
         <a href="<?= $this->Url->build('/suppliers/add')?>" class="d-none d-sm-inline-block btn btn-success"><i
@@ -26,6 +26,7 @@
                 <th><?= h('Name') ?></th>
                 <th><?= h('Phone') ?></th>
                 <th><?= h('Email') ?></th>
+                <th><?= h('Avg Wait Time (Days)') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
             </thead>
@@ -36,6 +37,7 @@
                     <td><?= h($supplier->name) ?></td>
                     <td><?= h($supplier->phone) ?></td>
                     <td><?= h($supplier->email) ?></td>
+                    <td><?= h($supplier->wait) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $supplier->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $supplier->id]) ?>

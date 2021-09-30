@@ -38,11 +38,11 @@ $produceQuantity = [
                 <br>
                 <div class="row">
                     <?= $this->Form->create($inputQuantity, ['type' => 'get']) ?>
-                    <div class="col"> 
+                    <div class="col">
                         <?= $this->Form->control('inputQuantity', ['label' => false,
                             'class' => 'form-control search-slt me-3','style'=>"width: 96px",
                             'placeholder' => '1','default'=>'0']); ?>
-                        
+
                     </div>
                     <br>
                     <div class='col'>
@@ -52,11 +52,11 @@ $produceQuantity = [
                     <?= $this->Form->end() ?>
 
                     <?= $this->Form->create($produceQuantity, ['type' => 'get']) ?>
-                    <div class="col"> 
+                    <div class="col">
                         <?= $this->Form->control('produceQuantity', ['label' => false,
                             'class' => 'form-control search-slt me-3','style'=>"width: 96px",
                             'placeholder' => '1','default'=>'0']); ?>
-                        
+
                     </div>
                     <br>
                     <div class='col'>

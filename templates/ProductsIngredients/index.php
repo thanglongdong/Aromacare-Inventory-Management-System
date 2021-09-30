@@ -11,7 +11,7 @@
 <!-- End of Tabs -->
 <br>
 
-<div class="container">
+<div class="container-fluid">
 
     <div class="mb-3 d-sm-flex align-items-center justify-content-between mb-4">
         <h3 class="text-success"><?= __('Products Ingredients') ?></h3>

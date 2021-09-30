@@ -10,7 +10,7 @@
 <!-- End of Tabs -->
 <br>
 
-<div class="container">
+<div class="container-fluid">
 
     <div class="mb-3 d-sm-flex align-items-center justify-content-between mb-4">
         <h3 class="text-success"><?= __('Products') ?></h3>
@@ -21,19 +21,21 @@
     <div class="table-responsive-lg">
         <table class="table table-bordered" id="productsTable" width="100%" cellspacing="0">
             <thead>
-                <tr>
-                    <th><?= h('ID') ?></th>
-                    <th><?= h('Name') ?></th>
-                    <th><?= h('Type') ?></th>
-                    <th><?= h('Price (AUD)') ?></th>
-                    <th><?= h('Size (ml)') ?></th>
-                    <th><?= h('Stock') ?></th>
-                    <th><?= h('SKU') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
-                </tr>
+            <tr>
+                <th><?= h('ID') ?></th>
+                <th><?= h('Name') ?></th>
+                <th><?= h('Type') ?></th>
+                <th><?= h('Price (AUD)') ?></th>
+                <th><?= h('Size (ml)') ?></th>
+                <th><?= h('Stock') ?></th>
+                <th><?= h('SKU') ?></th>
+                <th><?= h('Image') ?></th>
+                <th><?= h('Recipe') ?></th>
+                <th class="actions"><?= __('Actions') ?></th>
+            </tr>
             </thead>
             <tbody>
-                <?php foreach ($products as $product): ?>
+            <?php foreach ($products as $product): ?>
                 <tr>
                     <td><?= $this->Number->format($product->id) ?></td>
                     <td><?= h($product->name) ?></td>
@@ -42,13 +44,15 @@
                     <td><?= h($product->size) ?></td>
                     <td><?= $this->Number->format($product->stock) ?></td>
                     <td><?= h($product->sku) ?></td>
+                    <td><?= h($product->image) ?></td>
+                    <td><?= h($product->recipe_id) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $product->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $product->id]) ?>
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $product->id], ['confirm' => __('Are you sure you want to delete {0}?', $product->name)]) ?>
                     </td>
                 </tr>
-                <?php endforeach; ?>
+            <?php endforeach; ?>
             </tbody>
         </table>
     </div>

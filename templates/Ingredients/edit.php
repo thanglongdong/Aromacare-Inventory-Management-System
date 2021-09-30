@@ -32,6 +32,9 @@
                     <div class="col">
                         <?= $this->Form->control('price',['label'=>'Price (AUD)']) ?>
                     </div>
+                    <div class="col">
+                        <?= $this->Form->control('threshold') ?>
+                    </div>
                 </div>
                 <!-- Row 2 -->
                 <div class="row">
@@ -61,4 +64,3 @@
 </div>
 
 <br </br>
-

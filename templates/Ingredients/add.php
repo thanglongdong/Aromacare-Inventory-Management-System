@@ -1,4 +1,3 @@
-
 <?php
 /**
  * @var \App\View\AppView $this
@@ -39,6 +38,9 @@
                     </div>
                     <div class="col">
                         <?= $this->Form->control('price',['label'=>'Price (AUD)'])?>
+                    </div>
+                    <div class="col">
+                        <?= $this->Form->control('threshold')?>
                     </div>
                 </div>
 

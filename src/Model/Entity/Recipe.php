@@ -6,18 +6,14 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Supplier Entity
+ * Recipe Entity
  *
  * @property int $id
- * @property string $name
- * @property int $phone
- * @property string $email
- * @property string|null $address
- * @property string|null $wait
+ * @property string|null $method
  *
- * @property \App\Model\Entity\Ingredient[] $ingredients
+ * @property \App\Model\Entity\Product[] $products
  */
-class Supplier extends Entity
+class Recipe extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -29,11 +25,7 @@ class Supplier extends Entity
      * @var array
      */
     protected $_accessible = [
-        'name' => true,
-        'phone' => true,
-        'email' => true,
-        'address' => true,
-        'wait' => true,
-        'ingredients' => true,
+        'method' => true,
+        'products' => true,
     ];
 }

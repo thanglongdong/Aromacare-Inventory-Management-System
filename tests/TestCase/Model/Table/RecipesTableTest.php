@@ -3,20 +3,20 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\ProductsTable;
+use App\Model\Table\RecipesTable;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\ProductsTable Test Case
+ * App\Model\Table\RecipesTable Test Case
  */
-class ProductsTableTest extends TestCase
+class RecipesTableTest extends TestCase
 {
     /**
      * Test subject
      *
-     * @var \App\Model\Table\ProductsTable
+     * @var \App\Model\Table\RecipesTable
      */
-    protected $Products;
+    protected $Recipes;
 
     /**
      * Fixtures
@@ -24,8 +24,8 @@ class ProductsTableTest extends TestCase
      * @var array
      */
     protected $fixtures = [
+        'app.Recipes',
         'app.Products',
-        'app.Ingredients',
     ];
 
     /**
@@ -36,8 +36,8 @@ class ProductsTableTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $config = $this->getTableLocator()->exists('Products') ? [] : ['className' => ProductsTable::class];
-        $this->Products = $this->getTableLocator()->get('Products', $config);
+        $config = $this->getTableLocator()->exists('Recipes') ? [] : ['className' => RecipesTable::class];
+        $this->Recipes = $this->getTableLocator()->get('Recipes', $config);
     }
 
     /**
@@ -47,7 +47,7 @@ class ProductsTableTest extends TestCase
      */
     public function tearDown(): void
     {
-        unset($this->Products);
+        unset($this->Recipes);
 
         parent::tearDown();
     }
@@ -56,20 +56,9 @@ class ProductsTableTest extends TestCase
      * Test validationDefault method
      *
      * @return void
-     * @uses \App\Model\Table\ProductsTable::validationDefault()
+     * @uses \App\Model\Table\RecipesTable::validationDefault()
      */
     public function testValidationDefault(): void
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test isName method
-     *
-     * @return void
-     * @uses \App\Model\Table\ProductsTable::isName()
-     */
-    public function testIsName(): void
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

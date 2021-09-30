@@ -89,6 +89,11 @@ class SuppliersTable extends Table
             ->requirePresence('address', 'create')
             ->notEmptyString('address','Please enter a valid address.');
 
+        $validator
+            ->scalar('wait')
+            ->maxLength('wait', 30)
+            ->allowEmptyString('wait');
+
         return $validator;
     }
 

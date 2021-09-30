@@ -98,7 +98,11 @@ class IngredientsTable extends Table
             ]);
 
         $validator
-           ->notEmptyString('supplier_id', 'Please select an option');
+            ->notEmptyString('supplier_id', 'Please select an option');
+
+        $validator
+            ->integer('threshold')
+            ->allowEmptyString('threshold');
 
         return $validator;
     }

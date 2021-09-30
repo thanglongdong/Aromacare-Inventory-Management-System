@@ -51,16 +51,16 @@ class ProductsController extends AppController
 
                 $produceQuantity = $key['produceQuantity'];
                 $product_ingredient=$ProductsIngredients
-                ->find()
-                ->where(['product_id' => $product->id])
-                ->all();
+                    ->find()
+                    ->where(['product_id' => $product->id])
+                    ->all();
                 $ingredientResult=true;
 
                 foreach ($product_ingredient as $eachproduct_ingredient){ // use foreach loop to check whether each ingredients required is enough or not, if all of them are enough, variable ingredientResult = true
                     $eachingredient = $Ingredients
-                    ->find()
-                    ->where(['id' => $eachproduct_ingredient->ingredient_id])
-                    ->first();
+                        ->find()
+                        ->where(['id' => $eachproduct_ingredient->ingredient_id])
+                        ->first();
                     $amount=$eachproduct_ingredient->amount;
                     $updatedStock=$eachingredient->stock-$produceQuantity*$amount;
                     $eachingredient->stock= $updatedStock;
@@ -73,9 +73,9 @@ class ProductsController extends AppController
                 if($ingredientResult==true){ //we have checked all the related ingredients stock are enough to make that amount of products, we update the stock of ingredients and product
                     foreach ($product_ingredient as $eachproduct_ingredient){
                         $eachingredient = $Ingredients
-                        ->find()
-                        ->where(['id' => $eachproduct_ingredient->ingredient_id])
-                        ->first();
+                            ->find()
+                            ->where(['id' => $eachproduct_ingredient->ingredient_id])
+                            ->first();
 
                         $amount=$eachproduct_ingredient->amount;
                         $updatedStock=$eachingredient->stock-$produceQuantity*$amount;
@@ -207,5 +207,5 @@ class ProductsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
-    
+
 }
