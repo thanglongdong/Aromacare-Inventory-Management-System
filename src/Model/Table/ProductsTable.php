@@ -12,6 +12,7 @@ use Cake\Validation\Validator;
  * Products Model
  *
  * @property \App\Model\Table\IngredientsTable&\Cake\ORM\Association\BelongsToMany $Ingredients
+ * @property \App\Model\Table\RecipesTable&\Cake\ORM\Association\BelongsTo $Recipes
  *
  * @method \App\Model\Entity\Product newEmptyEntity()
  * @method \App\Model\Entity\Product newEntity(array $data, array $options = [])
@@ -42,6 +43,11 @@ class ProductsTable extends Table
         $this->setTable('products');
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
+
+        $this->belongsTo('Recipes', [
+            'foreignKey' => 'recipe_id',
+            'joinType' => 'INNER',
+        ]);
 
         $this->belongsToMany('Ingredients', [
             'foreignKey' => 'product_id',

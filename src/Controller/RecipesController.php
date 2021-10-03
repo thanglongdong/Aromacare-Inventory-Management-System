@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\ORM\TableRegistry;
 /**
  * Recipes Controller
  *
@@ -32,9 +33,22 @@ class RecipesController extends AppController
      */
     public function recipeview($id = null)
     {
+        $Products = TableRegistry::getTableLocator()->get('Products');
+        $ProductsIngredients = TableRegistry::getTableLocator()->get('ProductsIngredients');
+
         $recipe = $this->Recipes->get($id, [
             'contain' => ['Products'],
         ]);
+
+//        $Product= $Products
+//            ->find()
+//            ->where(['recipe_id' => $recipe->id])
+//            ->first();
+//
+//        $ProductIngredient= $ProductsIngredients
+//            ->find()
+//            ->where(['product_id' => $Product->id])
+//            ->all();
 
         $this->set(compact('recipe'));
     }
