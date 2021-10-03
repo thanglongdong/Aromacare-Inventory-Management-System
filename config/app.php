@@ -185,7 +185,7 @@ return [
         'skipLog' => [],
         'log' => true,
         'trace' => true,
-        'ignoredDeprecationPaths' => ['vendor/friendsofcake/cakephp-csvview/src/View/CsvView.php'],
+        'ignoredDeprecationPaths' => ['vendor/friendsofcake/cakephp-csvview/src/View/CsvView.php', 'vendor/cakephp/cakephp/src/View/SerializedView.php'],
     ],
 
     /*
