@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\I18n\FrozenTime;
 /**
  * Suppliers Controller
  *
@@ -101,5 +102,17 @@ class SuppliersController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function export()
+    {
+        $time = FrozenTime::now();
+        $this->response = $this->response->withDownload('suppliers(' . $time->i18nFormat('dd-MMM-yy') .').csv');
+        $suppliers = $this->Suppliers->find();
+        $_serialize = 'suppliers';
+        $_header = ['ID', 'Name', 'Phone', 'Email', 'Avg Wait Time (Days)'];
+        $_extract = ['id', 'name', 'phone', 'email', 'wait'];
+        $this->viewBuilder()->setClassName('CsvView.Csv');
+        $this->set(compact('suppliers', '_serialize', '_header', '_extract'));
     }
 }

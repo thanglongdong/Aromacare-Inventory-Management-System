@@ -14,8 +14,13 @@
 
     <div class="mb-3 d-sm-flex align-items-center justify-content-between mb-4">
         <h3 class="text-success"><?= __('Products') ?></h3>
-        <a href="<?= $this->Url->build('/Products/add')?>" class="d-none d-sm-inline-block btn btn-success"><i
+
+        <div style="display: inline-block">
+        <a href="<?= $this->Url->build('/Products/add')?>" class=" btn btn-success"><i
                 class="fas fa-plus fa-sm text-white-50"></i> New Product</a>
+        <a href="<?= $this->Url->build('/Products/export')?>" class=" btn btn-success"><i
+                class="fas fa-file-export fa-sm text-white-50"></i> Download</a>
+        </div>
     </div>
 
     <div class="table-responsive-lg">
