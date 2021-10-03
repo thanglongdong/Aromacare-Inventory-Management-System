@@ -11,7 +11,7 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string|null $method
  *
- * @property \App\Model\Entity\Product[] $products
+ * @property \App\Model\Entity\Product $products
  */
 class Recipe extends Entity
 {

@@ -137,7 +137,8 @@ class ProductsController extends AppController
             $this->Flash->error(__('The product could not be saved. Please, try again.'));
         }
         $ingredients = $this->Products->Ingredients->find('list', ['limit' => 200]);
-        $this->set(compact('product', 'ingredients'));
+        $recipes = $this->Products->Recipes->find('list', ['keyField' => 'id', 'valueField' => 'method','limit' => 200]);
+        $this->set(compact('product', 'ingredients','recipes'));
     }
 
     /**
@@ -162,7 +163,8 @@ class ProductsController extends AppController
             $this->Flash->error(__('The product could not be saved. Please, try again.'));
         }
         $ingredients = $this->Products->Ingredients->find('list', ['limit' => 200]);
-        $this->set(compact('product', 'ingredients'));
+        $recipes = $this->Products->Recipes->find('list', ['keyField' => 'id', 'valueField' => 'method','limit' => 200]);
+        $this->set(compact('product', 'ingredients','recipes'));
     }
 
     /**
