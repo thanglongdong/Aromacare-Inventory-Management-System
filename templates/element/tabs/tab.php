@@ -39,9 +39,9 @@
     </li>
     <li class="nav-item">
         <?php if($page == 'Recipes') : ?>
-            <a class="nav-link active font-weight-bold link-aromacare" href="<?= $this->Url->build('/recipes')?>"><strong class="text-aromacare">Recipes</strong></a>
+            <a class="nav-link active font-weight-bold link-aromacare" href="<?= $this->Url->build(['controller'=>'recipes','action'=>'recipeindex'])?>"><strong class="text-aromacare">Recipes</strong></a>
         <?php else : ?>
-            <a class="nav-link link-aromacare" href="<?= $this->Url->build('/recipes')?>">Recipes</a>
+            <a class="nav-link link-aromacare" href="<?= $this->Url->build(['controller'=>'recipes','action'=>'recipeindex'])?>">Recipes</a>
         <?php endif; ?>
     </li>
 </ul>

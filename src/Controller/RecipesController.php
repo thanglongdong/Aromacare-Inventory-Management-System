@@ -16,7 +16,7 @@ class RecipesController extends AppController
      *
      * @return \Cake\Http\Response|null|void Renders view
      */
-    public function index()
+    public function recipeindex()
     {
         $recipes = $this->paginate($this->Recipes);
 
@@ -30,7 +30,7 @@ class RecipesController extends AppController
      * @return \Cake\Http\Response|null|void Renders view
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
+    public function recipeview($id = null)
     {
         $recipe = $this->Recipes->get($id, [
             'contain' => ['Products'],
@@ -44,7 +44,7 @@ class RecipesController extends AppController
      *
      * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function recipeadd()
     {
         $recipe = $this->Recipes->newEmptyEntity();
         if ($this->request->is('post')) {
@@ -52,7 +52,7 @@ class RecipesController extends AppController
             if ($this->Recipes->save($recipe)) {
                 $this->Flash->success(__('The recipe has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'recipeindex']);
             }
             $this->Flash->error(__('The recipe could not be saved. Please, try again.'));
         }
@@ -66,7 +66,7 @@ class RecipesController extends AppController
      * @return \Cake\Http\Response|null|void Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function edit($id = null)
+    public function recipeedit($id = null)
     {
         $recipe = $this->Recipes->get($id, [
             'contain' => [],
@@ -76,7 +76,7 @@ class RecipesController extends AppController
             if ($this->Recipes->save($recipe)) {
                 $this->Flash->success(__('The recipe has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'recipeindex']);
             }
             $this->Flash->error(__('The recipe could not be saved. Please, try again.'));
         }
@@ -90,7 +90,7 @@ class RecipesController extends AppController
      * @return \Cake\Http\Response|null|void Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function delete($id = null)
+    public function recipedelete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
         $recipe = $this->Recipes->get($id);
@@ -100,6 +100,6 @@ class RecipesController extends AppController
             $this->Flash->error(__('The recipe could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect(['action' => 'recipeindex']);
     }
 }

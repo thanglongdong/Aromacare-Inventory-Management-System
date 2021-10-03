@@ -13,7 +13,7 @@
 <div class="container-fluid">
     <div class="mb-3 d-sm-flex align-items-center justify-content-between mb-4">
         <h3 class="text-success"><?= __('Recipes') ?></h3>
-        <a href="<?= $this->Url->build('/Recipes/add')?>" class="d-none d-sm-inline-block btn btn-success"><i
+        <a href="<?= $this->Url->build('/Recipes/recipeadd')?>" class="d-none d-sm-inline-block btn btn-success"><i
                 class="fas fa-plus fa-sm text-white-50"></i> New Recipe</a>
     </div>
     <div class="table-responsive">
@@ -31,9 +31,9 @@
                     <td><?= $this->Number->format($recipe->id) ?></td>
                     <td><?= h($recipe->method) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $recipe->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id)]) ?>
+                        <?= $this->Html->link(__('View'), ['action' => 'recipeview', $recipe->id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'recipeedit', $recipe->id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'recipedelete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id)]) ?>
                     </td>
                 </tr>
             <?php endforeach; ?>

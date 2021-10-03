@@ -10,29 +10,32 @@
 <!-- End of Tabs -->
 <br>
 
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div>
-                <h1 class="h3 mb-2 text-success"><?= __('New Recipe') ?></h1>
+                <h1 class="h3 mb-2 text-success"><?= __('Edit Recipe') ?></h1>
             </div>
-            <br>
+            <br </br>
             <div>
                 <?= $this->Form->create($recipe,['novalidate' => true, 'type'=>'file']) ?>
-
                 <!-- Row 1 -->
                 <div class="row">
                     <div class="col">
                         <?= $this->Form->control('method')?>
                     </div>
                 </div>
-
-
                 <br>
-
                 <div>
-                    <?= $this->Form->button(__('Add Recipe'), ['class' => 'btn btn-success']) ?>
-                    <?= $this->Html->link(__('List Recipes'), ['action' => 'index'], ['class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
+                    <?= $this->Form->button(__('Save Changes'), ['class' => 'btn btn-success']) ?>
+                    <?= $this->Form->end() ?>
+                    <?= $this->Form->postLink(
+                        __('Delete Recipe'),
+                        ['action' => 'recipedelete', $recipe->id],
+                        ['confirm' => __('Are you sure you want to delete ingredient {0}?', $recipe->id), 'class' => 'btn btn-outline-success float-right mr-2']
+                    ) ?>
+                    <?= $this->Html->link(__('List Recipes'), ['action' => 'recipeindex'], ['class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
                 </div>
             </div>
 
@@ -40,5 +43,5 @@
     </div>
 
 </div>
-<?= $this->Form->end() ?>
+
 <br </br>
