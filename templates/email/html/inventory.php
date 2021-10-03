@@ -165,7 +165,7 @@ endforeach;
         }
 
         a {
-            color: #3498db;
+            color: #9cb226;
             text-decoration: underline;
         }
 
@@ -187,10 +187,10 @@ endforeach;
         }
         .btn a {
             background-color: #ffffff;
-            border: solid 1px #3498db;
+            border: solid 1px #9cb226;
             border-radius: 5px;
             box-sizing: border-box;
-            color: #3498db;
+            color: #9cb226;
             cursor: pointer;
             display: inline-block;
             font-size: 14px;
@@ -201,13 +201,13 @@ endforeach;
             text-transform: capitalize;
         }
 
-        .btn-primary table td {
-            background-color: #3498db;
+        .btn-aromacare table td {
+            background-color: #9cb226;
         }
 
-        .btn-primary a {
-            background-color: #3498db;
-            border-color: #3498db;
+        .btn-aromacare a {
+            background-color: #9cb226;
+            border-color: #9cb226;
             color: #ffffff;
         }
 
@@ -345,12 +345,12 @@ endforeach;
                 font-weight: inherit;
                 line-height: inherit;
             }
-            .btn-primary table td:hover {
-                background-color: #34495e !important;
+            .btn-aromacare table td:hover {
+                background-color: #65741d !important;
             }
-            .btn-primary a:hover {
-                background-color: #34495e !important;
-                border-color: #34495e !important;
+            .btn-aromacare a:hover {
+                background-color: #65741d !important;
+                border-color: #65741d !important;
             }
         }
 
@@ -372,13 +372,13 @@ endforeach;
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td>
-                                        <p>Hi,</p>
+                                        <p>Hello,</p>
                                         <p>An ingredient has reached it's threshold limit.</p>
                                         <p><b>Name: </b><?= h($name) ?></p>
                                         <p><b>Current Stock: </b><?= h($stock) ?></p>
-                                        <p><b>Supplier ID: </b><?= h($supplier) ?></p>
+                                        <p><b>Supplier: </b><?= h($supplierName) ?></p>
 
-                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-aromacare">
                                             <tbody>
                                             <tr>
                                                 <td align="left">
@@ -393,7 +393,16 @@ endforeach;
                                             </tr>
                                             </tbody>
                                         </table>
-                                        <p>Please prepare an email to supplier.</p>
+                                        <p>Please prepare an email to supplier using the below template:</p>
+                                        <hr>
+                                        <div>
+                                            <p><b>To:</b> <?= h($supplierEmail) ?></p>
+                                            <p>Hello <?= h($supplierName) ?>,</p>
+                                            <p>We are currently running on low stock of <?= h($name) ?> and would like to make a purchase of __this__amount__.</p>
+                                            <p>Please advise on availability.</p>
+                                            <p>Thank you,</p>
+                                            <p>Aromacare</p>
+                                        </div>
                                     </td>
                                 </tr>
                             </table>

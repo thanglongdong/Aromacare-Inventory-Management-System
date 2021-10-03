@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use Cake\Core\Configure;
 use Cake\Mailer\Mailer;
+use Cake\ORM\TableRegistry;
 /**
  * Ingredients Controller
  *
@@ -75,8 +76,17 @@ class IngredientsController extends AppController
             'contain' => ['Products'],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
+            /* Information for email*/
+            $Suppliers = TableRegistry::getTableLocator()->get('Suppliers');
+
+            $Supplier= $Suppliers
+                ->find()
+                ->where(['id' => $ingredient->supplier_id])
+                ->first();
+            /* End information for email */
             $ingredient = $this->Ingredients->patchEntity($ingredient, $this->request->getData());
             $threshold = $ingredient->threshold;
+
             if ($this->Ingredients->save($ingredient)) {
                 //send email
                 if ($ingredient->stock < $threshold) {
@@ -85,14 +95,17 @@ class IngredientsController extends AppController
                         ->setEmailFormat('html')
                         ->setTo(Configure::read('InventoryEmail.to'))
                         ->setFrom(Configure::read('InventoryEmail.from'))
+                        ->setSubject("Threshold of $ingredient->name was met")
                         ->viewBuilder()
                         ->setTemplate('inventory');
 
                     $mailer->setViewVars([
                         'name'=> $ingredient->name,
                         'stock'=> $ingredient->stock,
-                        'supplier'=> $ingredient->supplier,
-                        'id'=> $ingredient->id
+                        'supplier'=> $ingredient->supplier_id,
+                        'id'=> $ingredient->id,
+                        'supplierEmail'=>$Supplier->email,
+                        'supplierName'=>$Supplier->name
                     ]);
                     $email_result = $mailer->deliver();
                 }
