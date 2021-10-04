@@ -1,25 +1,9 @@
 <?php
 
-use Cake\ORM\TableRegistry;
-
 echo $this->Html->script("https://canvasjs.com/assets/script/canvasjs.min.js");
 
-$products = TableRegistry::getTableLocator()->get('Products');
-$ingredients = TableRegistry::getTableLocator()->get('Ingredients');
-$suppliers = TableRegistry::getTableLocator()->get('Suppliers');
-
-$product = $products
-    ->find()
-    ->all()
-    ->count();
-$ingredient = $ingredients
-    ->find()
-    ->all()
-    ->count();
-$supplier = $suppliers
-    ->find()
-    ->all()
-    ->count();
+debug($ingredients);
+//exit();
 
 ?>
 
@@ -118,8 +102,9 @@ $supplier = $suppliers
                         <div>
                             <h7 class="m-0 font-weight-bold">Select Ingredient</h7>
                         </div>
+                        <?= $this->Form->create($ingredients,['novalidate' => true, 'type'=>'file']) ?>
                         <div>
-<!--                            --><?//= $this->Form->control('ingredients._ids', ['options' => $ingredients]) ?>
+                            <?= $this->Form->control('name', ['options' => $ingredients]) ?>
                         </div>
                         <br>
                         <div>
@@ -135,6 +120,7 @@ $supplier = $suppliers
                         <div>
                             <?= $this->Form->button(__('Save Changes'), ['class' => 'btn btn-aromacare']) ?>
                         </div>
+                        <?= $this->Form->end() ?>
                     </div>
 
                 </div>
@@ -149,7 +135,7 @@ $supplier = $suppliers
             <div class="toast-header">
                 <i class="fas fa-globe"></i>
                 <strong class="me-auto"> &emsp; System Notification</strong>
-                <small>Now</small>
+                <small>Just Now</small>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="toast-body">
@@ -157,4 +143,6 @@ $supplier = $suppliers
             </div>
         </div>
     </div>
+
+
 </div>

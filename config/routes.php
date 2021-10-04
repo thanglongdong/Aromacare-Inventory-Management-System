@@ -23,7 +23,6 @@
 
 use Cake\Routing\Route\DashedRoute;
 use Cake\Routing\RouteBuilder;
-
 /*
  * The default class to use for all routes
  *

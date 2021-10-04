@@ -6,6 +6,7 @@ namespace App\Controller;
 use Cake\Core\Configure;
 use Cake\Mailer\Mailer;
 use Cake\ORM\TableRegistry;
+use Cake\I18n\FrozenTime;
 /**
  * Ingredients Controller
  *
@@ -139,5 +140,17 @@ class IngredientsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function export()
+    {
+        $time = FrozenTime::now();
+        $this->response = $this->response->withDownload('ingredients(' . $time->i18nFormat('dd-MMM-yy') .').csv');
+        $ingredients = $this->Ingredients->find();
+        $_serialize = 'ingredients';
+        $_header = ['ID', 'Name', 'Stock', 'Price (AUD)', 'Threshold'];
+        $_extract = ['id', 'name', 'stock', 'price', 'threshold'];
+        $this->viewBuilder()->setClassName('CsvView.Csv');
+        $this->set(compact('ingredients', '_serialize', '_header', '_extract'));
     }
 }

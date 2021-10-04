@@ -5,7 +5,7 @@ namespace App\Controller;
 
 use Cake\ORM\TableRegistry;
 use Cake\Core\Configure;
-use Cake\Mailer\Mailer;
+use Cake\I18n\FrozenTime;
 
 /**
  * Products Controller
@@ -187,4 +187,15 @@ class ProductsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+    public function export()
+    {
+        $time = FrozenTime::now();
+        $this->response = $this->response->withDownload('products(' . $time->i18nFormat('dd-MMM-yy') .').csv');
+        $products = $this->Products->find();
+        $_serialize = 'products';
+        $_header = ['ID', 'Name', 'Size', 'Price (AUD)', 'Stock', 'SKU'];
+        $_extract = ['id', 'name', 'size', 'price', 'stock', 'sku'];
+        $this->viewBuilder()->setClassName('CsvView.Csv');
+        $this->set(compact('products', '_serialize', '_header', '_extract'));
+    }
 }
