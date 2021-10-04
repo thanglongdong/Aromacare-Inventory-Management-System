@@ -3,10 +3,20 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Product[]|\Cake\Collection\CollectionInterface $products
  */
+$this->loadHelper('Authentication.Identity');
+
+$loggedin = $this->Identity->isLoggedIn();
+
+if ($loggedin){
+$role = $this->Identity->get('role');
+$user_id=$this->Identity->get('id');
+}
 ?>
 <!-- Tabs -->
 <?php $page_name = $this->request->getparam("controller") ?>
 <?= $this->element('tabs/tab', ['page' => $page_name]) ?>
+
+
 <!-- End of Tabs -->
 <br>
 
@@ -29,8 +39,11 @@
                 <th><?= h('Size (ml)') ?></th>
                 <th><?= h('Stock') ?></th>
                 <th><?= h('SKU') ?></th>
-                <th><?= h('Image') ?></th>
-                <th><?= h('Recipe') ?></th>
+                <?php if($loggedin): ?>
+                    <div class="col-md-3 text-end">
+                        <th><?= h('Recipe') ?></th>
+                    </div>
+                <?php endif; ?>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
             </thead>
@@ -44,8 +57,11 @@
                     <td><?= h($product->size) ?></td>
                     <td><?= $this->Number->format($product->stock) ?></td>
                     <td><?= h($product->sku) ?></td>
-                    <td><?= h($product->image) ?></td>
-                    <td><?= h($product->recipe_id) ?></td>
+                    <?php if($loggedin): ?>
+                    <div class="col-md-3 text-end">
+                        <td><?= $this->Html->link($product->recipe_id, ['controller' => 'Recipes', 'action' => 'recipeview', $product->recipe_id]) ?></td>
+                    </div>
+                    <?php endif; ?>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $product->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $product->id]) ?>

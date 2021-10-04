@@ -4,6 +4,16 @@
  * @var \App\Model\Entity\Product $product
  * @var string[]|\Cake\Collection\CollectionInterface $ingredients
  */
+
+$this->loadHelper('Authentication.Identity');
+
+$loggedin = $this->Identity->isLoggedIn();
+
+if ($loggedin){
+$role = $this->Identity->get('role');
+$user_id=$this->Identity->get('id');
+}
+ 
 ?>
 <!-- Tabs -->
 <?php $page_name = $this->request->getparam("controller") ?>
@@ -58,12 +68,11 @@
                 </div>
                 <!-- Row 2 -->
                 <div class="row">
-                    <div class="col">
-                        <?= $this->Form->control('image') ?>
-                    </div>
-                    <div class="col">
-                        <?= $this->Form->control('recipe_id') ?>
-                    </div>
+                    <?php if($loggedin): ?>
+                        <div class="col">
+                            <?= $this->Form->control('recipe_id') ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <!-- Row 3 -->
                 <div class="row">

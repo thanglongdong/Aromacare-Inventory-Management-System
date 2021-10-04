@@ -65,9 +65,6 @@
                 <!-- Row 4 -->
                 <div class="row">
                     <div class="col">
-                        <?= $this->Form->control('image') ?>
-                    </div>
-                    <div class="col">
                         <?= $this->Form->control('recipe_id', ['options' => $recipes, 'empty' => true]) ?>
                     </div>
                 </div>

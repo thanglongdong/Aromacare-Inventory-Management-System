@@ -30,13 +30,13 @@
             <a class="nav-link link-aromacare" href="<?= $this->Url->build('/suppliers')?>">Suppliers</a>
         <?php endif; ?>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <?php if($page == 'ProductsIngredients') : ?>
             <a class="nav-link active font-weight-bold link-aromacare" href="<?= $this->Url->build('/products-ingredients')?>"><strong class="text-aromacare">Products Ingredients</strong></a>
         <?php else : ?>
             <a class="nav-link link-aromacare" href="<?= $this->Url->build('/products-ingredients')?>">Products Ingredients</a>
         <?php endif; ?>
-    </li>
+    </li> -->
     <li class="nav-item">
         <?php if($page == 'Recipes') : ?>
             <a class="nav-link active font-weight-bold link-aromacare" href="<?= $this->Url->build(['controller'=>'recipes','action'=>'recipeindex'])?>"><strong class="text-aromacare">Recipes</strong></a>
