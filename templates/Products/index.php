@@ -10,9 +10,7 @@ $loggedin = $this->Identity->isLoggedIn();
 if ($loggedin){
 $role = $this->Identity->get('role');
 $user_id=$this->Identity->get('id');
-};
-$this -> Html->css("/webroot/datatables/dataTables.min.css",['block'=>true,'defer'=>true]);
-$this -> Html->script("/webroot/datatables/dataTables.min.js",['block'=>true,'defer'=>true]);
+}
 ?>
 <!-- Tabs -->
 <?php $page_name = $this->request->getparam("controller") ?>
