@@ -1,12 +1,8 @@
 <?php
 
-echo $this->Html->script("https://canvasjs.com/assets/script/canvasjs.min.js");
-
 //debug($ingredients);
 //exit();
-
 ?>
-
 <!-- Tabs -->
 <?php $page_name = $this->request->getparam("controller") ?>
 <?= $this->element('tabs/tab', ['page' => $page_name]) ?>
@@ -73,62 +69,78 @@ echo $this->Html->script("https://canvasjs.com/assets/script/canvasjs.min.js");
     </div>
     <br>
 
-        <!-- Content Row -->
-        <div class="row">
+    <!-- Content Row 1 -->
+    <div class="row">
 
-            <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
+        <!-- Content Column -->
+        <div class="col-lg-6 mb-4">
 
-                <!-- Project Card Example -->
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold" style="color: #158467">Order Size Tracking</h6>
-                    </div>
-                    <div class="card-body">
-                        <div id="columnChart" style="height: 370px; width: 100%;"></div> <!-- canvas call -->
-                        <br>
-                    </div>
+            <!-- Project Card Example -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold" style="color: #158467">Bookings Breakdown</h6>
+                </div>
+                <div class="card-body">
+                    <div id="barChart" style="height: 370px; width: 100%;"></div> <!-- canvas call -->
+                    <br>
                 </div>
             </div>
-            <!-- Content Column -->
-            <div class="col-lg-6 mb-4">
 
-                <!-- Project Card Example -->
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold" style="color: #158467">Update Ingredient Order Threshold</h6>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <h7 class="m-0 font-weight-bold">Select Ingredient</h7>
-                        </div>
-                        <?= $this->Form->create($ingredients,['novalidate' => true, 'type'=>'file']) ?>
-                        <div>
-                            <?= $this->Form->control('name', ['options' => $ingredients]) ?>
-                        </div>
-                        <br>
-                        <div>
-                            <h8 class="m-0 font-weight-bold">Set Threshold For Re-Order Notification</h8>
-                        </div>
-                        <div>
-                            <?= $this->Form->control('threshold') ?>
-                        </div>
-                        <br>
-                        <div>
-                            <h9 class="m-0 font-weight-bold">Confirm Ingredient Threshold</h9>
-                        </div>
-                        <div>
-                            <?= $this->Form->button(__('Save Changes'), ['class' => 'btn btn-aromacare']) ?>
-                        </div>
-                        <?= $this->Form->end() ?>
-                    </div>
-
-                </div>
-            </div>
         </div>
+        <!-- Content Column -->
+        <div class="col-lg-6 mb-4">
+
+            <!-- Project Card Example -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold" style="color: #158467">Order Size Tracking</h6>
+                </div>
+                <div class="card-body">
+                    <div id="chartContainer" style="height: 370px; width: 100%;"></div> <!-- canvas call -->
+                    <br>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Content Row 1 -->
+    <div class="row">
+        <!-- Project Card Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold" style="color: #158467">Update Ingredient Order Threshold</h6>
+            </div>
+            <div class="card-body">
+                <div>
+                    <h7 class="m-0 font-weight-bold">Select Ingredient</h7>
+                </div>
+                <?= $this->Form->create($ingredients,['novalidate' => true, 'type'=>'file']) ?>
+                <div>
+                    <?= $this->Form->control('name', ['options' => $ingredients]) ?>
+                </div>
+                <br>
+                <div>
+                    <h8 class="m-0 font-weight-bold">Set Threshold For Re-Order Notification</h8>
+                </div>
+                <div>
+                    <?= $this->Form->control('threshold') ?>
+                </div>
+                <br>
+                <div>
+                    <h9 class="m-0 font-weight-bold">Confirm Ingredient Threshold</h9>
+                </div>
+                <div>
+                    <?= $this->Form->button(__('Save Changes'), ['class' => 'btn btn-aromacare']) ?>
+                </div>
+                <?= $this->Form->end() ?>
+            </div>
+
+        </div>
+    </div>
 
     <!-- Toast -->
-    <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+    <button type="button" class="btn btn-primary" id="liveToastBtn">Notification test</button>
 
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -146,3 +158,6 @@ echo $this->Html->script("https://canvasjs.com/assets/script/canvasjs.min.js");
 
 
 </div>
+
+
+
