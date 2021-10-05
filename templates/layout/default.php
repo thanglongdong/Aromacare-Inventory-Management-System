@@ -17,17 +17,14 @@
 
     <!-- Core theme CSS (includes Bootstrap)-->
     <?= $this->Html->css('styles') ?>
+    <?= $this -> Html->css('datatables.min.css',['defer'=>true]); ?>
 
     <?= $this->fetch('meta') ?>
-    <?= $this -> Html->css("/datatables/dataTables.min.css",['defer'=>true]); ?>
-    <?= $this -> Html->script("/datatables/dataTables.min.js",['defer'=>true]); ?>
+
     <?= $this->fetch('css') ?>
 
-<!--   THIS ONEEEEEE -->
+
     <?= $this->Html->css(['/vendor/fontawesome-free-5.15.4-web/css/all.min.css']) ?>
-
-
-
 
 
     <?= $this->fetch('script') ?>
@@ -36,6 +33,7 @@
     <?= $this -> Html->script("https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js",['defer'=>true]); ?>
     <!-- Core theme JS-->
     <?= $this -> Html->script("scripts.js",['defer'=>true]); ?>
+    <?= $this -> Html->script('datatables.min.js',['defer'=>true]); ?>
 </head>
 
 <!-- Navigation -->
