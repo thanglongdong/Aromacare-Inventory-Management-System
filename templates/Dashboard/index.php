@@ -2,7 +2,7 @@
 
 echo $this->Html->script("https://canvasjs.com/assets/script/canvasjs.min.js");
 
-debug($ingredients);
+//debug($ingredients);
 //exit();
 
 ?>
@@ -22,7 +22,7 @@ debug($ingredients);
     <div class="row">
         <!-- product count -->
         <div class="col-xl">
-            <a href="<?= $this->Url->build('/products')?>" style="text-decoration: none" class="card border-left-primary shadow h-100 py-2">
+            <a href="<?= $this->Url->build('/products')?>" style="text-decoration: none;" class="card count border-left-primary shadow py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -39,7 +39,7 @@ debug($ingredients);
 
         <!-- ingredient count -->
         <div class="col-xl">
-            <a href="<?= $this->Url->build('/ingredients')?>" style="text-decoration: none" class="card border-left-success shadow h-100 py-2">
+            <a href="<?= $this->Url->build('/ingredients')?>" style="text-decoration: none" class="card count border-left-success shadow py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -56,7 +56,7 @@ debug($ingredients);
 
         <!-- Supplier count -->
         <div class="col-xl">
-            <a href="<?= $this->Url->build('/suppliers')?>" style="text-decoration: none" class="card border-left-primary shadow h-100 py-2">
+            <a href="<?= $this->Url->build('/suppliers')?>" style="text-decoration: none" class="card count border-left-primary shadow py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">

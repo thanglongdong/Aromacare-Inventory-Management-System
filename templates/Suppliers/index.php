@@ -17,9 +17,9 @@
         <h3 class="text-aromacare"><?= __('Suppliers') ?></h3>
 
         <div style="display: inline-block">
-            <a href="<?= $this->Url->build('/Supplier/add')?>" class=" btn btn-aromacare"><i
+            <a href="<?= $this->Url->build('/suppliers/add')?>" class=" btn btn-aromacare"><i
                     class="fas fa-plus fa-sm text-white-50"></i> New Supplier</a>
-            <a href="<?= $this->Url->build('/Suppliers/export')?>" class=" btn btn-aromacare"><i
+            <a href="<?= $this->Url->build('/suppliers/export')?>" class=" btn btn-aromacare"><i
                     class="fas fa-download fa-sm text-white-50"></i> Download</a>
         </div>
     </div>

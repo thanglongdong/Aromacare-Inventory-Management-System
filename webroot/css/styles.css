@@ -4569,6 +4569,13 @@ textarea.form-control-lg {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
+.count {
+    height: 100%;
+}
+.count:hover{
+    transform: scale(1.05);
+}
+
 .card > hr {
   margin-right: 0;
   margin-left: 0;

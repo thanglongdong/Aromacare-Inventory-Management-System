@@ -26,9 +26,9 @@ $user_id=$this->Identity->get('id');
         <h3 class="text-aromacare"><?= __('Products') ?></h3>
 
         <div style="display: inline-block">
-        <a href="<?= $this->Url->build('/Products/add')?>" class=" btn btn-aromacare"><i
+        <a href="<?= $this->Url->build('/products/add')?>" class=" btn btn-aromacare"><i
                 class="fas fa-plus fa-sm text-white-50"></i> New Product</a>
-        <a href="<?= $this->Url->build('/Products/export')?>" class=" btn btn-aromacare"><i
+        <a href="<?= $this->Url->build('/products/export')?>" class=" btn btn-aromacare"><i
                 class="fas fa-download fa-sm text-white-50"></i> Download</a>
         </div>
     </div>

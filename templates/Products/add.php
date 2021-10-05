@@ -69,11 +69,23 @@
                     </div>
                 </div>
                 <!-- Row 5 -->
+                <?php if ($ingredients) : ?>
                 <div>Select Ingredients in This Product</div> <!-- this should just go above whatever the final ingredients section is so that the process makes sense-->
+                <?php endif; ?>
                 <div class="row">
-                    <div class="col ">
-                        <?= $this->Form->multiCheckbox('ingredients', $ingredients, ['multiple' => 'checkbox',['style'=>'display:inline']]) ?>
+                    <?php $i = 1 ?>
+                    <div class="form-check form-check-inline">
+                        <?php foreach ($ingredients as $ingredient): ?>
+
+                            <?= $this->Form->checkbox($ingredient,
+                                ['class'=>"form-check-input",'type'=>"checkbox",'id'=>"inlineCheckbox".$i,'value'=>"option".$i]) ?>
+                            <label class="form-check-label" for="inlineCheckbox1" ><?=$ingredient?></label>
+
+                            <?php $i++ ?>
+                        <?php endforeach; ?>
                     </div>
+                </div>
+
                     <!-- </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">

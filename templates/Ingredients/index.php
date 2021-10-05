@@ -18,9 +18,9 @@
         <h3 class="text-aromacare"><?= __('Ingredients') ?></h3>
 
         <div style="display: inline-block">
-            <a href="<?= $this->Url->build('/Ingredients/add')?>" class=" btn btn-aromacare"><i
+            <a href="<?= $this->Url->build('/ingredients/add')?>" class=" btn btn-aromacare"><i
                     class="fas fa-plus fa-sm text-white-50"></i> New Ingredient</a>
-            <a href="<?= $this->Url->build('/Ingredients/export')?>" class=" btn btn-aromacare"><i
+            <a href="<?= $this->Url->build('/ingredients/export')?>" class=" btn btn-aromacare"><i
                     class="fas fa-download fa-sm text-white-50"></i> Download</a>
         </div>
     </div>

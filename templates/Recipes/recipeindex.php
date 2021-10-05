@@ -13,7 +13,7 @@
 <div class="container-fluid">
     <div class="mb-3 d-sm-flex align-items-center justify-content-between mb-4">
         <h3 class="text-aromacare"><?= __('Recipes') ?></h3>
-        <a href="<?= $this->Url->build('/Recipes/recipeadd')?>" class="d-none d-sm-inline-block btn btn-aromacare"><i
+        <a href="<?= $this->Url->build('/recipes/recipeadd')?>" class="d-none d-sm-inline-block btn btn-aromacare"><i
                 class="fas fa-plus fa-sm text-white-50"></i> New Recipe</a>
     </div>
     <div class="table-responsive">
