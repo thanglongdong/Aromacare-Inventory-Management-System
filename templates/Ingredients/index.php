@@ -15,13 +15,13 @@
 
 <div class="container-fluid">
     <div class="mb-3 d-sm-flex align-items-center justify-content-between mb-4">
-        <h3 class="text-success"><?= __('Ingredients') ?></h3>
+        <h3 class="text-aromacare"><?= __('Ingredients') ?></h3>
 
         <div style="display: inline-block">
-            <a href="<?= $this->Url->build('/Ingredients/add')?>" class=" btn btn-success"><i
+            <a href="<?= $this->Url->build('/Ingredients/add')?>" class=" btn btn-aromacare"><i
                     class="fas fa-plus fa-sm text-white-50"></i> New Ingredient</a>
-            <a href="<?= $this->Url->build('/Ingredients/export')?>" class=" btn btn-success"><i
-                    class="fas fa-file-export fa-sm text-white-50"></i> Download</a>
+            <a href="<?= $this->Url->build('/Ingredients/export')?>" class=" btn btn-aromacare"><i
+                    class="fas fa-download fa-sm text-white-50"></i> Download</a>
         </div>
     </div>
     <div class="table-responsive">

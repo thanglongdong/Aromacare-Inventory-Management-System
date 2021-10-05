@@ -19,7 +19,7 @@ class RecipesController extends AppController
      */
     public function recipeindex()
     {
-        $recipes = $this->paginate($this->Recipes);
+        $recipes = $this->Recipes->find();
 
         $this->set(compact('recipes'));
     }

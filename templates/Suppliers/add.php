@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-md-12">
             <div>
-                <h1 class="h3 mb-2 text-success"><?= __('New Supplier') ?></h1>
+                <h1 class="h3 mb-2 text-aromacare"><?= __('New Supplier') ?></h1>
             </div>
             <div>
                 <?= $this->Form->create($supplier,['novalidate' => true]) ?>
@@ -47,8 +47,8 @@
 
                 <br>
                 <div>
-                    <?= $this->Form->button(__('Add Supplier'), ['class' => 'btn btn-success']) ?>
-                    <?= $this->Html->link(__('List Suppliers'), ['action' => 'index'], ['class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
+                    <?= $this->Form->button(__('Add Supplier'), ['class' => 'btn btn-aromacare']) ?>
+                    <?= $this->Html->link(__('List Suppliers'), ['action' => 'index'], ['class' => 'btn btn-outline-aromacare me-2 float-right mr-2']) ?>
                 </div>
             </div>
 

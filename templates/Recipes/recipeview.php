@@ -14,29 +14,23 @@
     <div class="row">
         <div class="col-md-12">
             <div>
-                <h1 class="h3 mb-2 text-success"><?= h($recipe->id) ?></h1>
+                <h1 class="h3 mb-2 text-aromacare">Recipe <?= h($recipe->id) ?></h1>
             </div>
 
             <div>
-                <?= $this->Form->create($recipe) ?>
-            </div>
-
-            <div>
-                <!-- Row 1 -->
-                <div class="row">
-                    <div class="col">
-                        <?= $this->Form->control('method', ['empty' => true, 'disabled'])?>
+                <table>
+                    <div class="text">
+                        <blockquote>
+                            <?= $this->Text->autoParagraph($recipe->method)?>
+                        </blockquote>
                     </div>
-                </div>
+                </table>
 
-
-                <br </br>
-                <?= $this->Form->end() ?>
                 <div>
-                    <?= $this->Html->link(__('Edit Recipe'), ['action' => 'recipeedit', $recipe->id], ['class' => 'btn btn-success']) ?>
-                    <?= $this->Form->postLink(__('Delete Recipe'), ['action' => 'recipedelete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id), 'class' => 'btn btn-outline-success float-right mr-2']) ?>
-                    <?= $this->Html->link(__('List Recipes'), ['action' => 'recipeindex'], ['class' => 'btn btn-outline-success float-right mr-2']) ?>
-                    <?= $this->Html->link(__('New Recipe'), ['action' => 'recipeadd'], ['class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
+                    <?= $this->Html->link(__('Edit Recipe'), ['action' => 'recipeedit', $recipe->id], ['class' => 'btn btn-aromacare']) ?>
+                    <?= $this->Form->postLink(__('Delete Recipe'), ['action' => 'recipedelete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id), 'class' => 'btn btn-outline-aromacare float-right mr-2']) ?>
+                    <?= $this->Html->link(__('List Recipes'), ['action' => 'recipeindex'], ['class' => 'btn btn-outline-aromacare float-right mr-2']) ?>
+                    <?= $this->Html->link(__('New Recipe'), ['action' => 'recipeadd'], ['class' => 'btn btn-outline-aromacare me-2 float-right mr-2']) ?>
                 </div>
             </div>
 
@@ -49,7 +43,7 @@
 
 <?php if (!empty($recipe->products)) : ?>
     <div class="container">
-        <h1 class="h3 mb-2 text-success"><?= __('Related Product') ?></h1>
+        <h1 class="h3 mb-2 text-aromacare"><?= __('Related Product') ?></h1>
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <tr>
@@ -88,15 +82,6 @@
         </div>
     </div><br </br>
 <?php endif; ?>
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#method' ) )
-        .then( editor => {
-            console.log( editor );
-        } )
-        .catch( error => {
-            console.error( error );
-        } );
-</script>
+
 
 

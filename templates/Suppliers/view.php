@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-md-12">
             <div>
-                <h1 class="h3 mb-2 text-success"><?= __('View Suppliers') ?></h1>
+                <h1 class="h3 mb-2 text-aromacare"><?= __('View Suppliers') ?></h1>
             </div>
 
             <div>
@@ -54,10 +54,10 @@
                 <br </br>
                 <?= $this->Form->end() ?>
                 <div>
-                    <?= $this->Html->link(__('Edit Supplier'), ['action' => 'edit', $supplier->id], ['class' => 'btn btn-success']) ?>
-                    <?= $this->Form->postLink(__('Delete Supplier'), ['action' => 'delete', $supplier->id], ['confirm' => __('Are you sure you want to delete # {0}?', $supplier->id), 'class' => 'btn btn-outline-success float-right mr-2']) ?>
-                    <?= $this->Html->link(__('List Supplier'), ['action' => 'index'], ['class' => 'btn btn-outline-success float-right mr-2']) ?>
-                    <?= $this->Html->link(__('New Supplier'), ['action' => 'add'], ['class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
+                    <?= $this->Html->link(__('Edit Supplier'), ['action' => 'edit', $supplier->id], ['class' => 'btn btn-aromacare']) ?>
+                    <?= $this->Form->postLink(__('Delete Supplier'), ['action' => 'delete', $supplier->id], ['confirm' => __('Are you sure you want to delete # {0}?', $supplier->id), 'class' => 'btn btn-outline-aromacare float-right mr-2']) ?>
+                    <?= $this->Html->link(__('List Supplier'), ['action' => 'index'], ['class' => 'btn btn-outline-aromacare float-right mr-2']) ?>
+                    <?= $this->Html->link(__('New Supplier'), ['action' => 'add'], ['class' => 'btn btn-outline-aromacare me-2 float-right mr-2']) ?>
                 </div>
             </div>
 
@@ -71,7 +71,7 @@
 
 <?php if (!empty($supplier->ingredients)) : ?>
     <div class="container">
-        <h1 class="h3 mb-2 text-success"><?= __('Related Ingredients') ?></h1>
+        <h1 class="h3 mb-2 text-aromacare"><?= __('Related Ingredients') ?></h1>
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <tr>

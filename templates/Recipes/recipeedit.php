@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-md-12">
             <div>
-                <h1 class="h3 mb-2 text-success"><?= __('Edit Recipe') ?></h1>
+                <h1 class="h3 mb-2 text-aromacare"><?= __('Edit Recipe') ?></h1>
             </div>
             <br </br>
             <div>
@@ -28,14 +28,14 @@
                 </div>
                 <br>
                 <div>
-                    <?= $this->Form->button(__('Save Changes'), ['class' => 'btn btn-success']) ?>
+                    <?= $this->Form->button(__('Save Changes'), ['class' => 'btn btn-aromacare']) ?>
                     <?= $this->Form->end() ?>
                     <?= $this->Form->postLink(
                         __('Delete Recipe'),
                         ['action' => 'recipedelete', $recipe->id],
-                        ['confirm' => __('Are you sure you want to delete ingredient {0}?', $recipe->id), 'class' => 'btn btn-outline-success float-right mr-2']
+                        ['confirm' => __('Are you sure you want to delete ingredient {0}?', $recipe->id), 'class' => 'btn btn-outline-aromacare float-right mr-2']
                     ) ?>
-                    <?= $this->Html->link(__('List Recipes'), ['action' => 'recipeindex'], ['class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
+                    <?= $this->Html->link(__('List Recipes'), ['action' => 'recipeindex'], ['class' => 'btn btn-outline-aromacare me-2 float-right mr-2']) ?>
                 </div>
             </div>
 

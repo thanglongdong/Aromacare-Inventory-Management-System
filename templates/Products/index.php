@@ -23,13 +23,13 @@ $user_id=$this->Identity->get('id');
 <div class="container-fluid">
 
     <div class="mb-3 d-sm-flex align-items-center justify-content-between mb-4">
-        <h3 class="text-success"><?= __('Products') ?></h3>
+        <h3 class="text-aromacare"><?= __('Products') ?></h3>
 
         <div style="display: inline-block">
-        <a href="<?= $this->Url->build('/Products/add')?>" class=" btn btn-success"><i
+        <a href="<?= $this->Url->build('/Products/add')?>" class=" btn btn-aromacare"><i
                 class="fas fa-plus fa-sm text-white-50"></i> New Product</a>
-        <a href="<?= $this->Url->build('/Products/export')?>" class=" btn btn-success"><i
-                class="fas fa-file-export fa-sm text-white-50"></i> Download</a>
+        <a href="<?= $this->Url->build('/Products/export')?>" class=" btn btn-aromacare"><i
+                class="fas fa-download fa-sm text-white-50"></i> Download</a>
         </div>
     </div>
 

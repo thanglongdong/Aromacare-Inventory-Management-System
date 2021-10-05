@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-md-12">
             <div>
-                <h1 class="h3 mb-2 text-success"><?= __('New Ingredient') ?></h1>
+                <h1 class="h3 mb-2 text-aromacare"><?= __('New Ingredient') ?></h1>
             </div>
             <br>
             <div>
@@ -48,8 +48,8 @@
                 <br>
 
                 <div>
-                    <?= $this->Form->button(__('Add Ingredient'), ['class' => 'btn btn-success']) ?>
-                    <?= $this->Html->link(__('List Ingredients'), ['action' => 'index'], ['class' => 'btn btn-outline-success me-2 float-right mr-2']) ?>
+                    <?= $this->Form->button(__('Add Ingredient'), ['class' => 'btn btn-aromacare']) ?>
+                    <?= $this->Html->link(__('List Ingredients'), ['action' => 'index'], ['class' => 'btn btn-outline-aromacare me-2 float-right mr-2']) ?>
                 </div>
             </div>
 

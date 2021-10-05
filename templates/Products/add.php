@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-md-12">
             <div>
-                <h1 class="h3 mb-2 text-success"><?= __('New Product') ?></h1>
+                <h1 class="h3 mb-2 text-aromacare"><?= __('New Product') ?></h1>
             </div>
             <br </br>
 
@@ -97,8 +97,8 @@
 
                     <br>
                     <div>
-                        <?= $this->Form->button(__('Add Product'), ['class' => 'btn btn-success']) ?>
-                        <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'btn btn-outline-success flex-shrink-0']) ?>
+                        <?= $this->Form->button(__('Add Product'), ['class' => 'btn btn-aromacare']) ?>
+                        <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'btn btn-outline-aromacare flex-shrink-0']) ?>
                     </div>
                 </div>
 

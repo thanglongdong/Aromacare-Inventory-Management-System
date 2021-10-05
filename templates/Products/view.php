@@ -28,12 +28,12 @@ $produceQuantity = [
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
             <div class="col-md-6">
-                <div class="small mb-1 text-success">SKU:<?= h($product->sku) ?></div>
-                <h1 class="display-5 fw-bolder text-success"><?= h($product->name) ?></h1>
-                <div class="fs-5 mb-5 text-success">
+                <div class="small mb-1 text-aromacare">SKU:<?= h($product->sku) ?></div>
+                <h1 class="display-5 fw-bolder text-aromacare"><?= h($product->name) ?></h1>
+                <div class="fs-5 mb-5 text-aromacare">
                     <span><?= $this->Number->currency($product->price) ?></span>
                 </div>
-                <p class="lead text-success"><?= h($product->description) ?></p>
+                <p class="lead text-aromacare"><?= h($product->description) ?></p>
 
                 <br>
                 <div class="row">
@@ -46,7 +46,7 @@ $produceQuantity = [
                     </div>
                     <br>
                     <div class='col'>
-                        <?= $this->Form->button(__('Purchase'), ['class'=>'btn btn-outline-success flex-shrink-0 me-1']) ?>
+                        <?= $this->Form->button(__('Purchase'), ['class'=>'btn btn-outline-aromacare flex-shrink-0 me-1']) ?>
                     </div>
 
                     <?= $this->Form->end() ?>
@@ -60,7 +60,7 @@ $produceQuantity = [
                     </div>
                     <br>
                     <div class='col'>
-                        <?= $this->Form->button(__('Produce'), ['class'=>'btn btn-outline-success flex-shrink-0 me-1','style'=>"width: 96px"]) ?>
+                        <?= $this->Form->button(__('Produce'), ['class'=>'btn btn-outline-aromacare flex-shrink-0 me-1','style'=>"width: 96px"]) ?>
                     </div>
 
                     <?= $this->Form->end() ?>
