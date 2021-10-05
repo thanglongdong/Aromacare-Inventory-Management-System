@@ -1,4 +1,12 @@
 <?php
+$this->loadHelper('Authentication.Identity');
+
+$loggedin = $this->Identity->isLoggedIn();
+
+if ($loggedin){
+    $role = $this->Identity->get('role');
+    $user_id=$this->Identity->get('id');
+}
 ?>
 
 <ul class="nav nav-tabs nav-fill">
@@ -37,6 +45,7 @@
             <a class="nav-link link-aromacare" href="<?= $this->Url->build('/products-ingredients')?>">Products Ingredients</a>
         <?php endif; ?>
     </li> -->
+    <?php if($loggedin) : ?>
     <li class="nav-item">
         <?php if($page == 'Recipes') : ?>
             <a class="nav-link active font-weight-bold link-aromacare" href="<?= $this->Url->build(['controller'=>'recipes','action'=>'recipeindex'])?>"><strong class="text-aromacare">Recipes</strong></a>
@@ -44,4 +53,5 @@
             <a class="nav-link link-aromacare" href="<?= $this->Url->build(['controller'=>'recipes','action'=>'recipeindex'])?>">Recipes</a>
         <?php endif; ?>
     </li>
+    <?php endif; ?>
 </ul>

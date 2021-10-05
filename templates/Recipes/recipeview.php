@@ -88,4 +88,15 @@
         </div>
     </div><br </br>
 <?php endif; ?>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#method' ) )
+        .then( editor => {
+            console.log( editor );
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+
 
