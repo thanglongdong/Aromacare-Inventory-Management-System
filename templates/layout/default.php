@@ -14,8 +14,8 @@
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <?= $this -> Html->css("../vendor/datatables/dataTables.min.css",['block'=>true]); ?>
-    <?= $this -> Html->css("../vendor/datatables/dataTables.css",['block'=>true]); ?>
+    <?= $this -> Html->css("../vendor/datatables/dataTables.min.css",['block'=>true,'defer'=>true]); ?>
+    <?= $this -> Html->css("../vendor/datatables/dataTables.css",['block'=>true,'defer'=>true]); ?>
     <?= $this->Html->css('styles') ?>
 
     <?= $this->fetch('meta') ?>
@@ -24,7 +24,7 @@
     <?= $this->Html->css(['../vendor/fontawesome-free-5.15.4-web/css/all.min.css']) ?>
 
 
-    <?= $this -> Html->script("../vendor/datatables/dataTables.min.js",['block'=>true]); ?>
+    <?= $this -> Html->script("../vendor/datatables/dataTables.min.js",['block'=>true,'defer'=>true]); ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <?= $this->fetch('script') ?>
