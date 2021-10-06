@@ -39,7 +39,6 @@ $user_id=$this->Identity->get('id');
             <tr>
                 <th><?= h('ID') ?></th>
                 <th><?= h('Name') ?></th>
-                <th><?= h('Type') ?></th>
                 <th><?= h('Price (AUD)') ?></th>
                 <th><?= h('Size (ml)') ?></th>
                 <th><?= h('Stock') ?></th>
@@ -57,10 +56,11 @@ $user_id=$this->Identity->get('id');
                 <tr>
                     <td><?= $this->Number->format($product->id) ?></td>
                     <td><?= h($product->name) ?></td>
-                    <td><?= h($product->type) ?></td>
                     <td><?= $this->Number->currency($product->price) ?></td>
                     <td><?= h($product->size) ?></td>
-                    <td><?= $this->Number->format($product->stock) ?></td>
+                    <td><?= $this->Number->format($product->stock) ?>
+
+                    </td>
                     <td><?= h($product->sku) ?></td>
                     <?php if($loggedin): ?>
                     <div class="col-md-3 text-end">
@@ -71,6 +71,10 @@ $user_id=$this->Identity->get('id');
                         <?= $this->Html->link(__('View'), ['action' => 'view', $product->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $product->id]) ?>
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $product->id], ['confirm' => __('Are you sure you want to delete {0}?', $product->name)]) ?>
+                        <?= $this->Form->postLink(__('-5'), ['action' => 'minusFive', $product->id]) ?>
+                        <?= $this->Form->postLink(__('-1'), ['action' => 'minusOne', $product->id]) ?>
+                        <?= $this->Form->postLink(__('+1'), ['action' => 'addOne', $product->id]) ?>
+                        <?= $this->Form->postLink(__('+5'), ['action' => 'addFive', $product->id]) ?>
                     </td>
                 </tr>
             <?php endforeach; ?>

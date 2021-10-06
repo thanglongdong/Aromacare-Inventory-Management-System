@@ -198,4 +198,53 @@ class ProductsController extends AppController
         $this->viewBuilder()->setClassName('CsvView.Csv');
         $this->set(compact('products', '_serialize', '_header', '_extract'));
     }
+
+    public function addOne($id = null)
+    {
+        $product = $this->Products->get($id);
+        $product->stock = $product->stock + 1;
+        if ($this->Products->save($product)) {
+            $this->Flash->success(__('Stock for "' . $product->name . '" has been correctly adjusted.'));
+            return $this->redirect(['action' => 'index']);
+        }
+        $this->Flash->error(__('Stock could not be adjusted'));
+        return $this->redirect(['action' => 'index']);
+    }
+
+    public function minusOne($id = null)
+    {
+        $product = $this->Products->get($id);
+        $product->stock = $product->stock - 1;
+        if ($this->Products->save($product)) {
+            $this->Flash->success(__('Stock for "' . $product->name . '" has been correctly adjusted.'));
+            return $this->redirect(['action' => 'index']);
+        }
+        $this->Flash->error(__('Stock could not be adjusted'));
+        return $this->redirect(['action' => 'index']);
+    }
+
+    public function addFive($id = null)
+    {
+        $product = $this->Products->get($id);
+        $product->stock = $product->stock + 5;
+        if ($this->Products->save($product)) {
+            $this->Flash->success(__('Stock for "' . $product->name . '" has been correctly adjusted.'));
+            return $this->redirect(['action' => 'index']);
+        }
+        $this->Flash->error(__('Stock could not be adjusted'));
+        return $this->redirect(['action' => 'index']);
+    }
+
+    public function minusFive($id = null)
+    {
+        $product = $this->Products->get($id);
+        $product->stock = $product->stock - 5;
+        if ($this->Products->save($product)) {
+            $this->Flash->success(__('Stock for "' . $product->name . '" has been correctly adjusted.'));
+            return $this->redirect(['action' => 'index']);
+        }
+        $this->Flash->error(__('Stock could not be adjusted'));
+        return $this->redirect(['action' => 'index']);
+    }
+
 }
