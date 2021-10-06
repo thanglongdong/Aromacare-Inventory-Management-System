@@ -108,10 +108,13 @@ class IngredientsController extends AppController
                         'supplierEmail'=>$Supplier->email,
                         'supplierName'=>$Supplier->name
                     ]);
-                    $email_result = $mailer->deliver();
+                    if($email_result = $mailer->deliver()){
+                        $this->Flash->popup(__('Ingredient threshold met! An email has been sent.'));
+                    }
+
                 }
 
-                $this->Flash->popup(__('Ingredient threshold met! An email has been sent.'));
+                $this->Flash->success(__('The ingredient has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
