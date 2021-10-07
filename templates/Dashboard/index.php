@@ -78,7 +78,7 @@
             <!-- Project Card Example -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold" style="color: #158467">Bookings Breakdown</h6>
+                    <h6 class="m-0 font-weight-bold" style="color: #158467">Ingredients threshold trends</h6>
                 </div>
                 <div class="card-body">
                     <div id="barChart" style="height: 370px; width: 100%;"></div> <!-- canvas call -->
@@ -93,7 +93,7 @@
             <!-- Project Card Example -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold" style="color: #158467">Order Size Tracking</h6>
+                    <h6 class="m-0 font-weight-bold" style="color: #158467">10 Ingredients closest to threshold</h6>
                 </div>
                 <div class="card-body">
                     <div id="chartContainer" style="height: 370px; width: 100%;"></div> <!-- canvas call -->
@@ -139,6 +139,64 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    window.onload = function() {
+
+        var barChart = new CanvasJS.Chart("barChart", {
+            animationEnabled: true,
+            exportEnabled: true,
+            theme: "light2",
+            title: {
+                text: "Ingredient threshold trends"
+            },
+            axisY: {
+                title: "# of Ingredients"
+            },
+            axisX: {
+                title: "Distance from Threshold"
+            },
+            data: [{
+                type: "column",
+                yValueFormatString: "# Ingredients",
+                dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+            }]
+        });
+
+        var chartContainer = new CanvasJS.Chart("chartContainer", {
+            theme: "light2", // "light1", "light2", "dark1", "dark2"
+            animationEnabled: true,
+            exportEnabled: true,
+            title: {
+                text: "Ingredients closest to threshold"
+            },
+            axisX: {
+                margin: 10,
+                labelPlacement: "inside",
+                tickPlacement: "inside",
+                // title: "Ingredient Name"
+            },
+            axisY2: {
+                title: "Stock away from threshold",
+                includeZero: true,
+                suffix: ""
+            },
+            data: [{
+                type: "bar",
+                axisYType: "secondary",
+                yValueFormatString: "#",
+                indexLabel: "{y}",
+                dataPoints: <?php echo json_encode($dataPoints1, JSON_NUMERIC_CHECK); ?>
+
+            }]
+        });
+
+        barChart.render();
+        chartContainer.render();
+
+    }
+</script>
 
 
 

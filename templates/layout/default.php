@@ -16,6 +16,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <?= $this -> Html->script("https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js",['block'=>true]); ?>
     <?= $this -> Html->script("https://canvasjs.com/assets/script/canvasjs.min.js", ['block'=>true]); ?>
+    <?= $this -> Html->script("https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js", ['block'=>true]); ?>
+    <?= $this->Html->css('https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css', ['block'=>true]); ?>
+
 
     <!-- Core theme CSS (includes Bootstrap)-->
     <?= $this->Html->css('styles') ?>
