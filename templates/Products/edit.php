@@ -77,10 +77,11 @@ $user_id=$this->Identity->get('id');
                 <!-- Row 3 -->
                 <div class="row">
                     <div class="col">
-                        <?= $this->Form->control('description') ?>
-                    </div>
-                    <div class="col">
-                        <?= $this->Form->control('ingredients._ids', ['options' => $ingredients]) ?>
+                        <?= $this->Form->control('ingredients._ids', [
+                            'options'=>$ingredients,
+                            'class'=>"js-example-basic-multiple",
+                            'multiple'=>"multiple"
+                        ]) ?>
                     </div>
                 </div>
 
@@ -102,4 +103,9 @@ $user_id=$this->Identity->get('id');
 
 </div>
 <?= $this->Form->end() ?>
-<br </br>
+<br>
+<script>
+    $(document).ready(function() {
+        $('#ingredients-ids').select2();
+    });
+</script>

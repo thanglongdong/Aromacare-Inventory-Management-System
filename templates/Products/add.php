@@ -38,7 +38,8 @@
                     <div class="col">
                         <?= $this->Form->control('type',
                             ['options' =>
-                                ['Aromatherapy Accessories and Diffusers'=>'Aromatherapy Accessories and Diffusers',
+                                [
+                                    'Aromatherapy Accessories and Diffusers'=>'Aromatherapy Accessories and Diffusers',
                                     'Essential Oil Blends'=>'Essential Oil Blends',
                                     'Essential Oils'=>'Essential Oils',
                                     'Skin Care'=>'Skin Care',
@@ -46,14 +47,15 @@
                                     'Lifestyle'=>'Lifestyle',
                                     'Dementia Care'=>'Dementia Care',
                                     'Palliative Care'=>'Palliative Care',
-                                    'Aged Care'=>'Aged Care']
+                                    'Aged Care'=>'Aged Care'
+                                ]
                             ]) ?>
                     </div>
                     <div class="col">
                         <?= $this->Form->control('price',['label'=>'Price (AUD)']) ?>
                     </div>
                     <div class="col">
-                        <?= $this->Form->control('size',['label'=>'Size (ml)']); ?>
+                        <?= $this->Form->control('size',['label'=>'Size (mL)']); ?>
                     </div>
                 </div>
                 <!-- Row 3 -->
@@ -69,20 +71,13 @@
                     </div>
                 </div>
                 <!-- Row 5 -->
-                <?php if ($ingredients) : ?>
-                <div>Select Ingredients in This Product</div> <!-- this should just go above whatever the final ingredients section is so that the process makes sense-->
-                <?php endif; ?>
                 <div class="row">
-                    <?php $i = 1 ?>
-                    <div class="form-check form-check-inline">
-                        <?php foreach ($ingredients as $ingredient): ?>
-
-                            <?= $this->Form->checkbox($ingredient,
-                                ['class'=>"form-check-input",'type'=>"checkbox",'id'=>"inlineCheckbox".$i,'value'=>"option".$i]) ?>
-                            <label class="form-check-label" for="inlineCheckbox1" ><?=$ingredient?></label>
-
-                            <?php $i++ ?>
-                        <?php endforeach; ?>
+                    <div class="col">
+                        <?= $this->Form->control('ingredients._ids', [
+                            'options'=>$ingredients,
+                            'class'=>"js-example-basic-multiple",
+                            'multiple'=>"multiple"
+                        ]) ?>
                     </div>
                 </div>
 
@@ -105,7 +100,7 @@
                     </div>
                     <br> -->
 
-                    <br></br>
+                    <br>
 
                     <br>
                     <div>
@@ -120,3 +115,9 @@
     </div>
     <?= $this->Form->end() ?>
     <br>
+
+<script>
+    $(document).ready(function() {
+        $('#ingredients-ids').select2();
+    });
+</script>
