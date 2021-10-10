@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '4ac40e51eb2ae1827ce04f4fb64a1f8d1e5f80a3',
+    'reference' => '7db3fbd62b7f280785075f0165fbe4d0e7158be0',
     'name' => 'cakephp/app',
   ),
   'versions' => 
@@ -51,7 +51,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '4ac40e51eb2ae1827ce04f4fb64a1f8d1e5f80a3',
+      'reference' => '7db3fbd62b7f280785075f0165fbe4d0e7158be0',
     ),
     'cakephp/authentication' => 
     array (

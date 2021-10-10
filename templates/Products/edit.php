@@ -101,5 +101,16 @@ $user_id=$this->Identity->get('id');
     </div>
 
 </div>
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#description' ) )
+        .then( editor => {
+            console.log( editor );
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 <?= $this->Form->end() ?>
 <br </br>

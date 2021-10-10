@@ -134,7 +134,7 @@ class ProductsTable extends Table
     }
 
     public function isName($value){
-        if (!preg_match('/[^a-z ]/i',$value)){
+        if (!preg_match('/[^a-z0-9 ]/i',$value) && (substr($value,0,1)!=' ')){
             return true;
         }
         return false;
