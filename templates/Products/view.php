@@ -33,12 +33,6 @@ $produceQuantity = [
                 <div class="fs-5 mb-5 text-aromacare">
                     <span><?= $this->Number->currency($product->price) ?></span>
                 </div>
-                <div class="text">
-                        <blockquote>
-                            <?= $this->Text->autoParagraph($product->description)?>
-                        </blockquote>
-                </div>
-                <!-- <p class="lead text-aromacare"><?= h($product->description) ?></p> -->
 
                 <br>
                 <div class="row">
