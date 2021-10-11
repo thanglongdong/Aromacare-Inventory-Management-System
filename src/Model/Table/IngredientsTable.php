@@ -84,8 +84,8 @@ class IngredientsTable extends Table
             ->requirePresence('stock', 'create')
             ->notEmptyString('stock','Please enter a number.')
             ->add('stock', 'range', [
-                'rule' => ['range',0,8000],
-                'message' => 'Please enter a valid number from 0 - 8000.'
+                'rule' => ['range',-1000,8000],
+                'message' => 'Please enter a valid number from -1000 to 8000.'
             ]);
 
         $validator
