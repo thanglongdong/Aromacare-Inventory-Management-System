@@ -75,7 +75,6 @@
                     <div class="col">
                         <?= $this->Form->control('ingredients._ids', [
                             'options'=>$ingredients,
-                            'class'=>"js-example-basic-multiple",
                             'multiple'=>"multiple"
                         ]) ?>
                     </div>

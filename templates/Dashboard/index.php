@@ -152,7 +152,7 @@
                 text: "Ingredient threshold trends"
             },
             axisY: {
-                title: "# of Ingredients"
+                title: "Number of Ingredients"
             },
             axisX: {
                 title: "Distance from Threshold"

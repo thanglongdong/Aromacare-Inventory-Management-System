@@ -17,26 +17,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <?= $this->Html->charset() ?>
-    <title>
-        <?= $this->fetch('title') ?>
-    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
     <?= $this->Html->meta('icon') ?>
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <title>
+        Aromacare
+    </title>
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <?= $this->Html->css('styles') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+
+    <!-- Bootstrap core JS-->
+    <?= $this -> Html->script("https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js",['defer'=>true]); ?>
+    <!-- Core theme JS-->
+    <?= $this -> Html->script("scripts.js",['defer'=>true]); ?>
 </head>
 <body>
-    <div class="error-container">
-        <?= $this->Flash->render() ?>
-        <?= $this->fetch('content') ?>
-        An error has occurred.
-        <?= $this->Html->link(__('Back'), 'javascript:history.back()') ?>
+<!-- Navigation -->
+<?= $this->element('navbar/nav') ?>
+<!-- Main Content -->
+<main>
+    <br><br>
+    <div style="text-align: center;">
+        <h1 style="font-size: 18vh"><?=$code?></h1>
+        <h3 style="font-size: 6vh">Looks like you're lost!</h3>
+        <p style="font-size: 3vh">An error has occurred.</p>
+        <?= $this->Html->link(__('Go Back'), 'javascript:history.back()', ['class' => 'btn btn-aromacare flex-shrink-0']) ?>
     </div>
+</main>
+<!-- Footer -->
+
+</div>
 </body>
+<footer style="position: absolute; bottom: 0; width: 100%">
+    <?= $this->element('footer/foot') ?>
+</footer>
 </html>

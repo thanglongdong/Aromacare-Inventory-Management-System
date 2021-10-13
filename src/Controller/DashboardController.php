@@ -68,7 +68,7 @@ class DashboardController extends AppController
         }
 
         $dataPoints = array( //data points for bar chart
-            array("y" => $past, "label" => "Passed Threshold" ),
+            array("y" => $past, "label" => "Below Threshold" ),
             array("y" => $lessTwo, "label" => "Within 2" ),
             array("y" => $twoToFive, "label" => "2 to 5" ),
             array("y" => $fiveToTen, "label" => "5 to 10" ),
@@ -111,19 +111,6 @@ class DashboardController extends AppController
             array_unshift($dataPoints1,array("y" => $list[$i], "label"=> $list[$i+1]));
             $i = $i + 2;
         }
-
-//        $dataPoints1= array(
-//            array("y" => $list[18], "label"=> $list[19] ),
-//            array("y" => $list[16], "label"=> $list[17] ),
-//            array("y" => $list[14], "label"=> $list[15] ),
-//            array("y" => $list[12], "label"=> $list[13] ),
-//            array("y" => $list[10], "label"=> $list[11] ),
-//            array("y" => $list[8], "label"=> $list[9] ),
-//            array("y" => $list[6], "label"=> $list[7]),
-//            array("y" => $list[4], "label"=> $list[5] ),
-//            array("y" => $list[2], "label"=> $list[3] ),
-//            array("y" => $list[0], "label"=> $list[1] )
-//        );
 
 
         $this->set('ingredients', $ingredientsEntries);
