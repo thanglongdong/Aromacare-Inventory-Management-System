@@ -55,7 +55,6 @@
                     <th><?= __('Stock') ?></th>
                     <th><?= __('Sku') ?></th>
                     <th><?= __('Description') ?></th>
-                    <th><?= __('Image') ?></th>
                     <th><?= __('Recipe Id') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
@@ -68,8 +67,14 @@
                         <td><?= h($products->size) ?></td>
                         <td><?= h($products->stock) ?></td>
                         <td><?= h($products->sku) ?></td>
-                        <td><?= h($products->description) ?></td>
-                        <td><?= h($products->image) ?></td>
+                        <td><?=  $this->Text->truncate(
+                            $this->Text->autoParagraph($products->description),
+                            80,
+                            [
+                                'ellipsis' => '...',
+                                'exact' => false
+                            ]
+                        );?></td>
                         <td><?= h($products->recipe_id) ?></td>
                         <td class="actions">
                             <?= $this->Html->link(__('View'), ['controller' => 'Products', 'action' => 'view', $products->id]) ?>

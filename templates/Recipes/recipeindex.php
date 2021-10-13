@@ -29,7 +29,14 @@
             <?php foreach ($recipes as $recipe): ?>
                 <tr>
                     <td><?= $this->Number->format($recipe->id) ?></td>
-                    <td><?= h($recipe->method) ?></td>
+                    <td><?=  $this->Text->truncate(
+                            $this->Text->autoParagraph($recipe->method),
+                            80,
+                            [
+                                'ellipsis' => '...',
+                                'exact' => false
+                            ]
+                        );?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'recipeview', $recipe->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'recipeedit', $recipe->id]) ?>

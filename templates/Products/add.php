@@ -58,12 +58,7 @@
                         <?= $this->Form->control('size',['label'=>'Size (mL)']); ?>
                     </div>
                 </div>
-                <!-- Row 3 -->
-                <div class="row">
-                    <div class="col">
-                        <?= $this->Form->control('description') ?>
-                    </div>
-                </div>
+                
                 <!-- Row 4 -->
                 <div class="row">
                     <div class="col">
@@ -112,6 +107,7 @@
         </div>
 
     </div>
+   
     <?= $this->Form->end() ?>
     <br>
 

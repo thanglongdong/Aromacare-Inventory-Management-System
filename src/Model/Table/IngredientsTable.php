@@ -84,8 +84,8 @@ class IngredientsTable extends Table
             ->requirePresence('stock', 'create')
             ->notEmptyString('stock','Please enter a number.')
             ->add('stock', 'range', [
-                'rule' => ['range',0,8000],
-                'message' => 'Please enter a valid number from 0 - 8000.'
+                'rule' => ['range',-1000,8000],
+                'message' => 'Please enter a valid number from -1000 to 8000.'
             ]);
 
         $validator
@@ -122,7 +122,7 @@ class IngredientsTable extends Table
     }
 
     public function isName($value){
-        if (!preg_match('/[^a-z ]/i',$value)){
+        if (!preg_match('/[^a-z0-9 ]/i',$value) && (substr($value,0,1)!=' ')){
             return true;
         }
         return false;

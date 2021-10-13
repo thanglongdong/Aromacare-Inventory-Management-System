@@ -71,10 +71,10 @@ $user_id=$this->Identity->get('id');
                         <?= $this->Html->link(__('View'), ['action' => 'view', $product->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $product->id]) ?>
                         <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $product->id], ['confirm' => __('Are you sure you want to delete {0}?', $product->name)]) ?>
-                        <?= $this->Form->postLink(__('-5'), ['action' => 'minusFive', $product->id]) ?>
-                        <?= $this->Form->postLink(__('-1'), ['action' => 'minusOne', $product->id]) ?>
-                        <?= $this->Form->postLink(__('+1'), ['action' => 'addOne', $product->id]) ?>
-                        <?= $this->Form->postLink(__('+5'), ['action' => 'addFive', $product->id]) ?>
+                        <?= $this->Form->postLink(__('-5'), ['action' => 'minusFive', $product->id], ['confirm' => __('Are you sure you want to decrease the stock of {0} by 5?', $product->name)]) ?>
+                        <?= $this->Form->postLink(__('-1'), ['action' => 'minusOne', $product->id], ['confirm' => __('Are you sure you want to decrease the stock of {0} by 1?', $product->name)]) ?>
+                        <?= $this->Form->postLink(__('+1'), ['action' => 'addOne', $product->id], ['confirm' => __('Are you sure you want to increase the stock of {0} by 1?', $product->name)]) ?>
+                        <?= $this->Form->postLink(__('+5'), ['action' => 'addFive', $product->id], ['confirm' => __('Are you sure you want to increase the stock of {0} by 5?', $product->name)]) ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
