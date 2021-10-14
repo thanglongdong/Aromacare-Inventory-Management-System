@@ -104,6 +104,10 @@ class IngredientsTable extends Table
             ->integer('threshold')
             ->allowEmptyString('threshold');
 
+        $validator
+            ->boolean('sent')
+            ->notEmptyString('sent');
+
         return $validator;
     }
 

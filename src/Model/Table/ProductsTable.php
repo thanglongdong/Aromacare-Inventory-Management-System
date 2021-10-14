@@ -120,16 +120,6 @@ class ProductsTable extends Table
             ->requirePresence('sku', 'create')
             ->notEmptyString('sku');
 
-        $validator
-            ->scalar('description')
-            ->requirePresence('description', 'create')
-            ->notEmptyString('description');
-
-        $validator
-            ->scalar('image')
-            ->maxLength('image', 256)
-            ->allowEmptyFile('image');
-
         return $validator;
     }
 

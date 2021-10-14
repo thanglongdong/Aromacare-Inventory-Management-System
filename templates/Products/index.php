@@ -8,8 +8,8 @@ $this->loadHelper('Authentication.Identity');
 $loggedin = $this->Identity->isLoggedIn();
 
 if ($loggedin){
-$role = $this->Identity->get('role');
-$user_id=$this->Identity->get('id');
+    $role = $this->Identity->get('role');
+    $user_id=$this->Identity->get('id');
 }
 ?>
 <!-- Tabs -->
@@ -26,10 +26,10 @@ $user_id=$this->Identity->get('id');
         <h3 class="text-aromacare"><?= __('Products') ?></h3>
 
         <div style="display: inline-block">
-        <a href="<?= $this->Url->build('/products/add')?>" class=" btn btn-aromacare"><i
-                class="fas fa-plus fa-sm text-white-50"></i> New Product</a>
-        <a href="<?= $this->Url->build('/products/export')?>" class=" btn btn-aromacare"><i
-                class="fas fa-download fa-sm text-white-50"></i> Download</a>
+            <a href="<?= $this->Url->build('/products/add')?>" class=" btn btn-aromacare"><i
+                    class="fas fa-plus fa-sm text-white-50"></i> New Product</a>
+            <a href="<?= $this->Url->build('/products/export')?>" class=" btn btn-aromacare"><i
+                    class="fas fa-download fa-sm text-white-50"></i> Download</a>
         </div>
     </div>
 
@@ -63,9 +63,9 @@ $user_id=$this->Identity->get('id');
                     </td>
                     <td><?= h($product->sku) ?></td>
                     <?php if($loggedin): ?>
-                    <div class="col-md-3 text-end">
-                        <td><?= $this->Html->link($product->recipe_id, ['controller' => 'Recipes', 'action' => 'recipeview', $product->recipe_id]) ?></td>
-                    </div>
+                        <div class="col-md-3 text-end">
+                            <td><?= $this->Html->link($product->recipe_id, ['controller' => 'Recipes', 'action' => 'recipeview', $product->recipe_id]) ?></td>
+                        </div>
                     <?php endif; ?>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $product->id]) ?>

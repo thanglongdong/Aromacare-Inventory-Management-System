@@ -10,8 +10,8 @@ $this->loadHelper('Authentication.Identity');
 $loggedin = $this->Identity->isLoggedIn();
 
 if ($loggedin){
-$role = $this->Identity->get('role');
-$user_id=$this->Identity->get('id');
+    $role = $this->Identity->get('role');
+    $user_id=$this->Identity->get('id');
 }
 
 ?>

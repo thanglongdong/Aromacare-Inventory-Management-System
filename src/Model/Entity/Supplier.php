@@ -10,10 +10,10 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
- * @property int $phone
+ * @property string $phone
  * @property string $email
  * @property string|null $address
- * @property string|null $wait
+ * @property int|null $wait
  *
  * @property \App\Model\Entity\Ingredient[] $ingredients
  */

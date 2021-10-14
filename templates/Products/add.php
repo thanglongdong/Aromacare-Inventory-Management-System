@@ -58,7 +58,7 @@
                         <?= $this->Form->control('size',['label'=>'Size (mL)']); ?>
                     </div>
                 </div>
-                
+
                 <!-- Row 4 -->
                 <div class="row">
                     <div class="col">
@@ -75,41 +75,41 @@
                     </div>
                 </div>
 
-                    <!-- </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                        <label class="form-check-label" for="inlineCheckbox1">Grass</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                        <label class="form-check-label" for="inlineCheckbox2">Tea</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option3">
-                        <label class="form-check-label" for="inlineCheckbox1">Myrrh Oil</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option4">
-                        <label class="form-check-label" for="inlineCheckbox2">Marjoram</label>
-                    </div>
-                    <br> -->
-
-                    <br>
-
-                    <br>
-                    <div>
-                        <?= $this->Form->button(__('Add Product'), ['class' => 'btn btn-aromacare']) ?>
-                        <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'btn btn-outline-aromacare flex-shrink-0']) ?>
-                    </div>
+                <!-- </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Grass</label>
                 </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Tea</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox1">Myrrh Oil</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox2">Marjoram</label>
+                </div>
+                <br> -->
 
+                <br>
+
+                <br>
+                <div>
+                    <?= $this->Form->button(__('Add Product'), ['class' => 'btn btn-aromacare']) ?>
+                    <?= $this->Html->link(__('List Products'), ['action' => 'index'], ['class' => 'btn btn-outline-aromacare flex-shrink-0']) ?>
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
-   
-    <?= $this->Form->end() ?>
-    <br>
+
+</div>
+
+<?= $this->Form->end() ?>
+<br>
 
 <script>
     $(document).ready(function() {

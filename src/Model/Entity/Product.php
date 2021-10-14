@@ -15,10 +15,9 @@ use Cake\ORM\Entity;
  * @property string $size
  * @property int $stock
  * @property string $sku
- * @property string|null $description
- * @property string|null $image
  * @property int|null $recipe_id
  *
+ * @property \App\Model\Entity\Recipe $recipe
  * @property \App\Model\Entity\Ingredient[] $ingredients
  */
 class Product extends Entity
@@ -39,9 +38,8 @@ class Product extends Entity
         'size' => true,
         'stock' => true,
         'sku' => true,
-        'description' => true,
-        'image' => true,
         'recipe_id' => true,
+        'recipe' => true,
         'ingredients' => true,
     ];
 }

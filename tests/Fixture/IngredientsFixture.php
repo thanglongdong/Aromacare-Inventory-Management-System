@@ -23,6 +23,7 @@ class IngredientsFixture extends TestFixture
         'price' => ['type' => 'float', 'length' => null, 'precision' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => ''],
         'supplier_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'threshold' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'sent' => ['type' => 'boolean', 'length' => null, 'null' => false, 'default' => '0', 'comment' => '', 'precision' => null],
         '_indexes' => [
             'FK_ingredients_suppliers' => ['type' => 'index', 'columns' => ['supplier_id'], 'length' => []],
         ],
@@ -51,6 +52,7 @@ class IngredientsFixture extends TestFixture
                 'price' => 1,
                 'supplier_id' => 1,
                 'threshold' => 1,
+                'sent' => 1,
             ],
         ];
         parent::init();

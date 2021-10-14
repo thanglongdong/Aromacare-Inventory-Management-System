@@ -1,4 +1,3 @@
-
 <?php
 /**
  * @var \App\View\AppView $this
@@ -23,7 +22,7 @@
                 <!-- Row 1 -->
                 <div class="row">
                     <div class="col">
-                    <?= $this->Form->control('name') ?>
+                        <?= $this->Form->control('name') ?>
                     </div>
                     <div class="col">
                         <?= $this->Form->control('phone',['label'=>'Phone Number']) ?>

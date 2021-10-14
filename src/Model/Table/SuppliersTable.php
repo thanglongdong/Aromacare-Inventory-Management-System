@@ -91,7 +91,7 @@ class SuppliersTable extends Table
 
         $validator
             ->scalar('wait')
-            ->maxLength('wait', 30)
+            ->maxLength('wait', 3)
             ->allowEmptyString('wait')
             ->add('wait', 'range', [
                 'rule' => ['range',0,365],
