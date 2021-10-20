@@ -64,7 +64,7 @@
 
     </div>
 
-    <br></br>
+    <br>
 
 
 <?php if (!empty($supplier->ingredients)) : ?>

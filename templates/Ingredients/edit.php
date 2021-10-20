@@ -62,3 +62,9 @@
 </div>
 
 <br>
+
+<script>
+    $(document).ready(function() {
+        $('#products-ids').select2();
+    });
+</script>

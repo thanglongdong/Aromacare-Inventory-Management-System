@@ -44,6 +44,14 @@
                     </div>
                 </div>
 
+                <!-- Row 2 -->
+
+                <div class="row">
+                    <div class="col">
+                        <?= $this->Form->control('products._ids', ['options' => $products, 'empty' => true])?>
+                    </div>
+                </div>
+
 
                 <br>
 
@@ -59,3 +67,9 @@
 </div>
 <?= $this->Form->end() ?>
 <br </br>
+
+<script>
+    $(document).ready(function() {
+        $('#products-ids').select2();
+    });
+</script>

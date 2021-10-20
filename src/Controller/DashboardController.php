@@ -121,8 +121,5 @@ class DashboardController extends AppController
         $this->set('ingredient', $ingredientCount);
         $this->set('supplier', $supplierCount);
 
-
     }
-
-
 }

@@ -36,7 +36,7 @@
                         <?= $this->Form->control('price',['label'=>'Price (AUD)','disabled'])?>
                     </div>
                     <div class="col">
-                        <?= $ingredient->has('supplier') ? $this->Form->control($ingredient->supplier->name,['disabled']) : '' ?>
+                        <?= $this->Form->control('supplier_id', ['options' => $suppliers, 'disabled'])?>
                     </div>
                 </div>
                 <?= $this->Form->end() ?>

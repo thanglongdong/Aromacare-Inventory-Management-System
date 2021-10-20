@@ -39,7 +39,9 @@ class IngredientsController extends AppController
             'contain' => ['Suppliers', 'Products'],
         ]);
 
-        $this->set(compact('ingredient'));
+        $suppliers = $this->Ingredients->Suppliers->find('list', ['limit' => 200]);
+        $products = $this->Ingredients->Products->find('list', ['limit' => 200]);
+        $this->set(compact('ingredient','suppliers','products'));
     }
 
     /**
