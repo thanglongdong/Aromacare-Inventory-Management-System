@@ -20,6 +20,7 @@
     <?= $this->Html->css('https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css', ['block'=>true]); ?>
 
 
+
     <!-- Core theme CSS (includes Bootstrap)-->
     <?= $this->Html->css('styles') ?>
     <?= $this -> Html->css('datatables.min.css'); ?>
@@ -34,11 +35,16 @@
 
     <?= $this->fetch('script') ?>
 
-    <!-- Bootstrap core JS-->
-    <?= $this -> Html->script("https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js",['defer'=>true]); ?>
+
+
     <!-- Core theme JS-->
     <?= $this -> Html->script("scripts.js",['defer'=>true]); ?>
+    <?= $this -> Html->script("popper.min.js"); ?>
+    <?= $this -> Html->script("bootstrap.min.js"); ?>
     <?= $this -> Html->script('datatables.min.js'); ?>
+
+    <!-- Bootstrap core JS-->
+    <?= $this -> Html->script("https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js",['defer'=>true]); ?>
 </head>
 
 <!-- Navigation -->

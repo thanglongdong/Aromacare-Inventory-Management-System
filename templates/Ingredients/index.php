@@ -4,6 +4,7 @@
  * @var \App\Model\Entity\Ingredient[]|\Cake\Collection\CollectionInterface $ingredients
  */
 
+echo $this->Html->css('ingredients-customize');
 ?>
 <!-- Tabs -->
 <?php $page_name = $this->request->getparam("controller") ?>
@@ -58,6 +59,18 @@
 </div>
 <script>
     $(document).ready( function () {
-        $("#customTable").DataTable();
+        var table = $('#customTable').DataTable({
+            "createdRow": function( row, data, dataIndex ) {
+                if ((data[2] - data[4]) < "0") {
+                    $(row).addClass('red');
+                }
+                if ((data[2] - data[4]) >= "0" && (data[2] - data[4]) < "3") {
+                    $(row).addClass('yellow');
+                }
+                if ((data[2] - data[4]) >= "3") {
+                    $(row).addClass('green');
+                }
+            }
+        });
     } );
 </script>
