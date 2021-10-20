@@ -88,9 +88,13 @@ class IngredientsController extends AppController
             $ingredient = $this->Ingredients->patchEntity($ingredient, $this->request->getData());
             $threshold = $ingredient->threshold;
 
+            if ($ingredient->sent == true && ($ingredient->stock >= $ingredient->threshold)) {
+                $ingredient->sent = false; //when email sent and stock now above/on threshold (new stock in)
+            }
+
             if ($this->Ingredients->save($ingredient)) {
                 //send email
-                if ($ingredient->stock < $threshold) {
+                if ($ingredient->stock < $threshold && $ingredient->sent == false) { //only send email when email not yet sent
                     $mailer = new Mailer('default');
                     $mailer
                         ->setEmailFormat('html')
@@ -112,7 +116,11 @@ class IngredientsController extends AppController
                         $this->Flash->popup(__('Ingredient threshold met! An email has been sent.'));
                     }
 
+                    $ingredient->sent = true;
+                    $this->Ingredients->save($ingredient);
                 }
+
+
 
                 $this->Flash->success(__('The ingredient has been saved.'));
 

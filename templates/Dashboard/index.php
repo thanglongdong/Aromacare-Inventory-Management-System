@@ -1,8 +1,5 @@
 <?php
 
-//debug($ingredients);
-//exit();
-
 ?>
 <!-- Tabs -->
 <?php $page_name = $this->request->getparam("controller") ?>
@@ -80,7 +77,7 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold" style="color: #158467; display: inline">Ingredients threshold trends</h6>
-                    <i class="far fa-question-circle" data-bs-toggle="tooltip" data-bs-placement="right"  data-bs-html="true" title="<b>Graph relates stock to ingredient's threshold</b> <br> If an ingredient's stock is below it's threshold, it is categorised as 'Below Threshold'. <br> If an ingredients stock is within 2 of it's threshold, then it is categorised as such - this follows for all others and until all ingredients are categorised" style="display: inline;float: right"></i>
+                    <i class="far fa-question-circle" data-bs-toggle="tooltip" data-bs-placement="right"  data-bs-html="true" title="<b>Graph relates ingredient's stock to it's threshold.</b> <br> If an ingredient's stock is below it's threshold, it is categorised as 'Below Threshold'. <br> If an ingredients stock is within 2 of it's threshold, then it is categorised as such - this follows for all others and until all ingredients are categorised" style="display: inline;float: right"></i>
                 </div>
                 <div class="card-body">
                     <div id="barChart" style="height: 370px; width: 100%;"></div> <!-- canvas call -->
@@ -96,7 +93,7 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold" style="color: #158467;display: inline">10 Ingredients closest to threshold</h6>
-                    <i class="far fa-question-circle" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-html="true" title="<b>Chart shows the 10 ingredients closest to their thresholds</b> <br> The highest ingredient is the closest to it's threshold and the lowest ingredient is furthest away from it's threshold"  style="display: inline;float: right"></i>
+                    <i class="far fa-question-circle" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-html="true" title="<b>Chart shows the 10 ingredients closest to their thresholds.</b> <br> The highest ingredient is the closest to it's threshold and the lowest ingredient is furthest away from it's threshold"  style="display: inline;float: right"></i>
                 </div>
                 <div class="card-body">
                     <div id="chartContainer" style="height: 370px; width: 100%;"></div> <!-- canvas call -->

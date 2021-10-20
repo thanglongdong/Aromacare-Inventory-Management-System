@@ -18,7 +18,7 @@
             <div>
                 <h1 class="h3 mb-2 text-aromacare"><?= __('Edit Ingredient') ?></h1>
             </div>
-            <br </br>
+            <br>
             <div>
                 <?= $this->Form->create($ingredient,['novalidate' => true, 'type'=>'file']) ?>
                 <?= $this->Form->control('name')?>
@@ -61,4 +61,4 @@
 
 </div>
 
-<br </br>
+<br>

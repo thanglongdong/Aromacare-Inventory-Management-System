@@ -19,7 +19,7 @@ $user_id=$this->Identity->get('id');
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 
             <li><a href="<?= $this->Url->build('/') ?>" class="nav-link px-2 link-aromacare">Dashboard</a></li>
-            <li><a href="<?= $this->Url->build('/') ?>" class="nav-link px-2 link-aromacare">Manual</a></li>
+            <li><a href="<?= $this->Url->build('/manual') ?>" class="nav-link px-2 link-aromacare">Manual</a></li>
 
         </ul>
         <?php if($loggedin): ?>
