@@ -398,7 +398,7 @@ endforeach;
                                         <div>
                                             <p><b>To:</b> <?= h($supplierEmail) ?></p>
                                             <p>Hello <?= h($supplierName) ?>,</p>
-                                            <p>We are currently running on low stock of <?= h($name) ?> and would like to make a purchase of __this__amount__.</p>
+                                            <p>We are currently running on low stock of <?= h($name) ?> and would like to make a purchase of <u>this amount</u>.</p>
                                             <p>Please advise on availability.</p>
                                             <p>Thank you,</p>
                                             <p>Aromacare</p>
