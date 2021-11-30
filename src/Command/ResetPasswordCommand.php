@@ -11,7 +11,7 @@ class ResetPasswordCommand extends Command
     protected function buildOptionParser(ConsoleOptionParser $parser): ConsoleOptionParser
     {
         $parser->addArgument('password', [
-            'help' => 'New password for priveledged owner account'
+            'help' => 'New password for privileged owner account'
         ]);
         return $parser;
     }
@@ -19,8 +19,8 @@ class ResetPasswordCommand extends Command
     public function execute(Arguments $args, ConsoleIo $io)
     {
         $password = $args->getArgument('password');
-        
-		
+
+
 		//Reset Password in users table
 		$this->loadModel('Users');
 		$user = $this->Users->get(1);
@@ -30,6 +30,6 @@ class ResetPasswordCommand extends Command
 		} else {
 			$io->error("Password cannot be reset for owner account, please contact system admin.");
 		}
-		
+
 	}
 }
